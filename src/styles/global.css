@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@theme {
+	--color-00-lightgrey: #f2f3f5;
+	--color-00-orange: #ff861b;
+}
+
+html,
+body {
+	@apply w-full h-full;
+}
+body.main {
+	@apply m-0 bg-[var(--color-00-lightgrey)] text-[16px] leading-[1.6];
+	font-family: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+}
+a {
+	@apply no-underline text-black;
+}
+
+/* LAYOUT */
+
+.container {
+  @apply max-w-[1560px] mx-auto px-5;
+}
+
+/* HEADER & NAV */
+
+.header__inner {
+	@apply flex items-center pt-[50px] pb-[60px];
+}
+
+.header__brand {
+	@apply flex flex-row flex-nowrap items-center gap-x-[30px] shrink-0 no-underline;
+}
+
+.logo--text {
+  @apply hidden lg:block m-0 -translate-y-[2px];
+}
+
+.header__nav {
+	@apply ml-auto;
+}
+
+.nav__list {
+	@apply hidden md:flex m-0 p-0 list-none gap-x-[50px];
+}
+
+.nav__item {
+	@apply flex items-center text-[20px] font-semibold before:content-['/'] before:mr-1;
+}
+
+.nav__item--lang {
+  @apply before:content-['>'];
+}
+
+.nav__link {
+	@apply hover:text-[var(--color-00-orange)] hover:underline transition-colors duration-200;
+}
+
+.nav__link--current {
+	@apply text-[var(--color-00-orange)];
+}
+
+.header__burger {
+	@apply block md:hidden;
+}
