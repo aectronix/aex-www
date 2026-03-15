@@ -3,6 +3,7 @@
 @theme {
 	--color-00-lightgrey: #f2f3f5;
 	--color-00-orange: #ff861b;
+	--color-00-grey: #666e81;
 }
 
 html,
@@ -20,7 +21,7 @@ a {
 /* LAYOUT */
 
 .container {
-  @apply max-w-[1560px] mx-auto px-5;
+  @apply max-w-[1760px] mx-auto px-5 md:px-12 lg:px-20 xl:px-[100px];
 }
 
 /* HEADER & NAV */
@@ -63,4 +64,42 @@ a {
 
 .header__burger {
 	@apply block md:hidden;
+}
+
+/* HERO SECTION */
+
+.hero {
+	@apply pt-10 pb-20 md:pt-20 md:pb-32;
+}
+
+.hero__layout {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-y-10 md:gap-x-8 lg:gap-x-12;
+}
+
+.hero__motto {
+	@apply relative z-10 md:col-start-1 md:row-start-1 self-end w-full max-w-[450px] md:max-w-[600px] lg:max-w-[750px];
+}
+
+.hero__headline {
+	@apply w-full text-[46px] md:text-[54px] lg:text-[72px] font-bold leading-[1.05] tracking-tight text-black m-0;
+}
+
+.hero__cta-wrapper {
+	@apply relative z-10 md:col-start-1 md:row-start-2 self-start mt-4;
+}
+
+.hero__cta {
+	@apply inline-block bg-[var(--color-00-orange)] text-black font-semibold text-[16px] md:text-[18px] px-8 py-3 rounded-full transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+}
+
+.hero__image-wrapper {
+	@apply md:col-start-2 md:row-start-1 md:row-span-3 flex justify-center md:justify-end w-full -mt-[20px];
+}
+
+.hero__image {
+	@apply w-full max-w-[350px] md:max-w-[450px] lg:max-w-[500px] xl:max-w-[550px] h-auto object-contain object-center md:object-right;
+}
+
+.hero__description {
+	@apply relative z-10 md:col-start-1 md:row-start-3 self-end text-[16px] md:text-[18px] text-[var(--color-00-grey)] w-full max-w-[500px] mt-2 md:mt-16 text-pretty;
 }

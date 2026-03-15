@@ -2,7 +2,9 @@
 import '../styles/global.css';
 import Logo from '../assets/aex_logo.astro';
 import LogoText from '../assets/aex_logo_text.astro';
+import { Image } from 'astro:assets';
 import ItemMenu from '../assets/item_menu.astro';
+import HeroImage from '../assets/aex_hero_cover.png';
 const pageTitle = "aectronix";
 ---
 
@@ -38,9 +40,32 @@ const pageTitle = "aectronix";
 
 		<main>
 
-			<section class="cover">
-				<div class="cover__inner container">
-					lorem ipsum dolomit
+			<section class="hero">
+				<div class="hero__inner container">
+					<div class="hero__layout">
+						<div class="hero__motto">
+							<h1 class="hero__headline">
+								We&nbsp;are&nbsp;making construction&nbsp;digital again.&nbsp;Whatever.
+							</h1>
+						</div>
+						<div class="hero__cta-wrapper">
+							<a href="#" class="hero__cta">
+								<span>Contact Us</span>
+							</a>
+						</div>
+						<div class="hero__image-wrapper">
+							<Image 
+								src={HeroImage} 
+								alt="Building Information Manager with a laptop" 
+								class="hero__image" 
+							/>
+						</div>
+							<div class="hero__description">
+								<p>
+									Utilizing BIM, VDC and digital approach, we help to transform AECO sector for better efficiency & outcomes
+								</p>
+							</div>
+					</div>
 				</div>
 			</section>
 
