@@ -1,9 +1,10 @@
 ---
 import '../styles/global.css';
-import Logo from '../assets/aex_logo.astro';
-import LogoText from '../assets/aex_logo_text.astro';
+import Logo from '../components/aex_logo.astro';
+import LogoText from '../components/aex_logo_text.astro';
 import { Image } from 'astro:assets';
-import ItemMenu from '../assets/item_menu.astro';
+import ItemMenu from '../components/item_menu.astro';
+import ItemArrow from '../components/item_arrow.astro';
 import HeroImage from '../assets/aex_hero_cover.png';
 const pageTitle = "aectronix";
 ---
@@ -13,6 +14,7 @@ const pageTitle = "aectronix";
 	<head>
 		<title>{pageTitle}</title>
 		<meta charset="utf-8" />
+		<meta name="description" content="aectronix – we provide bim, vdc and digitalization to aeco sector" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -31,9 +33,9 @@ const pageTitle = "aectronix";
 						<li class="nav__item"><a class="nav__link" href="#">blog</a></li>
 						<li class="nav__item nav__item--lang"><a class="nav__link" href="#">en</a></li>
 					</ul>
-					<div class="header__burger">
+					<button type="button" class="header__burger" aria-label="Open menu">
 						<ItemMenu />
-					</div>
+					</button>
 				</nav>
 			</div>
 		</header>
@@ -49,8 +51,9 @@ const pageTitle = "aectronix";
 							</h1>
 						</div>
 						<div class="hero__cta-wrapper">
-							<a href="#" class="hero__cta">
-								<span>Contact Us</span>
+							<a href="#" class="hero__cta group" aria-label="Contact Us">
+								<span class="hero__cta-text">Contact Us</span>
+								<span class="hero__cta-icon" aria-hidden="true"><ItemArrow /></span>
 							</a>
 						</div>
 						<div class="hero__image-wrapper">
@@ -61,8 +64,9 @@ const pageTitle = "aectronix";
 							/>
 						</div>
 							<div class="hero__description">
-								<p>
-									Utilizing BIM, VDC and digital approach, we help to transform AECO sector for better efficiency & outcomes
+								<p class="hero__description-text">
+									Utilizing BIM, VDC and digital approach, we help to transform<br class="hidden md:block" />
+									AECO sector for better efficiency & outcomes
 								</p>
 							</div>
 					</div>
