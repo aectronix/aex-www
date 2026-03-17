@@ -66,7 +66,7 @@ a {
 	@apply block md:hidden;
 }
 
-/* HERO SECTION */
+/* HERO & TITLE */
 
 .hero {
 	@apply pt-[15px] sm:pt-10 pb-20 md:pt-20 md:pb-32;
@@ -114,4 +114,97 @@ a {
 
 .hero__description-text {
 	@apply inline bg-[var(--color-00-lightgrey)] p-2.5 rounded-md box-decoration-clone;
+}
+
+/* SERVICES */
+
+.services {
+  @apply pt-20 pb-32;
+}
+
+.services__grid {
+  @apply flex flex-wrap justify-center lg:justify-start gap-10;
+}
+
+.services__intro {
+  @apply w-full max-w-[360px] h-[240px] flex flex-col items-start shrink-0 pr-10;
+}
+
+.services__intro-line {
+  @apply w-10 h-2.5 bg-[var(--color-00-orange)] mb-[23px];
+}
+
+.services__intro-title {
+  @apply text-[24px] font-bold uppercase text-black h-6 leading-none mb-[36px];
+}
+
+.services__intro-text {
+  @apply text-[16px] text-[var(--color-00-grey)] leading-[1.25] -mt-1 mb-auto;
+}
+
+.services__intro-link {
+  @apply inline-flex items-center px-3 h-[24px] border border-black bg-transparent text-black text-[12px] rounded-[5px] hover:bg-black hover:text-white transition-colors duration-300 mb-[30px];
+}
+
+.service-card {
+  --card-bg: #E3E5EA;
+  @apply relative w-full max-w-[360px] h-[240px] bg-[var(--card-bg)] rounded-[24px] px-10 py-[30px] flex flex-col items-start shrink-0 transition-colors duration-300;
+}
+
+.service-card.group:hover {
+  --card-bg: var(--color-00-orange);
+}
+
+.service-card__tag {
+  @apply inline-flex items-center bg-black text-white text-[16px] font-bold px-4 h-[30px] rounded-full mb-6 z-10;
+}
+
+.service-card__content {
+  @apply relative flex-1 w-full z-10;
+}
+
+.service-card__title {
+  @apply absolute inset-0 text-[28px] font-extrabold text-black leading-[1.1] transition-opacity duration-300 opacity-100 group-hover:opacity-0 pointer-events-none;
+}
+
+.service-card__desc {
+  @apply absolute inset-0 text-[16px] font-medium text-black leading-[1.25] transition-opacity duration-300 opacity-0 group-hover:opacity-100 pointer-events-none;
+}
+
+.service-card__link {
+  @apply inline-flex items-center bg-black text-white text-[12px] px-3 h-[24px] rounded-[5px] mt-auto z-10;
+}
+
+.service-card__link-default {
+  @apply block group-hover:hidden;
+}
+
+.service-card__link-hover {
+  @apply hidden group-hover:block;
+}
+
+.service-card__cutout {
+  @apply absolute bottom-0 right-0 w-[50px] h-[50px] bg-[var(--color-00-lightgrey)] rounded-tl-[30px] rounded-br-[24px] flex items-end justify-end;
+}
+
+/* rounded corners */
+.service-card__cutout::before,
+.service-card__cutout::after {
+  content: "";
+  @apply absolute w-[20px] h-[20px] pointer-events-none;
+  background: radial-gradient(circle at top left, transparent 20px, var(--color-00-lightgrey) 20px);
+}
+
+.service-card__cutout::before {
+  bottom: 100%;
+  right: 0;
+}
+
+.service-card__cutout::after {
+  right: 100%;
+  bottom: 0;
+}
+
+.service-card__action {
+  @apply relative flex items-center justify-center w-[40px] h-[40px] bg-black text-white rounded-full transition-colors duration-300 group-hover:bg-[var(--color-00-orange)] group-hover:text-white z-10;
 }
