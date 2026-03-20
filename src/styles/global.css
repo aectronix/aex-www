@@ -78,7 +78,7 @@ a {
 }
 
 .hero__headline {
-	@apply w-full text-[42px] md:text-[54px] lg:text-[72px] font-bold leading-[1.05] tracking-tight text-black m-0;
+  @apply w-full text-[42px] md:text-[54px] lg:text-[72px] font-bold leading-[1.05] tracking-tight text-black m-0;
 }
 
 .hero__cta-wrapper {
@@ -124,9 +124,8 @@ a {
 }
 
 .services__intro {
-  @apply w-full flex flex-col items-start shrink-0 min-[1760px]:max-w-[400px] min-[1760px]:h-[240px];
+  @apply w-full flex flex-col items-start shrink-0 min-[1760px]:w-[calc((100%-120px)/4)] min-[1760px]:max-w-none min-[1760px]:h-[240px];
 }
-
 .services__intro-line {
   @apply w-10 h-2.5 bg-[var(--color-00-orange)] mb-[23px];
 }
@@ -136,7 +135,7 @@ a {
 }
 
 .services__intro-text {
-  @apply text-[16px] text-[var(--color-00-grey)] leading-[1.25] -mt-1 max-w-[400px] sm:max-w-[600px] min-[1760px]:max-w-none mb-8 min-[1760px]:mb-auto;
+  @apply text-[16px] text-[var(--color-00-grey)] leading-[1.25] -mt-1 max-w-[400px] sm:max-w-[600px] min-[1760px]:max-w-[320px] mb-8 min-[1760px]:mb-auto;
 }
 
 .services__intro-actions {
@@ -151,16 +150,44 @@ a {
   @apply flex justify-center items-center leading-none w-[40px] h-[24px] px-0 border border-black bg-black text-white text-[15px] transition-colors duration-300 group-hover:bg-[var(--color-00-orange)] group-hover:border-[var(--color-00-orange)] group-hover:text-black;
 }
 
+.services__carousel {
+  @apply w-full flex flex-col min-[1760px]:flex-1 min-w-0;
+}
+
 .services__slider {
-  @apply w-full h-[240px] sm:h-[210px] xl:h-[240px] overflow-hidden min-[1760px]:flex-1;
+  @apply w-full h-[240px] sm:h-[210px] xl:h-[240px] overflow-hidden;
 }
 
 .services__track {
-  @apply flex flex-wrap justify-between gap-10 w-full transition-transform duration-500 ease-in-out;
+  @apply flex flex-nowrap gap-10 w-full transition-transform duration-500 ease-in-out;
+}
+
+.services__pagination {
+  @apply flex items-center justify-between mt-10 min-[1760px]:mt-12 w-full max-w-[400px] sm:max-w-none;
+}
+
+.services__indicators {
+  @apply flex items-center gap-1;
+}
+
+.services__indicator {
+  @apply text-[#D1D5DB] text-[16px] font-semibold leading-none bg-transparent border-none p-0 cursor-pointer transition-colors duration-300 hover:text-black;
+}
+
+.services__indicator--active {
+  @apply text-[var(--color-00-orange)] hover:text-[var(--color-00-orange)] cursor-pointer;
+}
+
+.services__nav {
+  @apply flex items-center gap-2;
+}
+
+.services__nav-btn {
+  @apply flex justify-center items-center leading-none w-[40px] h-[24px] border border-[#E3E5EA] bg-transparent text-black text-[15px] rounded-[5px] transition-colors duration-300 hover:border-black hover:bg-black hover:text-white cursor-pointer;
 }
 
 .service-card {
-  @apply relative w-full sm:w-[calc((100%-40px)/2)] lg:w-[calc((100%-80px)/3)] max-w-[400px] h-[240px] sm:h-[210px] xl:h-[240px] bg-[#E3E5EA] hover:bg-[var(--color-00-orange)] rounded-[24px] px-8 xl:px-10 py-[30px] sm:py-6 xl:py-[30px] flex flex-col items-start shrink-0 transition-all duration-300;
+  @apply relative w-full sm:w-[calc((100%-40px)/2)] lg:w-[calc((100%-80px)/3)] max-w-[400px] h-[240px] sm:h-[210px] xl:h-[240px] bg-[#E3E5EA] hover:bg-[var(--color-00-orange)] rounded-[24px] px-8 xl:px-10 py-[30px] sm:py-6 xl:py-[30px] flex flex-col items-start flex-none transition-all duration-300;
 }
 
 .service-card__tag {
