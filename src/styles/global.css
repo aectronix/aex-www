@@ -151,10 +151,13 @@ a {
 }
 
 .services__carousel {
-  @apply w-full flex flex-col min-[1760px]:flex-1 min-w-0;
+  /* 1. min-w-0 allows the flex item to shrink properly.
+     2. overflow-hidden acts as the master mask for the entire carousel area. */
+  @apply w-full flex flex-col min-[1760px]:flex-1 min-w-0 overflow-hidden;
 }
 
 .services__slider {
+  /* Ensure this stays as the immediate window for the track */
   @apply w-full h-[240px] sm:h-[210px] xl:h-[240px] overflow-hidden;
 }
 
@@ -163,7 +166,8 @@ a {
 }
 
 .services__pagination {
-  @apply flex items-center justify-between mt-10 min-[1760px]:mt-12 w-full max-w-[400px] sm:max-w-none;
+  /* Removed max-w-[400px] and sm:max-w-none so it naturally fills the space */
+  @apply flex items-center justify-between mt-10 min-[1760px]:mt-12 w-full;
 }
 
 .services__indicators {
@@ -187,9 +191,9 @@ a {
 }
 
 .service-card {
-  @apply relative w-full sm:w-[calc((100%-40px)/2)] lg:w-[calc((100%-80px)/3)] max-w-[400px] h-[240px] sm:h-[210px] xl:h-[240px] bg-[#E3E5EA] hover:bg-[var(--color-00-orange)] rounded-[24px] px-8 xl:px-10 py-[30px] sm:py-6 xl:py-[30px] flex flex-col items-start flex-none transition-all duration-300;
+  /* Removed max-w-[400px]. Now the cards will strictly obey the 1, 2, or 3 column math, leaving no empty gaps! */
+  @apply relative w-full sm:w-[calc((100%-40px)/2)] lg:w-[calc((100%-80px)/3)] h-[240px] sm:h-[210px] xl:h-[240px] bg-[#E3E5EA] hover:bg-[var(--color-00-orange)] rounded-[24px] px-8 xl:px-10 py-[30px] sm:py-6 xl:py-[30px] flex flex-col items-start flex-none transition-all duration-300;
 }
-
 .service-card__tag {
   @apply inline-flex items-center bg-black text-white text-[16px] sm:text-[14px] xl:text-[16px] font-bold px-4 h-[30px] sm:h-[28px] xl:h-[30px] rounded-full mb-6 sm:mb-4 xl:mb-6 z-10;
 }
