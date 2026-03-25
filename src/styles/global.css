@@ -52,7 +52,7 @@ a {
 }
 
 .nav__link {
-	@apply hover:text-[var(--color-00-orange)] hover:underline transition-colors duration-200;
+  @apply hover:text-[var(--color-00-orange)] hover:underline transition-colors duration-200;
 }
 
 .nav__link--current {
@@ -66,7 +66,7 @@ a {
 /* HERO & TITLE */
 
 .hero {
-	@apply pt-[15px] sm:pt-10 pb-20 md:pt-20 md:pb-32;
+  @apply pt-[15px] sm:pt-10 pb-20 md:pt-20 md:pb-32;
 }
 
 .hero__layout {
@@ -113,85 +113,110 @@ a {
 	@apply inline bg-[var(--color-00-lightgrey)] p-2.5 rounded-md box-decoration-clone;
 }
 
-/* SERVICES */
+/* SECTIONS */
 
-.services {
-  @apply pt-20 pb-32;
+.split-layout {
+  @apply flex flex-col min-[1760px]:flex-row justify-between gap-10 w-full;
 }
 
-.services__grid {
-  @apply flex flex-col min-[1760px]:flex-row justify-between gap-10;
+.split-layout__sidebar {
+  @apply w-full flex flex-col items-start shrink-0 min-[1760px]:w-[calc((100%-120px)/4)] min-[1760px]:max-w-none;
 }
 
-.services__intro {
-  @apply w-full flex flex-col items-start shrink-0 min-[1760px]:w-[calc((100%-120px)/4)] min-[1760px]:max-w-none min-[1760px]:h-[240px];
-}
-.services__intro-line {
-  @apply w-10 h-2.5 bg-[var(--color-00-orange)] mb-[23px];
-}
-
-.services__intro-title {
-  @apply text-[24px] font-bold uppercase text-black h-6 leading-none mb-[36px];
-}
-
-.services__intro-text {
-  @apply text-[16px] text-[var(--color-00-grey)] leading-[1.25] -mt-1 max-w-[400px] sm:max-w-[600px] min-[1760px]:max-w-[320px] mb-8 min-[1760px]:mb-auto;
-}
-
-.services__intro-actions {
-  @apply inline-flex items-center gap-2 -translate-y-[2px] min-[1760px]:mb-[30px];
-}
-
-.services__intro-link {
-  @apply inline-flex items-center justify-center px-3 h-[24px] border border-black bg-transparent text-black text-[12px] rounded-[5px] transition-colors duration-300 group-hover:bg-black group-hover:text-white;
-}
-
-.services__intro-link--arrow {
-  @apply flex justify-center items-center leading-none w-[40px] h-[24px] px-0 border border-black bg-black text-white text-[15px] transition-colors duration-300 group-hover:bg-[var(--color-00-orange)] group-hover:border-[var(--color-00-orange)] group-hover:text-black;
-}
-
-.services__carousel {
-  /* 1. min-w-0 allows the flex item to shrink properly.
-     2. overflow-hidden acts as the master mask for the entire carousel area. */
+.split-layout__content {
   @apply w-full flex flex-col min-[1760px]:flex-1 min-w-0 overflow-hidden;
 }
 
-.services__slider {
-  /* Ensure this stays as the immediate window for the track */
+.section-intro {
+  @apply flex flex-col w-full;
+}
+
+.section-intro--services {
+  @apply min-[1760px]:h-[240px];
+}
+
+.section-intro--projects {
+  @apply min-[1760px]:h-[240px];
+}
+
+.section-intro__line {
+  @apply w-10 h-2.5 bg-[var(--color-00-orange)] mb-[23px];
+}
+
+.section-intro__title {
+  @apply text-[24px] font-bold uppercase text-black h-6 leading-none mb-[36px];
+}
+
+.section-intro__text {
+  @apply text-[16px] text-[var(--color-00-grey)] leading-[1.25] -mt-1 max-w-[400px] sm:max-w-[600px] min-[1760px]:max-w-[320px] min-[1760px]:mb-auto;
+}
+
+.section-intro__footer {
+  @apply mt-6 min-[1760px]:mt-auto min-[1760px]:mb-[30px] w-full pr-4 flex items-center justify-between;
+}
+
+.section-intro__actions {
+  @apply inline-flex items-center gap-2;
+}
+
+.section-intro__link {
+  @apply inline-flex items-center justify-center px-3 h-[24px] border border-black bg-transparent text-black text-[12px] rounded-[5px] transition-colors duration-300 group-hover:bg-black group-hover:text-white;
+}
+
+.section-intro__link--arrow {
+  @apply flex justify-center items-center leading-none w-[40px] h-[24px] px-0 border border-black bg-black text-white text-[15px] transition-colors duration-300 group-hover:bg-[var(--color-00-orange)] group-hover:border-[var(--color-00-orange)] group-hover:text-black;
+}
+
+/* SLIDERS */
+
+.carousel {
+  @apply w-full flex flex-col;
+}
+
+.carousel__viewport {
   @apply w-full h-[240px] sm:h-[210px] xl:h-[240px] overflow-hidden;
 }
 
-.services__track {
+.carousel__viewport--tall {
+  @apply h-[320px] sm:h-[320px] xl:h-[320px];
+}
+
+.carousel__track {
   @apply flex flex-nowrap gap-10 w-full transition-transform duration-500 ease-in-out;
 }
 
-.services__pagination {
-  /* Removed max-w-[400px] and sm:max-w-none so it naturally fills the space */
+.carousel__pagination {
   @apply flex items-center justify-between mt-10 min-[1760px]:mt-12 w-full;
 }
 
-.services__indicators {
+.carousel__indicators {
   @apply flex items-center gap-1;
 }
 
-.services__indicator {
+.carousel__indicator {
   @apply text-[#D1D5DB] text-[16px] font-semibold leading-none bg-transparent border-none p-0 cursor-pointer transition-colors duration-300 hover:text-black;
 }
 
-.services__indicator--active {
+.carousel__indicator--active {
   @apply text-[var(--color-00-orange)] hover:text-[var(--color-00-orange)] cursor-pointer;
 }
 
-.services__nav {
+.carousel__nav {
   @apply flex items-center gap-2;
 }
 
-.services__nav-btn {
+.carousel__nav-btn {
   @apply flex justify-center items-center leading-none w-[40px] h-[24px] border border-[#E3E5EA] bg-transparent text-black text-[15px] rounded-[5px] transition-colors duration-300 hover:border-black hover:bg-black hover:text-white cursor-pointer;
 }
 
+.services, 
+.projects {
+  @apply pt-20 pb-32;
+}
+
+/* CARDS */
+
 .service-card {
-  /* Removed max-w-[400px]. Now the cards will strictly obey the 1, 2, or 3 column math, leaving no empty gaps! */
   @apply relative w-full sm:w-[calc((100%-40px)/2)] lg:w-[calc((100%-80px)/3)] h-[240px] sm:h-[210px] xl:h-[240px] bg-[#E3E5EA] hover:bg-[var(--color-00-orange)] rounded-[24px] px-8 xl:px-10 py-[30px] sm:py-6 xl:py-[30px] flex flex-col items-start flex-none transition-all duration-300;
 }
 .service-card__tag {

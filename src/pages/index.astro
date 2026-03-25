@@ -7,6 +7,7 @@ import ItemMenu from '../components/item_menu.astro';
 import ItemArrow from '../components/item_arrow.astro';
 import HeroImage from '../assets/aex_hero_cover.png';
 import Services from '../components/block_services.astro';
+import Projects from '../components/block_projects.astro';
 
 const pageTitle = "aectronix";
 ---
@@ -43,7 +44,7 @@ const pageTitle = "aectronix";
 		</header>
 
 		<main>
-
+			<!-- Hero cover -->
 			<section class="hero">
 				<div class="hero__inner container">
 					<div class="hero__layout">
@@ -74,9 +75,10 @@ const pageTitle = "aectronix";
 					</div>
 				</div>
 			</section>
-
+			<!-- Services cards -->
 			<Services />
-
+			<!-- Projects cards -->
+			<Projects />
 		</main>
 
 	</body>

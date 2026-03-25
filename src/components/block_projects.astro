@@ -1,22 +1,22 @@
 ---
-// src/components/services.astro
+// src/components/projects.astro
 import ItemArrow from './item_arrow.astro';
 ---
 
-<section class="services">
-	<div class="services__inner container">
+<section class="projects">
+	<div class="projects__inner container">
 		
 		<div class="split-layout">
 			
 			<div class="split-layout__sidebar">
-				<div class="section-intro section-intro--services">
+				<div class="section-intro section-intro--projects">
 					<div class="section-intro__line"></div>
-					<h2 class="section-intro__title">Our Services</h2>
+					<h2 class="section-intro__title">PROJECTS & ACTIVITIES</h2>
 					<p class="section-intro__text">
-						We could provide a wide range of BIM, VDC, IT and other digital services to satisfy client any needs and goals.
+						We’ve helped to succesfully accomplished different projects.
 					</p>
 					<div class="section-intro__footer">
-						<a href="#" class="section-intro__actions group" aria-label="See all services">
+						<a href="#" class="section-intro__actions group" aria-label="See all projects">
 							<span class="section-intro__link section-intro__link--arrow">&rarr;</span>
 							<span class="section-intro__link">&gt; see all_</span>
 						</a>
@@ -27,7 +27,7 @@ import ItemArrow from './item_arrow.astro';
 			<div class="split-layout__content">
 				<div class="carousel">
 					<div class="carousel__viewport">
-						<div class="carousel__track" id="services-track">
+						<div class="carousel__track" id="projects-track">
 
 						<article class="service-card group">
 							<div class="service-card__tag">BIM</div>
@@ -222,7 +222,7 @@ import ItemArrow from './item_arrow.astro';
 <script>
 document.addEventListener('DOMContentLoaded', () => {
 	// 1. We grab the parent section FIRST to scope our queries
-	const section = document.querySelector('.services') as HTMLElement;
+	const section = document.querySelector('.projects') as HTMLElement;
 	if (!section) return;
 
 	// 2. Now we only look for elements INSIDE this specific section!
