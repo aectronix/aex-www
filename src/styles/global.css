@@ -181,6 +181,51 @@ a {
   @apply h-[320px] sm:h-[320px] xl:h-[320px];
 }
 
+.carousel__viewport--multiline {
+  @apply w-full overflow-hidden h-[240px] sm:h-[460px] xl:h-[520px];
+}
+
+.carousel__track--multiline {
+  @apply grid grid-flow-col grid-rows-1 sm:grid-rows-2 auto-cols-[100%] sm:auto-cols-[calc((100%-40px)/2)] lg:auto-cols-[calc((100%-80px)/3)] gap-10 w-full transition-transform duration-500 ease-in-out;
+}
+
+/* FIX: Force cards to fill the grid column, overriding their default Flexbox widths */
+.carousel__track--multiline .service-card {
+  width: 100% !important;
+}
+
+/* FIX: Force cards to fill the grid column */
+.carousel__track--multiline .carousel__item {
+  width: 100% !important;
+}
+
+/* FIX: Force horizontal filling order (row-by-row) */
+@media (min-width: 1024px) {
+  /* Desktop: 3 cards per row (6 cards per page block) */
+  .carousel__track--multiline .carousel__item:nth-child(6n + 1),
+  .carousel__track--multiline .carousel__item:nth-child(6n + 2),
+  .carousel__track--multiline .carousel__item:nth-child(6n + 3) {
+    grid-row: 1;
+  }
+  .carousel__track--multiline .carousel__item:nth-child(6n + 4),
+  .carousel__track--multiline .carousel__item:nth-child(6n + 5),
+  .carousel__track--multiline .carousel__item:nth-child(6n + 6) {
+    grid-row: 2;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  /* Tablet: 2 cards per row (4 cards per page block) */
+  .carousel__track--multiline .carousel__item:nth-child(4n + 1),
+  .carousel__track--multiline .carousel__item:nth-child(4n + 2) {
+    grid-row: 1;
+  }
+  .carousel__track--multiline .carousel__item:nth-child(4n + 3),
+  .carousel__track--multiline .carousel__item:nth-child(4n + 4) {
+    grid-row: 2;
+  }
+}
+
 .carousel__track {
   @apply flex flex-nowrap gap-10 w-full transition-transform duration-500 ease-in-out;
 }
