@@ -1,0 +1,50 @@
+---
+// src/components/block_footer.astro
+import Logo from './aex_logo.astro';
+import LogoText from './aex_logo_text.astro';
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="footer">
+	<div class="footer__decorator-wrapper">
+		<div class="container">
+			<div class="split-layout">
+				<div class="split-layout__sidebar">
+					<div class="footer__decorator-line"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="footer__inner container">
+		<div class="split-layout">
+			
+			<div class="split-layout__sidebar">
+				<a href="#" class="footer__brand" aria-label="aectronix home">
+					<Logo />
+					<LogoText />
+				</a>
+			</div>
+
+			<div class="split-layout__content">
+				<div class="footer__top">
+					<div class="footer__links">
+						<a href="#" class="footer__link">Privacy Policy</a>
+						<a href="#" class="footer__link">Terms of Service</a>
+						<a href="#" class="footer__link">Contact</a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="footer__bottom">
+			<p class="footer__copyright">
+				Copyright &copy; {currentYear} aectronix. All rights & trademarks reserved.
+			</p>
+			<span class="footer__decoration">//<span class="text-[var(--color-00-orange)]">///</span></span>
+		</div>
+
+	</div>
+</footer>

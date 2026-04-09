@@ -1,13 +1,17 @@
 ---
-import '../styles/global.css';
-import { Image } from	'astro:assets';
-import HeroImage from	'../assets/aex_hero_cover.png';
-import Logo from 		'../components/aex_logo.astro';
-import LogoText from	'../components/aex_logo_text.astro';
-import ItemMenu from	'../components/item_menu.astro';
-import ItemArrow from	'../components/item_arrow.astro';
-import Services from	'../components/block_services.astro';
-import Projects from	'../components/block_projects.astro';
+import 						'../styles/global.css';
+import { Image } from		'astro:assets';
+import HeroImage from		'../assets/aex_hero_cover.png';
+
+import Services from		'../components/block_services.astro';
+import Projects from		'../components/block_projects.astro';
+import Clients from			'../components/block_clients.astro';
+import Footer from			'../components/block_footer.astro';
+
+import Logo from 			'../components/aex_logo.astro';
+import LogoText from		'../components/aex_logo_text.astro';
+import ItemMenu from		'../components/item_menu.astro';
+import ItemArrow from		'../components/item_arrow.astro';
 
 const pageTitle = "aectronix";
 ---
@@ -79,7 +83,12 @@ const pageTitle = "aectronix";
 			<Services />
 			<!-- Projects cards -->
 			<Projects />
+			<!-- Clients logos -->
+			<Clients />
+
 		</main>
+
+		<Footer />
 
 	</body>
 
