@@ -2,17 +2,22 @@
 // src/components/block_footer.astro
 import Logo from './aex_logo.astro';
 import LogoText from './aex_logo_text.astro';
+import IcoLinkedin from './item_ico_linkedin.astro';
+import IcoInstagram from './item_ico_instagram.astro';
+import IcoGithub from './item_ico_github.astro';
 
 const currentYear = new Date().getFullYear();
 ---
 
 <footer class="footer">
+
 	<div class="footer__decorator-wrapper">
 		<div class="container">
 			<div class="split-layout">
 				<div class="split-layout__sidebar">
 					<div class="footer__decorator-line"></div>
 				</div>
+				<div class="split-layout__content"></div>
 			</div>
 		</div>
 	</div>
@@ -21,18 +26,65 @@ const currentYear = new Date().getFullYear();
 		<div class="split-layout">
 			
 			<div class="split-layout__sidebar">
-				<a href="#" class="footer__brand" aria-label="aectronix home">
-					<Logo />
-					<LogoText />
-				</a>
+				<div class="flex flex-col gap-2 w-max">
+					<a href="#" class="footer__brand" aria-label="aectronix home">
+						<Logo />
+						<LogoText />
+					</a>
+					
+					<div class="flex flex-row justify-end gap-1 w-full mt-1">
+						<a href="#" class="text-[var(--color-00-orange)] hover:text-white transition-colors duration-300" aria-label="LinkedIn">
+							<IcoLinkedin />
+						</a>
+						<a href="#" class="text-[var(--color-00-orange)] hover:text-white transition-colors duration-300" aria-label="Instagram">
+							<IcoInstagram />
+						</a>
+						<a href="#" class="text-[var(--color-00-orange)] hover:text-white transition-colors duration-300" aria-label="GitHub">
+							<IcoGithub />
+						</a>
+					</div>
+				</div>
 			</div>
 
 			<div class="split-layout__content">
-				<div class="footer__top">
-					<div class="footer__links">
-						<a href="#" class="footer__link">Privacy Policy</a>
-						<a href="#" class="footer__link">Terms of Service</a>
-						<a href="#" class="footer__link">Contact</a>
+				<div class="footer__menus-wrapper">
+					<div class="footer__menus-layout">
+						<div class="footer__menus">
+							
+							<div class="footer__menu">
+								<h4 class="footer__menu-title">Explore</h4>
+								<div class="footer__menu-list">
+									<a href="#" class="footer__link">services</a>
+									<a href="#" class="footer__link">projects</a>
+									<a href="#" class="footer__link">dev</a>
+									<a href="#" class="footer__link">blog</a>
+								</div>
+							</div>
+
+							<div class="footer__menu">
+								<h4 class="footer__menu-title">About</h4>
+								<div class="footer__menu-list">
+									<a href="#" class="footer__link">company</a>
+									<a href="#" class="footer__link">vision</a>
+								</div>
+							</div>
+
+							<div class="footer__menu">
+								<h4 class="footer__menu-title">Support</h4>
+								<div class="footer__menu-list">
+									<a href="#" class="footer__link">privacy</a>
+									<a href="#" class="footer__link">cookies</a>
+								</div>
+							</div>
+
+							<div class="footer__menu">
+								<h4 class="footer__menu-title">Contacts</h4>
+								<div class="footer__menu-list">
+									<a href="mailto:info@aectronix.com" class="footer__link">info@aectronix.com</a>
+								</div>
+							</div>
+
+						</div>
 					</div>
 				</div>
 			</div>

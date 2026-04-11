@@ -370,9 +370,45 @@ a {
 }
 
 .footer__copyright {
-  @apply text-[14px] text-[#71717A] leading-relaxed m-0;
+  /* Changed text color from #71717A to #616161 */
+  @apply text-[13px] text-[#606060] leading-relaxed m-0;
 }
 
 .footer__decoration {
-  @apply text-[#71717A] text-[14px] tracking-widest font-mono select-none;
+  /* Changed text color from #71717A to #616161 */
+  @apply text-[#606060] text-[13px] tracking-widest select-none;
+}
+
+/* NEW: 3-column subgrid that mathematically matches your global columns */
+.footer__menus-wrapper {
+  @apply grid grid-cols-1 min-[1760px]:grid-cols-3 gap-10 w-full;
+}
+
+/* NEW: Skips the 1st column to leave it empty! */
+.footer__menus-layout {
+  @apply min-[1760px]:col-start-2 min-[1760px]:col-span-2 w-full;
+}
+
+.footer__menus {
+  /* Added mt-3 (12px) to perfectly align the menu titles with the visual center of the logo */
+  @apply grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 w-full mt-3 mb-8 md:mb-12;
+}
+
+.footer__menu {
+  @apply flex flex-col items-start gap-4;
+}
+
+.footer__menu-title {
+  /* Increased from text-[14px] to text-[15px] */
+  @apply text-[15px] font-bold text-white uppercase tracking-wider m-0;
+}
+
+.footer__menu-list {
+  /* Decreased gap from gap-2/gap-3 to gap-1.5/gap-2 (6px mobile, 8px desktop) */
+  @apply flex flex-wrap gap-1;
+}
+
+.footer__link {
+  /* Transparent background, orange border/text, turning white on hover */
+  @apply inline-flex items-center justify-center h-[24px] px-3 bg-transparent border border-[var(--color-00-orange)] text-[var(--color-00-orange)] text-[12px] rounded-[5px] transition-colors duration-300 hover:border-white hover:text-white;
 }
