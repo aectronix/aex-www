@@ -1,9 +1,8 @@
 ---
-import 						'../styles/global.css';
+import 					'../styles/global.css';
 import { Image } from		'astro:assets';
 import HeroImage from		'../assets/aex_hero_cover.png';
 
-import Intro from		'../components/block_intro.astro';
 import Services from		'../components/block_services.astro';
 import Projects from		'../components/block_projects.astro';
 import Clients from			'../components/block_clients.astro';
@@ -28,64 +27,93 @@ const pageTitle = "aectronix";
 		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 	</head>
 
-	<body class="bg-00-lightgrey">
+	<body class="bg-[#f2f3f5]">
 
-		<header class="header">
-			<div class="header__inner container">
-				<a href="#" class="header__brand" aria-label="aectronix home"><Logo /><LogoText /></a>
-				<nav class="nav header__nav">
-					<ul class="nav__list">
-						<li class="nav__item"><a class="nav__link" href="#">home</a></li>
-						<li class="nav__item"><a class="nav__link" href="#">services</a></li>
-						<li class="nav__item"><a class="nav__link" href="#">about</a></li>
-						<li class="nav__item"><a class="nav__link" href="#">blog</a></li>
-						<li class="nav__item nav__item--lang"><a class="nav__link" href="#">en</a></li>
-					</ul>
-					<button type="button" class="header__burger" aria-label="Open menu">
-						<ItemMenu />
-					</button>
-				</nav>
-			</div>
-		</header>
+<header class="relative px-5">
+    <div class="mx-auto flex w-full max-w-[400px] min-[720px]:max-w-[800px] min-[1080px]:max-w-[1200px] min-[1420px]:max-w-[1600px] items-center p-5 pb-8 md:pt-[50px] md:pb-[60px]">
+        
+        <a href="#" class="flex flex-nowrap items-center gap-x-[30px] shrink-0 no-underline" aria-label="aectronix home">
+            <Logo />
+            <div class="hidden lg:block m-0 -translate-y-[2px]">
+                <LogoText />
+            </div>
+        </a>
+        
+        <nav class="ml-auto">
+            <ul class="hidden md:flex m-0 p-0 list-none gap-x-[50px]">
+                <li class="flex items-center text-[20px] font-semibold before:content-['/'] before:mr-1">
+                    <a class="hover:text-[#ff861b] hover:underline transition-colors duration-200 text-black" href="#">home</a>
+                </li>
+                <li class="flex items-center text-[20px] font-semibold before:content-['/'] before:mr-1">
+                    <a class="hover:text-[#ff861b] hover:underline transition-colors duration-200 text-black" href="#">services</a>
+                </li>
+                <li class="flex items-center text-[20px] font-semibold before:content-['/'] before:mr-1">
+                    <a class="hover:text-[#ff861b] hover:underline transition-colors duration-200 text-black" href="#">about</a>
+                </li>
+<!--                 <li class="flex items-center text-[20px] font-semibold before:content-['/'] before:mr-1">
+                    <a class="hover:text-[#ff861b] hover:underline transition-colors duration-200 text-black" href="#">blog</a>
+                </li> -->
+                <li class="flex items-center text-[20px] font-semibold before:content-['>'] before:mr-1">
+                    <a class="hover:text-[#ff861b] hover:underline transition-colors duration-200 text-black" href="#">en</a>
+                </li>
+            </ul>
+            <button type="button" class="block md:hidden" aria-label="Open menu">
+                <ItemMenu />
+            </button>
+        </nav>
+
+    </div>
+</header>
 
 		<main>
-			<!-- Hero cover -->
-			<section class="hero">
-				<div class="hero__inner container">
-					<div class="hero__layout">
-						<div class="hero__motto">
-							<h1 class="hero__headline">
-								We&nbsp;are&nbsp;making construction&nbsp;digital again.&nbsp;Whatever.
-							</h1>
-						</div>
-						<div class="hero__cta-wrapper">
-							<a href="#" class="hero__cta group" aria-label="Contact Us">
-								<span class="hero__cta-text">Contact Us</span>
-								<span class="hero__cta-icon" aria-hidden="true"><ItemArrow /></span>
-							</a>
-						</div>
-						<div class="hero__image-wrapper">
-							<Image 
-								src={HeroImage} 
-								alt="Building Information Manager with a laptop" 
-								class="hero__image" 
-							/>
-						</div>
-							<div class="hero__description">
-								<p class="hero__description-text">
-									Utilizing BIM, VDC and digital approach, we help to transform<br class="hidden md:block" />
-									AECO sector for better efficiency & outcomes
-								</p>
-							</div>
-					</div>
-				</div>
+
+			<section class="relative px-5 md:mt-10 lg:mt-25">
+
+			    <div class="relative mx-auto flex w-full max-w-[400px] min-[720px]:max-w-[800px] min-[1080px]:max-w-[1200px] min-[1420px]:max-w-[1600px] rounded-[24px]">
+			            
+			            <div class="p-5 relative z-10 self-start w-full max-w-[450px] md:max-w-[600px] lg:max-w-[750px]">
+			                
+			                <h1 class="w-full text-[42px] md:text-[54px] lg:text-[72px] font-bold leading-[1.05] tracking-tight text-black m-0">
+			                    We&nbsp;are&nbsp;making construction&nbsp;digital again.&nbsp;Whatever.
+			                </h1>
+
+			                <a href="#" class="inline-flex items-center gap-2 group mt-8 relative z-40" aria-label="Contact Us">
+			                    <span class="inline-flex items-center justify-center h-[48px] px-7 bg-[#ff861b] text-black font-bold text-[18px] rounded-full transition-colors duration-300 group-hover:bg-black group-hover:text-white">
+			                        Contact Us
+			                    </span>
+			                    <span class="flex items-center justify-center w-[48px] h-[48px] bg-black text-white rounded-full shrink-0 transition-colors duration-300 group-hover:bg-[#ff861b] group-hover:text-black [&>svg>path]:group-hover:stroke-black" aria-hidden="true">
+			                        <ItemArrow />
+			                    </span>
+			                </a>
+
+			                <div class="flex md:hidden w-full justify-center items-center mt-10 pointer-events-none z-0">
+			                    <Image 
+			                        src={HeroImage} 
+			                        alt="aectronix" 
+			                        class="w-full max-w-[350px] h-auto object-contain object-center" 
+			                    />
+			                </div>
+
+			                <p class="inlinew-full max-w-[360px] min-[1200px]:max-w-[720px] text-black text-[17px] md:text-[20px] leading-[1.5] mt-10 md:mt-20 lg:mt-30">
+			                    Utilizing BIM, VDC and digital approach, we help to transform<br class="hidden min-[1200px]:block" /> AECO sector for better efficiency &amp; outcomes.
+			                </p>
+
+			            </div>
+
+			            <div class="hidden md:flex absolute right-0 bottom-0 top-0 z-0 items-center justify-end pointer-events-none">
+			                <Image 
+			                    src={HeroImage} 
+			                    alt="aectronix" 
+			                    class="w-full max-w-[450px] lg:max-w-[500px] xl:max-w-[550px] h-auto object-contain object-right" 
+			                />
+			            </div>
+
+			    </div>				
+
 			</section>
-			<Intro />
-			<!-- Services cards -->
+
 			<Services />
-			<!-- Projects cards -->
 			<Projects />
-			<!-- Clients logos -->
 			<Clients />
 
 		</main>
