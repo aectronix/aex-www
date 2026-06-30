@@ -3,359 +3,270 @@
 import ItemArrow from './item_arrow.astro';
 ---
 
-<section class="projects">
-	<div class="projects__inner container">
+<section class="mt-25 relative px-5">
+	<div class="mx-auto flex flex-wrap justify-center gap-y-[40px] w-full max-w-[1600px]">
 		
-		<div class="split-layout">
+		<div class="bg-[#efefef] p-5 min-[1420px]:h-[240px] self-start 
+		            flex-[1_1_100%] max-w-[400px]
+		            min-[720px]:max-w-[800px]
+		            min-[1080px]:max-w-[1200px]
+		            min-[1420px]:flex-[1_1_340px] min-[1420px]:max-w-[400px]">
+			<h3 class="relative py-1 font-bold text-[24px] text-[#222222]">
+				<span class="absolute -top-[20px] left-0 w-[40px] h-[10px] bg-[#FF8C00]"></span>
+				PROJECTS & ACTIVITIES
+			</h3>
+			<p class="text-[16px] pt-5 text-black leading-[1.25]">
+				We’ve helped to succesfully accomplished different projects.
+			</p>
+			<a href="#" aria-label="See all services" class="mt-5 group inline-flex items-center gap-1.5
+															min-[1420px]:absolute
+															min-[1420px]:top-42">
+				<span class="flex justify-center items-center leading-none w-[40px] h-[24px] rounded-[5px] border border-black bg-black text-white text-[15px] transition-colors duration-300 group-hover:bg-[#FF8C00] group-hover:border-[#FF8C00] group-hover:text-black">
+					&rarr;
+				</span>
+				<span class="inline-flex items-center justify-center px-3 h-[24px] rounded-[5px] border border-black bg-transparent text-black text-[12px] transition-colors duration-300 group-hover:bg-black group-hover:text-white">
+					&gt; see all_
+				</span>
+			</a>
+		</div>
+		
+		<div class="flex flex-wrap gap-y-[40px]
+		            flex-[1_1_100%] max-w-[400px]
+		            min-[720px]:max-w-[800px]
+		            min-[1080px]:max-w-[1200px]
+		            min-[1420px]:flex-[3_3_1020px] min-[1420px]:max-w-[1200px]">
 			
-			<div class="split-layout__sidebar">
-				<div class="section-intro section-intro--projects">
-					<div class="section-intro__line"></div>
-					<h2 class="section-intro__title">PROJECTS & ACTIVITIES</h2>
-					<p class="section-intro__text">
-						We’ve helped to succesfully accomplished different projects.
-					</p>
-					<div class="section-intro__footer">
-						<a href="#" class="section-intro__actions group" aria-label="See all projects">
-							<span class="section-intro__link section-intro__link--arrow">&rarr;</span>
-							<span class="section-intro__link">&gt; see all_</span>
+			<div class="bg-[#DFFFEC] rounded-[12px] px-5 h-[240px] text-[#222222] flex-[1_1_340px] max-w-[400px]">
+				<article class="group relative flex flex-col items-start w-full h-[240px] rounded-[24px] px-8 py-7 
+								bg-[url('/project1.png')] bg-center bg-cover bg-no-repeat">
+					<div class="absolute inset-0 rounded-[24px] bg-[#FF8C00] opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-0"></div>
+					<div class="relative flex flex-row gap-2 mb-4 z-10">
+						<div class="inline-flex items-center bg-black text-white text-[15px] font-bold px-4 h-[30px] rounded-full">BIM</div>
+						<div class="inline-flex items-center bg-black text-white text-[15px] font-bold px-4 h-[30px] rounded-full">IT</div>
+					</div>
+					<div class="relative flex-1 w-full z-10 flex flex-col">
+						<div class="relative w-full flex-1">
+							<div class="absolute inset-0 transition-opacity duration-300 opacity-100 group-hover:opacity-0 pointer-events-none">
+								<div class="w-[180px] bg-black text-white px-4 py-3 rounded-[16px] flex flex-col self-start gap-1">
+									<h3 class="text-[32px] font-extrabold tracking-wide leading-none">XXXYZ</h3>
+									<p class="text-[16px] font-bold tracking-widest">#Y2K25</p>
+								</div>
+							</div>
+							<p class="py-3 absolute inset-0 text-[16px] font-medium text-[#222222] leading-[1.25] transition-opacity duration-300 opacity-0 group-hover:opacity-100 pointer-events-none pr-8">
+								We support ongoing projects by establishing and maintaining digital collaborative workflows among involved parties.
+							</p>
+						</div>
+						<a href="#" class="inline-flex items-center bg-black text-white text-[12px] px-3 w-[80px] h-[24px] rounded-[5px] mt-auto z-10 self-start">
+							<span class="block group-hover:hidden">&gt; details_&nbsp;</span>
+							<span class="hidden group-hover:block">&gt; explore_</span>
 						</a>
 					</div>
-				</div>
+					<div class="absolute bottom-0 right-0 w-[50px] h-[50px] bg-[#DFFFEC] rounded-tl-[30px] rounded-br-[24px] flex items-end justify-end
+								before:content-[''] before:absolute before:w-[20px] before:h-[20px] before:bottom-[100%] before:right-0 before:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
+								after:content-[''] after:absolute after:w-[20px] after:h-[20px] after:right-[100%] after:bottom-0 after:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
+								z-10">
+						<button class="relative flex items-center justify-center w-[40px] h-[40px] bg-black text-white rounded-full transition-colors duration-300 group-hover:bg-[#FF8C00] group-hover:text-black" aria-label="Explore">
+							<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+								<line x1="7" y1="17" x2="17" y2="7"></line>
+								<polyline points="7 7 17 7 17 17"></polyline>
+							</svg>
+						</button>
+					</div>
+				</article>
+			</div>
+			
+			<div class="bg-[#DFFFEC] rounded-[12px] px-5 h-[240px] text-[#222222] flex-[1_1_340px] max-w-[400px]">
+				<article class="group relative flex flex-col items-start w-full h-[240px] rounded-[24px] px-8 py-7 
+								bg-[url('/project1.png')] bg-center bg-cover bg-no-repeat">
+					<div class="absolute inset-0 rounded-[24px] bg-[#FF8C00] opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-0"></div>
+					<div class="relative flex flex-row gap-2 mb-4 z-10">
+						<div class="inline-flex items-center bg-black text-white text-[15px] font-bold px-4 h-[30px] rounded-full">BIM</div>
+					</div>
+					<div class="relative flex-1 w-full z-10 flex flex-col">
+						<div class="relative w-full flex-1">
+							<div class="absolute inset-0 transition-opacity duration-300 opacity-100 group-hover:opacity-0 pointer-events-none">
+								<div class="w-[180px] bg-black text-white px-4 py-3 rounded-[16px] flex flex-col self-start gap-1">
+									<h3 class="text-[32px] font-extrabold tracking-wide leading-none">XXXYZ</h3>
+									<p class="text-[16px] font-bold tracking-widest">#Y2K25</p>
+								</div>
+							</div>
+							<p class="absolute inset-0 text-[16px] font-medium text-[#222222] leading-[1.25] transition-opacity duration-300 opacity-0 group-hover:opacity-100 pointer-events-none pr-8">
+								We support ongoing projects by establishing and maintaining digital collaborative workflows among involved parties.
+							</p>
+						</div>
+						<a href="#" class="inline-flex items-center bg-black text-white text-[12px] px-3 w-[80px] h-[24px] rounded-[5px] mt-auto z-10 self-start">
+							<span class="block group-hover:hidden">&gt; details_&nbsp;</span>
+							<span class="hidden group-hover:block">&gt; explore_</span>
+						</a>
+					</div>
+					<div class="absolute bottom-0 right-0 w-[50px] h-[50px] bg-[#DFFFEC] rounded-tl-[30px] rounded-br-[24px] flex items-end justify-end
+								before:content-[''] before:absolute before:w-[20px] before:h-[20px] before:bottom-[100%] before:right-0 before:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
+								after:content-[''] after:absolute after:w-[20px] after:h-[20px] after:right-[100%] after:bottom-0 after:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
+								z-10">
+						<button class="relative flex items-center justify-center w-[40px] h-[40px] bg-black text-white rounded-full transition-colors duration-300 group-hover:bg-[#FF8C00] group-hover:text-black" aria-label="Explore">
+							<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+								<line x1="7" y1="17" x2="17" y2="7"></line>
+								<polyline points="7 7 17 7 17 17"></polyline>
+							</svg>
+						</button>
+					</div>
+				</article>
+			</div>
+			
+			<div class="bg-[#DFFFEC] rounded-[12px] px-5 h-[240px] text-[#222222] flex-[1_1_340px] max-w-[400px]">
+				<article class="group relative flex flex-col items-start w-full h-[240px] rounded-[24px] px-8 py-7 
+								bg-[url('/project1.png')] bg-center bg-cover bg-no-repeat">
+					<div class="absolute inset-0 rounded-[24px] bg-[#FF8C00] opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-0"></div>
+					<div class="relative flex flex-row gap-2 mb-4 z-10">
+						<div class="inline-flex items-center bg-black text-white text-[15px] font-bold px-4 h-[30px] rounded-full">BIM</div>
+					</div>
+					<div class="relative flex-1 w-full z-10 flex flex-col">
+						<div class="relative w-full flex-1">
+							<div class="absolute inset-0 transition-opacity duration-300 opacity-100 group-hover:opacity-0 pointer-events-none">
+								<div class="w-[180px] bg-black text-white px-4 py-3 rounded-[16px] flex flex-col self-start gap-1">
+									<h3 class="text-[32px] font-extrabold tracking-wide leading-none">XXXYZ</h3>
+									<p class="text-[16px] font-bold tracking-widest">#Y2K25</p>
+								</div>
+							</div>
+							<p class="absolute inset-0 text-[16px] font-medium text-[#222222] leading-[1.25] transition-opacity duration-300 opacity-0 group-hover:opacity-100 pointer-events-none pr-8">
+								We support ongoing projects by establishing and maintaining digital collaborative workflows among involved parties.
+							</p>
+						</div>
+						<a href="#" class="inline-flex items-center bg-black text-white text-[12px] px-3 w-[80px] h-[24px] rounded-[5px] mt-auto z-10 self-start">
+							<span class="block group-hover:hidden">&gt; details_&nbsp;</span>
+							<span class="hidden group-hover:block">&gt; explore_</span>
+						</a>
+					</div>
+					<div class="absolute bottom-0 right-0 w-[50px] h-[50px] bg-[#DFFFEC] rounded-tl-[30px] rounded-br-[24px] flex items-end justify-end
+								before:content-[''] before:absolute before:w-[20px] before:h-[20px] before:bottom-[100%] before:right-0 before:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
+								after:content-[''] after:absolute after:w-[20px] after:h-[20px] after:right-[100%] after:bottom-0 after:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
+								z-10">
+						<button class="relative flex items-center justify-center w-[40px] h-[40px] bg-black text-white rounded-full transition-colors duration-300 group-hover:bg-[#FF8C00] group-hover:text-black" aria-label="Explore">
+							<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+								<line x1="7" y1="17" x2="17" y2="7"></line>
+								<polyline points="7 7 17 7 17 17"></polyline>
+							</svg>
+						</button>
+					</div>
+				</article>
 			</div>
 
-			<div class="split-layout__content">
-				<div class="carousel">
-                    <div class="carousel__viewport--multiline">
-						<div class="carousel__track--multiline" id="projects-track">
-
-							<article class="service-card group carousel__item">
-								<div class="service-card__tag">BIM</div>
-								<div class="service-card__content">
-									<h3 class="service-card__title">1BIM Consulting & Standards 1</h3>
-									<p class="service-card__desc">
-										We support ongoing projects by establishing and maintaining digital collaborative workflows among involved parties.
-									</p>
-								</div>
-								<a href="#" class="service-card__link">
-									<span class="service-card__link-text">&gt; details_&nbsp;</span>
-									<span class="service-card__link-hover">&gt; explore_</span>
-								</a>
-								<div class="service-card__cutout">
-									<button class="service-card__action" aria-label="Explore BIM Consulting">
-										<ItemArrow />
-									</button>
-								</div>
-							</article>
-
-							<article class="service-card group carousel__item">
-								<div class="service-card__tag">BIM</div>
-								<div class="service-card__content">
-									<h3 class="service-card__title">BIM Management & Coordination 2</h3>
-									<p class="service-card__desc">
-										We support ongoing projects by establishing and maintaining digital collaborative workflows among involved parties.
-									</p>
-								</div>
-								<a href="#" class="service-card__link">
-									<span class="service-card__link-text">&gt; details_&nbsp;</span>
-									<span class="service-card__link-hover">&gt; explore_</span>
-								</a>
-								<div class="service-card__cutout">
-									<button class="service-card__action" aria-label="Explore BIM Consulting">
-										<ItemArrow />
-									</button>
-								</div>
-							</article>
-
-							<article class="service-card group carousel__item">
-								<div class="service-card__tag">DEV</div>
-								<div class="service-card__content">
-									<h3 class="service-card__title">Development & Automation 3</h3>
-									<p class="service-card__desc">
-										We support ongoing projects by establishing and maintaining digital collaborative workflows among involved parties.
-									</p>
-								</div>
-								<a href="#" class="service-card__link">
-									<span class="service-card__link-text">&gt; details_&nbsp;</span>
-									<span class="service-card__link-hover">&gt; explore_</span>
-								</a>
-								<div class="service-card__cutout">
-									<button class="service-card__action" aria-label="Explore BIM Consulting">
-										<ItemArrow />
-									</button>
-								</div>
-							</article>
-
-							<article class="service-card group carousel__item">
-								<div class="service-card__tag">BIM</div>
-								<div class="service-card__content">
-									<h3 class="service-card__title">BIM Management & Coordination 4</h3>
-									<p class="service-card__desc">
-										We support ongoing projects by establishing and maintaining digital collaborative workflows among involved parties.
-									</p>
-								</div>
-								<a href="#" class="service-card__link">
-									<span class="service-card__link-text">&gt; details_&nbsp;</span>
-									<span class="service-card__link-hover">&gt; explore_</span>
-								</a>
-								<div class="service-card__cutout">
-									<button class="service-card__action" aria-label="Explore BIM Consulting">
-										<ItemArrow />
-									</button>
-								</div>
-							</article>
-
-							<article class="service-card group carousel__item">
-								<div class="service-card__tag">DEV</div>
-								<div class="service-card__content">
-									<h3 class="service-card__title">Development & Automation 5</h3>
-									<p class="service-card__desc">
-										We support ongoing projects by establishing and maintaining digital collaborative workflows among involved parties.
-									</p>
-								</div>
-								<a href="#" class="service-card__link">
-									<span class="service-card__link-text">&gt; details_&nbsp;</span>
-									<span class="service-card__link-hover">&gt; explore_</span>
-								</a>
-								<div class="service-card__cutout">
-									<button class="service-card__action" aria-label="Explore BIM Consulting">
-										<ItemArrow />
-									</button>
-								</div>
-							</article>
-
-							<article class="service-card group carousel__item">
-								<div class="service-card__tag">DEV</div>
-								<div class="service-card__content">
-									<h3 class="service-card__title">Development & Automation 6</h3>
-									<p class="service-card__desc">
-										We support ongoing projects by establishing and maintaining digital collaborative workflows among involved parties.
-									</p>
-								</div>
-								<a href="#" class="service-card__link">
-									<span class="service-card__link-text">&gt; details_&nbsp;</span>
-									<span class="service-card__link-hover">&gt; explore_</span>
-								</a>
-								<div class="service-card__cutout">
-									<button class="service-card__action" aria-label="Explore BIM Consulting">
-										<ItemArrow />
-									</button>
-								</div>
-							</article>
-
-							<article class="service-card group carousel__item">
-								<div class="service-card__tag">DEV</div>
-								<div class="service-card__content">
-									<h3 class="service-card__title">Development & Automation 7</h3>
-									<p class="service-card__desc">
-										We support ongoing projects by establishing and maintaining digital collaborative workflows among involved parties.
-									</p>
-								</div>
-								<a href="#" class="service-card__link">
-									<span class="service-card__link-text">&gt; details_&nbsp;</span>
-									<span class="service-card__link-hover">&gt; explore_</span>
-								</a>
-								<div class="service-card__cutout">
-									<button class="service-card__action" aria-label="Explore BIM Consulting">
-										<ItemArrow />
-									</button>
-								</div>
-							</article>
-
-							<article class="service-card group carousel__item">
-								<div class="service-card__tag">DEV</div>
-								<div class="service-card__content">
-									<h3 class="service-card__title">Development & Automation 8</h3>
-									<p class="service-card__desc">
-										We support ongoing projects by establishing and maintaining digital collaborative workflows among involved parties.
-									</p>
-								</div>
-								<a href="#" class="service-card__link">
-									<span class="service-card__link-text">&gt; details_&nbsp;</span>
-									<span class="service-card__link-hover">&gt; explore_</span>
-								</a>
-								<div class="service-card__cutout">
-									<button class="service-card__action" aria-label="Explore BIM Consulting">
-										<ItemArrow />
-									</button>
-								</div>
-							</article>
-
-							<article class="service-card group carousel__item">
-								<div class="service-card__tag">DEV</div>
-								<div class="service-card__content">
-									<h3 class="service-card__title">Development & Automation 9</h3>
-									<p class="service-card__desc">
-										We support ongoing projects by establishing and maintaining digital collaborative workflows among involved parties.
-									</p>
-								</div>
-								<a href="#" class="service-card__link">
-									<span class="service-card__link-text">&gt; details_&nbsp;</span>
-									<span class="service-card__link-hover">&gt; explore_</span>
-								</a>
-								<div class="service-card__cutout">
-									<button class="service-card__action" aria-label="Explore BIM Consulting">
-										<ItemArrow />
-									</button>
-								</div>
-							</article>
-
-						</div>
+			<div class="bg-[#DFFFEC] rounded-[12px] px-5 h-[240px] text-[#222222] flex-[1_1_340px] max-w-[400px]">
+				<article class="group relative flex flex-col items-start w-full h-[240px] rounded-[24px] px-8 py-7 
+								bg-[url('/project1.png')] bg-center bg-cover bg-no-repeat">
+					<div class="absolute inset-0 rounded-[24px] bg-[#FF8C00] opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-0"></div>
+					<div class="relative flex flex-row gap-2 mb-4 z-10">
+						<div class="inline-flex items-center bg-black text-white text-[15px] font-bold px-4 h-[30px] rounded-full">IT</div>
 					</div>
-					<div class="carousel__pagination">
-						<div class="carousel__indicators"></div>
-						<div class="carousel__nav">
-							<button type="button" class="carousel__nav-btn" aria-label="Previous slide">&larr;</button>
-							<button type="button" class="carousel__nav-btn" aria-label="Next slide">&rarr;</button>
+					<div class="relative flex-1 w-full z-10 flex flex-col">
+						<div class="relative w-full flex-1">
+							<div class="absolute inset-0 transition-opacity duration-300 opacity-100 group-hover:opacity-0 pointer-events-none">
+								<div class="w-[180px] bg-black text-white px-4 py-3 rounded-[16px] flex flex-col self-start gap-1">
+									<h3 class="text-[32px] font-extrabold tracking-wide leading-none">XXXYZ</h3>
+									<p class="text-[16px] font-bold tracking-widest">#Y2K25</p>
+								</div>
+							</div>
+							<p class="absolute inset-0 text-[16px] font-medium text-[#222222] leading-[1.25] transition-opacity duration-300 opacity-0 group-hover:opacity-100 pointer-events-none pr-8">
+								We support ongoing projects by establishing and maintaining digital collaborative workflows among involved parties.
+							</p>
 						</div>
+						<a href="#" class="inline-flex items-center bg-black text-white text-[12px] px-3 w-[80px] h-[24px] rounded-[5px] mt-auto z-10 self-start">
+							<span class="block group-hover:hidden">&gt; details_&nbsp;</span>
+							<span class="hidden group-hover:block">&gt; explore_</span>
+						</a>
 					</div>
-				</div>
+					<div class="absolute bottom-0 right-0 w-[50px] h-[50px] bg-[#DFFFEC] rounded-tl-[30px] rounded-br-[24px] flex items-end justify-end
+								before:content-[''] before:absolute before:w-[20px] before:h-[20px] before:bottom-[100%] before:right-0 before:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
+								after:content-[''] after:absolute after:w-[20px] after:h-[20px] after:right-[100%] after:bottom-0 after:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
+								z-10">
+						<button class="relative flex items-center justify-center w-[40px] h-[40px] bg-black text-white rounded-full transition-colors duration-300 group-hover:bg-[#FF8C00] group-hover:text-black" aria-label="Explore">
+							<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+								<line x1="7" y1="17" x2="17" y2="7"></line>
+								<polyline points="7 7 17 7 17 17"></polyline>
+							</svg>
+						</button>
+					</div>
+				</article>
+			</div>
+
+			<div class="bg-[#DFFFEC] rounded-[12px] px-5 h-[240px] text-[#222222] flex-[1_1_340px] max-w-[400px]">
+				<article class="group relative flex flex-col items-start w-full h-[240px] rounded-[24px] px-8 py-7 
+								bg-[url('/project1.png')] bg-center bg-cover bg-no-repeat">
+					<div class="absolute inset-0 rounded-[24px] bg-[#FF8C00] opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-0"></div>
+					<div class="relative flex flex-row gap-2 mb-4 z-10">
+						<div class="inline-flex items-center bg-black text-white text-[15px] font-bold px-4 h-[30px] rounded-full">DEV</div>
+						<div class="inline-flex items-center bg-black text-white text-[15px] font-bold px-4 h-[30px] rounded-full">IT</div>
+					</div>
+					<div class="relative flex-1 w-full z-10 flex flex-col">
+						<div class="relative w-full flex-1">
+							<div class="absolute inset-0 transition-opacity duration-300 opacity-100 group-hover:opacity-0 pointer-events-none">
+								<div class="w-[180px] bg-black text-white px-4 py-3 rounded-[16px] flex flex-col self-start gap-1">
+									<h3 class="text-[32px] font-extrabold tracking-wide leading-none">XXXYZ</h3>
+									<p class="text-[16px] font-bold tracking-widest">#Y2K25</p>
+								</div>
+							</div>
+							<p class="absolute inset-0 text-[16px] font-medium text-[#222222] leading-[1.25] transition-opacity duration-300 opacity-0 group-hover:opacity-100 pointer-events-none pr-8">
+								We support ongoing projects by establishing and maintaining digital collaborative workflows among involved parties.
+							</p>
+						</div>
+						<a href="#" class="inline-flex items-center bg-black text-white text-[12px] px-3 w-[80px] h-[24px] rounded-[5px] mt-auto z-10 self-start">
+							<span class="block group-hover:hidden">&gt; details_&nbsp;</span>
+							<span class="hidden group-hover:block">&gt; explore_</span>
+						</a>
+					</div>
+					<div class="absolute bottom-0 right-0 w-[50px] h-[50px] bg-[#DFFFEC] rounded-tl-[30px] rounded-br-[24px] flex items-end justify-end
+								before:content-[''] before:absolute before:w-[20px] before:h-[20px] before:bottom-[100%] before:right-0 before:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
+								after:content-[''] after:absolute after:w-[20px] after:h-[20px] after:right-[100%] after:bottom-0 after:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
+								z-10">
+						<button class="relative flex items-center justify-center w-[40px] h-[40px] bg-black text-white rounded-full transition-colors duration-300 group-hover:bg-[#FF8C00] group-hover:text-black" aria-label="Explore">
+							<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+								<line x1="7" y1="17" x2="17" y2="7"></line>
+								<polyline points="7 7 17 7 17 17"></polyline>
+							</svg>
+						</button>
+					</div>
+				</article>
+			</div>
+
+			<div class="bg-[#DFFFEC] rounded-[12px] px-5 h-[240px] text-[#222222] flex-[1_1_340px] max-w-[400px]">
+				<article class="group relative flex flex-col items-start w-full h-[240px] rounded-[24px] px-8 py-7 
+								bg-[url('/project1.png')] bg-center bg-cover bg-no-repeat">
+					<div class="absolute inset-0 rounded-[24px] bg-[#FF8C00] opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-0"></div>
+					<div class="relative flex flex-row gap-2 mb-4 z-10">
+						<div class="inline-flex items-center bg-black text-white text-[15px] font-bold px-4 h-[30px] rounded-full">BIM</div>
+						<div class="inline-flex items-center bg-black text-white text-[15px] font-bold px-4 h-[30px] rounded-full">CDE</div>
+					</div>
+					<div class="relative flex-1 w-full z-10 flex flex-col">
+						<div class="relative w-full flex-1">
+							<div class="absolute inset-0 transition-opacity duration-300 opacity-100 group-hover:opacity-0 pointer-events-none">
+								<div class="w-[180px] bg-black text-white px-4 py-3 rounded-[16px] flex flex-col self-start gap-1">
+									<h3 class="text-[32px] font-extrabold tracking-wide leading-none">XXXYZ</h3>
+									<p class="text-[16px] font-bold tracking-widest">#Y2K25</p>
+								</div>
+							</div>
+							<p class="absolute inset-0 text-[16px] font-medium text-[#222222] leading-[1.25] transition-opacity duration-300 opacity-0 group-hover:opacity-100 pointer-events-none pr-8">
+								We support ongoing projects by establishing and maintaining digital collaborative workflows among involved parties.
+							</p>
+						</div>
+						<a href="#" class="inline-flex items-center bg-black text-white text-[12px] px-3 w-[80px] h-[24px] rounded-[5px] mt-auto z-10 self-start">
+							<span class="block group-hover:hidden">&gt; details_&nbsp;</span>
+							<span class="hidden group-hover:block">&gt; explore_</span>
+						</a>
+					</div>
+					<div class="absolute bottom-0 right-0 w-[50px] h-[50px] bg-[#DFFFEC] rounded-tl-[30px] rounded-br-[24px] flex items-end justify-end
+								before:content-[''] before:absolute before:w-[20px] before:h-[20px] before:bottom-[100%] before:right-0 before:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
+								after:content-[''] after:absolute after:w-[20px] after:h-[20px] after:right-[100%] after:bottom-0 after:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
+								z-10">
+						<button class="relative flex items-center justify-center w-[40px] h-[40px] bg-black text-white rounded-full transition-colors duration-300 group-hover:bg-[#FF8C00] group-hover:text-black" aria-label="Explore">
+							<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+								<line x1="7" y1="17" x2="17" y2="7"></line>
+								<polyline points="7 7 17 7 17 17"></polyline>
+							</svg>
+						</button>
+					</div>
+				</article>
 			</div>
 
 		</div>
-		
 	</div>
 </section>
-
-<script>
-	document.addEventListener('DOMContentLoaded', () => {
-	const section = document.querySelector('.projects') as HTMLElement;
-	if (!section) return;
-
-	const track = section.querySelector('.carousel__track--multiline') as HTMLElement;
-	const cards = section.querySelectorAll('.carousel__item'); 
-	const prevBtn = section.querySelector('.carousel__nav-btn[aria-label="Previous slide"]') as HTMLButtonElement;
-	const nextBtn = section.querySelector('.carousel__nav-btn[aria-label="Next slide"]') as HTMLButtonElement;
-	const indicatorsContainer = section.querySelector('.carousel__indicators') as HTMLElement;
-
-	if (!track || cards.length === 0 || !indicatorsContainer) return;
-
-	function getGridConfig() {
-		const width = window.innerWidth;
-		if (width >= 1024) return { cols: 3, rows: 2 }; // Desktop
-		if (width >= 640) return { cols: 2, rows: 2 };  // Tablet
-		return { cols: 1, rows: 1 };                    // Mobile
-	}
-
-	function layoutGrid() {
-		const { cols, rows } = getGridConfig();
-		cards.forEach((card, index) => {
-			const page = Math.floor(index / (cols * rows));
-			const indexOnPage = index % (cols * rows);
-			const row = Math.floor(indexOnPage / cols) + 1;
-			const col = (page * cols) + (indexOnPage % cols) + 1;
-
-			const el = card as HTMLElement;
-			el.style.gridRow = row.toString();
-			el.style.gridColumn = col.toString();
-		});
-	}
-
-	let currentIndex = 0; 
-	let maxIndex = 0;
-	let autoSlideTimer: ReturnType<typeof setInterval>;
-
-	function updateSlider() {
-		const { cols: visibleColumns, rows } = getGridConfig();
-		const totalColumns = Math.ceil(cards.length / rows);
-		
-		maxIndex = Math.max(0, totalColumns - visibleColumns);
-
-		if (currentIndex > maxIndex) currentIndex = maxIndex;
-		if (currentIndex < 0) currentIndex = 0;
-
-		const cardWidth = (cards[0] as HTMLElement).offsetWidth;
-		const step = cardWidth + 40; // 40px gap
-
-		track.style.transform = `translateX(-${currentIndex * step}px)`;
-
-		// Now that we slide by 1, the total number of positions is maxIndex + 1
-		// (e.g. if maxIndex is 0, we have 1 position. If maxIndex is 2, we have 3 positions).
-		const totalSteps = maxIndex + 1;
-		
-		if (indicatorsContainer.children.length !== totalSteps) {
-			indicatorsContainer.innerHTML = '';
-			
-			for (let i = 0; i < totalSteps; i++) {
-				const slash = document.createElement('button');
-				slash.type = 'button';
-				slash.className = 'carousel__indicator';
-				slash.textContent = '/';
-				slash.setAttribute('aria-label', `Go to slide ${i + 1}`);
-				slash.addEventListener('click', () => {
-					currentIndex = i; // Jump exactly to this column step
-					updateSlider();
-					startAutoSlide();
-				});
-				indicatorsContainer.appendChild(slash);
-			}
-		}
-
-		// Highlight active slash based on exact currentIndex
-		Array.from(indicatorsContainer.children).forEach((slash, index) => {
-			if (index === currentIndex) {
-				slash.classList.add('carousel__indicator--active');
-			} else {
-				slash.classList.remove('carousel__indicator--active');
-			}
-		});
-
-		if (prevBtn) {
-			prevBtn.style.opacity = currentIndex === 0 ? '0.3' : '1';
-			prevBtn.style.cursor = currentIndex === 0 ? 'default' : 'pointer';
-		}
-		if (nextBtn) {
-			nextBtn.style.opacity = currentIndex >= maxIndex ? '0.3' : '1';
-			nextBtn.style.cursor = currentIndex >= maxIndex ? 'default' : 'pointer';
-		}
-	}
-
-	function startAutoSlide() {
-		clearInterval(autoSlideTimer);
-		if (maxIndex <= 0) return; 
-
-		autoSlideTimer = setInterval(() => {
-			if (currentIndex >= maxIndex) {
-				currentIndex = 0;
-			} else {
-				currentIndex += 1; // SLIDE BY 1 COLUMN
-				if (currentIndex > maxIndex) currentIndex = maxIndex;
-			}
-			updateSlider();
-		}, 8500);
-	}
-
-	prevBtn?.addEventListener('click', () => {
-		if (currentIndex > 0) {
-			currentIndex -= 1; // SLIDE BY 1 COLUMN
-			if (currentIndex < 0) currentIndex = 0;
-			updateSlider();
-			startAutoSlide();
-		}
-	});
-
-	nextBtn?.addEventListener('click', () => {
-		if (currentIndex < maxIndex) {
-			currentIndex += 1; // SLIDE BY 1 COLUMN
-			if (currentIndex > maxIndex) currentIndex = maxIndex;
-			updateSlider();
-			startAutoSlide();
-		}
-	});
-
-	// Pause on hover
-	track.addEventListener('mouseenter', () => clearInterval(autoSlideTimer));
-	track.addEventListener('mouseleave', startAutoSlide);
-
-	window.addEventListener('resize', () => {
-		layoutGrid();
-		updateSlider();
-	});
-	
-	setTimeout(() => {
-		layoutGrid();
-		updateSlider();
-		startAutoSlide();
-	}, 0);
-});
-</script>

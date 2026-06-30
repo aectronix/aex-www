@@ -11,9 +11,9 @@ html,
 body {
 	@apply w-full h-full m-0 bg-[var(--color-00-lightgrey)] text-[16px] leading-[1.6] font-roboto;
 }
-a {
+/*a {
 	@apply no-underline text-black;
-}
+}*/
 
 /* LAYOUT */
 
