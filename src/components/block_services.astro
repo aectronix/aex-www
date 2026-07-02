@@ -5,8 +5,8 @@ import ItemArrow from './item_arrow.astro';
 
 <section class="relative mt-10 md:mt-25 lg:mt-40 px-5">
 	<div class="mx-auto flex flex-wrap justify-center gap-y-[40px] w-full max-w-[1600px]">
-		
-		<div class="p-5 min-[1420px]:h-[240px] self-start 
+
+		<div class="p-5 min-[1420px]:h-[240px] self-start
 		            flex-[1_1_100%] max-w-[400px]
 		            min-[720px]:max-w-[800px]
 		            min-[1080px]:max-w-[1200px]
@@ -29,115 +29,376 @@ import ItemArrow from './item_arrow.astro';
 				</span>
 			</a>
 		</div>
-		
-		<div class="flex flex-wrap gap-y-[40px]
+
+		<!-- CARD GROUP: same responsive width steps as before; now a slider.
+		     min-w-0 is REQUIRED: without it, the non-wrapping track's content
+		     (5 cards) forces this flex item's min-width to its content size,
+		     so the group balloons past the container and the first card clips
+		     at the left edge. min-w-0 lets it shrink to the available width. -->
+		<div class="flex flex-wrap gap-y-[40px] min-w-0
 		            flex-[1_1_100%] max-w-[400px]
 		            min-[720px]:max-w-[800px]
 		            min-[1080px]:max-w-[1200px]
 		            min-[1420px]:flex-[3_3_1020px] min-[1420px]:max-w-[1200px]">
-			
-			<div class="px-5 h-[240px] text-[#222222] flex-[1_1_340px] max-w-[400px]">
-				<article class="group relative flex flex-col items-start w-full h-[240px] rounded-[24px] px-8 py-7 bg-[#E3E5EA]">
-					<div class="absolute inset-0 rounded-[24px] bg-[#FF8C00] opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-0"></div>
-					<div class="relative flex flex-row gap-2 mb-4 z-10">
-						<div class="inline-flex items-center bg-black text-white text-[15px] font-bold px-4 h-[30px] rounded-full">BIM</div>
+
+			<!-- viewport: clips the track; width comes from the group's flex sizing above.
+			     min-w-0 here too, so the overflow-hidden viewport can shrink below its
+			     track's content width instead of being pushed wide by it. -->
+			<div class="services-slider w-full min-w-0 overflow-hidden" data-slider>
+				<!-- track: single non-wrapping row. NO x-gap: the 40px gutter between
+				     cards comes from each slide's own px-5 padding, exactly like the
+				     original wrapping layout. -->
+				<div class="flex flex-nowrap gap-y-[40px] transition-transform duration-300 ease-out will-change-transform"
+				     data-track>
+
+					<!-- SLIDE 1 -->
+					<div class="shrink-0 px-5 h-[240px] text-[#222222]" data-slide>
+						<article class="group relative flex flex-col items-start w-full h-[240px] rounded-[24px] px-8 py-7 bg-[#E3E5EA]">
+							<div class="absolute inset-0 rounded-[24px] bg-[#FF8C00] opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-0"></div>
+							<div class="relative flex flex-row gap-2 mb-4 z-10">
+								<div class="inline-flex items-center bg-black text-white text-[15px] font-bold px-4 h-[30px] rounded-full">BIM</div>
+							</div>
+							<div class="relative flex-1 w-full z-10 flex flex-col">
+								<div class="relative w-full flex-1">
+									<h3 class="py-2.5 absolute inset-0 text-[28px] font-extrabold text-[#222222] leading-[1.1] transition-opacity duration-300 opacity-100 group-hover:opacity-0 pointer-events-none">
+										BIM Management & Coordination 2
+									</h3>
+									<p class="py-3 absolute inset-0 text-[16px] font-medium text-[#222222] leading-[1.25] transition-opacity duration-300 opacity-0 group-hover:opacity-100 pointer-events-none pr-8">
+										We support ongoing projects by establishing and maintaining digital collaborative workflows among involved parties.
+									</p>
+								</div>
+								<a href="#" class="inline-flex items-center bg-black text-white text-[12px] px-3 w-[80px] h-[24px] rounded-[5px] mt-auto z-10 self-start">
+									<span class="block group-hover:hidden">&gt; details_&nbsp;</span>
+									<span class="hidden group-hover:block">&gt; explore_</span>
+								</a>
+							</div>
+							<div class="absolute bottom-0 right-0 w-[50px] h-[50px] bg-[#DFFFEC] rounded-tl-[30px] rounded-br-[24px] flex items-end justify-end
+										before:content-[''] before:absolute before:w-[20px] before:h-[20px] before:bottom-[100%] before:right-0 before:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
+										after:content-[''] after:absolute after:w-[20px] after:h-[20px] after:right-[100%] after:bottom-0 after:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
+										z-10">
+								<button class="relative flex items-center justify-center w-[40px] h-[40px] bg-black text-white rounded-full transition-colors duration-300 group-hover:bg-[#FF8C00] group-hover:text-black" aria-label="Explore">
+									<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+										<line x1="7" y1="17" x2="17" y2="7"></line>
+										<polyline points="7 7 17 7 17 17"></polyline>
+									</svg>
+								</button>
+							</div>
+						</article>
 					</div>
-					<div class="relative flex-1 w-full z-10 flex flex-col">
-						<div class="relative w-full flex-1">
-							<h3 class="py-2.5 absolute inset-0 text-[28px] font-extrabold text-[#222222] leading-[1.1] transition-opacity duration-300 opacity-100 group-hover:opacity-0 pointer-events-none">
-								BIM Management & Coordination 2
-							</h3>
-							<p class="py-3 absolute inset-0 text-[16px] font-medium text-[#222222] leading-[1.25] transition-opacity duration-300 opacity-0 group-hover:opacity-100 pointer-events-none pr-8">
-								We support ongoing projects by establishing and maintaining digital collaborative workflows among involved parties.
-							</p>
-						</div>
-						<a href="#" class="inline-flex items-center bg-black text-white text-[12px] px-3 w-[80px] h-[24px] rounded-[5px] mt-auto z-10 self-start">
-							<span class="block group-hover:hidden">&gt; details_&nbsp;</span>
-							<span class="hidden group-hover:block">&gt; explore_</span>
-						</a>
+
+					<!-- SLIDE 2 -->
+					<div class="shrink-0 px-5 h-[240px] text-[#222222]" data-slide>
+						<article class="group relative flex flex-col items-start w-full h-[240px] rounded-[24px] px-8 py-7 bg-[#E3E5EA]">
+							<div class="absolute inset-0 rounded-[24px] bg-[#FF8C00] opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-0"></div>
+							<div class="relative flex flex-row gap-2 mb-4 z-10">
+								<div class="inline-flex items-center bg-black text-white text-[15px] font-bold px-4 h-[30px] rounded-full">BIM</div>
+							</div>
+							<div class="relative flex-1 w-full z-10 flex flex-col">
+								<div class="relative w-full flex-1">
+									<h3 class="py-3 absolute inset-0 text-[28px] font-extrabold text-[#222222] leading-[1.1] transition-opacity duration-300 opacity-100 group-hover:opacity-0 pointer-events-none">
+										BIM Management & Coordination 2
+									</h3>
+									<p class="py-3 absolute inset-0 text-[16px] font-medium text-[#222222] leading-[1.25] transition-opacity duration-300 opacity-0 group-hover:opacity-100 pointer-events-none pr-8">
+										We support ongoing projects by establishing and maintaining digital collaborative workflows among involved parties.
+									</p>
+								</div>
+								<a href="#" class="inline-flex items-center bg-black text-white text-[12px] px-3 w-[80px] h-[24px] rounded-[5px] mt-auto z-10 self-start">
+									<span class="block group-hover:hidden">&gt; details_&nbsp;</span>
+									<span class="hidden group-hover:block">&gt; explore_</span>
+								</a>
+							</div>
+							<div class="absolute bottom-0 right-0 w-[50px] h-[50px] bg-[#DFFFEC] rounded-tl-[30px] rounded-br-[24px] flex items-end justify-end
+										before:content-[''] before:absolute before:w-[20px] before:h-[20px] before:bottom-[100%] before:right-0 before:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
+										after:content-[''] after:absolute after:w-[20px] after:h-[20px] after:right-[100%] after:bottom-0 after:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
+										z-10">
+								<button class="relative flex items-center justify-center w-[40px] h-[40px] bg-black text-white rounded-full transition-colors duration-300 group-hover:bg-[#FF8C00] group-hover:text-black" aria-label="Explore">
+									<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+										<line x1="7" y1="17" x2="17" y2="7"></line>
+										<polyline points="7 7 17 7 17 17"></polyline>
+									</svg>
+								</button>
+							</div>
+						</article>
 					</div>
-					<div class="absolute bottom-0 right-0 w-[50px] h-[50px] bg-[#DFFFEC] rounded-tl-[30px] rounded-br-[24px] flex items-end justify-end
-								before:content-[''] before:absolute before:w-[20px] before:h-[20px] before:bottom-[100%] before:right-0 before:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
-								after:content-[''] after:absolute after:w-[20px] after:h-[20px] after:right-[100%] after:bottom-0 after:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
-								z-10">
-						<button class="relative flex items-center justify-center w-[40px] h-[40px] bg-black text-white rounded-full transition-colors duration-300 group-hover:bg-[#FF8C00] group-hover:text-black" aria-label="Explore">
-							<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-								<line x1="7" y1="17" x2="17" y2="7"></line>
-								<polyline points="7 7 17 7 17 17"></polyline>
-							</svg>
-						</button>
+
+					<!-- SLIDE 3 -->
+					<div class="shrink-0 px-5 h-[240px] text-[#222222]" data-slide>
+						<article class="group relative flex flex-col items-start w-full h-[240px] rounded-[24px] px-8 py-7 bg-[#E3E5EA]">
+							<div class="absolute inset-0 rounded-[24px] bg-[#FF8C00] opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-0"></div>
+							<div class="relative flex flex-row gap-2 mb-4 z-10">
+								<div class="inline-flex items-center bg-black text-white text-[15px] font-bold px-4 h-[30px] rounded-full">BIM</div>
+							</div>
+							<div class="relative flex-1 w-full z-10 flex flex-col">
+								<div class="relative w-full flex-1">
+									<h3 class="py-3 absolute inset-0 text-[28px] font-extrabold text-[#222222] leading-[1.1] transition-opacity duration-300 opacity-100 group-hover:opacity-0 pointer-events-none">
+										BIM Management & Coordination 2
+									</h3>
+									<p class="py-3 absolute inset-0 text-[16px] font-medium text-[#222222] leading-[1.25] transition-opacity duration-300 opacity-0 group-hover:opacity-100 pointer-events-none pr-8">
+										We support ongoing projects by establishing and maintaining digital collaborative workflows among involved parties.
+									</p>
+								</div>
+								<a href="#" class="inline-flex items-center bg-black text-white text-[12px] px-3 w-[80px] h-[24px] rounded-[5px] mt-auto z-10 self-start">
+									<span class="block group-hover:hidden">&gt; details_&nbsp;</span>
+									<span class="hidden group-hover:block">&gt; explore_</span>
+								</a>
+							</div>
+							<div class="absolute bottom-0 right-0 w-[50px] h-[50px] bg-[#DFFFEC] rounded-tl-[30px] rounded-br-[24px] flex items-end justify-end
+										before:content-[''] before:absolute before:w-[20px] before:h-[20px] before:bottom-[100%] before:right-0 before:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
+										after:content-[''] after:absolute after:w-[20px] after:h-[20px] after:right-[100%] after:bottom-0 after:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
+										z-10">
+								<button class="relative flex items-center justify-center w-[40px] h-[40px] bg-black text-white rounded-full transition-colors duration-300 group-hover:bg-[#FF8C00] group-hover:text-black" aria-label="Explore">
+									<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+										<line x1="7" y1="17" x2="17" y2="7"></line>
+										<polyline points="7 7 17 7 17 17"></polyline>
+									</svg>
+								</button>
+							</div>
+						</article>
 					</div>
-				</article>
+
+					<!-- SLIDE 4 -->
+					<div class="shrink-0 px-5 h-[240px] text-[#222222]" data-slide>
+						<article class="group relative flex flex-col items-start w-full h-[240px] rounded-[24px] px-8 py-7 bg-[#E3E5EA]">
+							<div class="absolute inset-0 rounded-[24px] bg-[#FF8C00] opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-0"></div>
+							<div class="relative flex flex-row gap-2 mb-4 z-10">
+								<div class="inline-flex items-center bg-black text-white text-[15px] font-bold px-4 h-[30px] rounded-full">VDC</div>
+							</div>
+							<div class="relative flex-1 w-full z-10 flex flex-col">
+								<div class="relative w-full flex-1">
+									<h3 class="py-3 absolute inset-0 text-[28px] font-extrabold text-[#222222] leading-[1.1] transition-opacity duration-300 opacity-100 group-hover:opacity-0 pointer-events-none">
+										BIM Management & Coordination 2
+									</h3>
+									<p class="py-3 absolute inset-0 text-[16px] font-medium text-[#222222] leading-[1.25] transition-opacity duration-300 opacity-0 group-hover:opacity-100 pointer-events-none pr-8">
+										We support ongoing projects by establishing and maintaining digital collaborative workflows among involved parties.
+									</p>
+								</div>
+								<a href="#" class="inline-flex items-center bg-black text-white text-[12px] px-3 w-[80px] h-[24px] rounded-[5px] mt-auto z-10 self-start">
+									<span class="block group-hover:hidden">&gt; details_&nbsp;</span>
+									<span class="hidden group-hover:block">&gt; explore_</span>
+								</a>
+							</div>
+							<div class="absolute bottom-0 right-0 w-[50px] h-[50px] bg-[#DFFFEC] rounded-tl-[30px] rounded-br-[24px] flex items-end justify-end
+										before:content-[''] before:absolute before:w-[20px] before:h-[20px] before:bottom-[100%] before:right-0 before:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
+										after:content-[''] after:absolute after:w-[20px] after:h-[20px] after:right-[100%] after:bottom-0 after:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
+										z-10">
+								<button class="relative flex items-center justify-center w-[40px] h-[40px] bg-black text-white rounded-full transition-colors duration-300 group-hover:bg-[#FF8C00] group-hover:text-black" aria-label="Explore">
+									<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+										<line x1="7" y1="17" x2="17" y2="7"></line>
+										<polyline points="7 7 17 7 17 17"></polyline>
+									</svg>
+								</button>
+							</div>
+						</article>
+					</div>
+
+					<!-- SLIDE 5 -->
+					<div class="shrink-0 px-5 h-[240px] text-[#222222]" data-slide>
+						<article class="group relative flex flex-col items-start w-full h-[240px] rounded-[24px] px-8 py-7 bg-[#E3E5EA]">
+							<div class="absolute inset-0 rounded-[24px] bg-[#FF8C00] opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-0"></div>
+							<div class="relative flex flex-row gap-2 mb-4 z-10">
+								<div class="inline-flex items-center bg-black text-white text-[15px] font-bold px-4 h-[30px] rounded-full">IT</div>
+							</div>
+							<div class="relative flex-1 w-full z-10 flex flex-col">
+								<div class="relative w-full flex-1">
+									<h3 class="py-3 absolute inset-0 text-[28px] font-extrabold text-[#222222] leading-[1.1] transition-opacity duration-300 opacity-100 group-hover:opacity-0 pointer-events-none">
+										BIM Management & Coordination 2
+									</h3>
+									<p class="py-3 absolute inset-0 text-[16px] font-medium text-[#222222] leading-[1.25] transition-opacity duration-300 opacity-0 group-hover:opacity-100 pointer-events-none pr-8">
+										We support ongoing projects by establishing and maintaining digital collaborative workflows among involved parties.
+									</p>
+								</div>
+								<a href="#" class="inline-flex items-center bg-black text-white text-[12px] px-3 w-[80px] h-[24px] rounded-[5px] mt-auto z-10 self-start">
+									<span class="block group-hover:hidden">&gt; details_&nbsp;</span>
+									<span class="hidden group-hover:block">&gt; explore_</span>
+								</a>
+							</div>
+							<div class="absolute bottom-0 right-0 w-[50px] h-[50px] bg-[#DFFFEC] rounded-tl-[30px] rounded-br-[24px] flex items-end justify-end
+										before:content-[''] before:absolute before:w-[20px] before:h-[20px] before:bottom-[100%] before:right-0 before:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
+										after:content-[''] after:absolute after:w-[20px] after:h-[20px] after:right-[100%] after:bottom-0 after:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
+										z-10">
+								<button class="relative flex items-center justify-center w-[40px] h-[40px] bg-black text-white rounded-full transition-colors duration-300 group-hover:bg-[#FF8C00] group-hover:text-black" aria-label="Explore">
+									<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+										<line x1="7" y1="17" x2="17" y2="7"></line>
+										<polyline points="7 7 17 7 17 17"></polyline>
+									</svg>
+								</button>
+							</div>
+						</article>
+					</div>
+
+				</div>
 			</div>
-			
-			<div class="px-5 h-[240px] text-[#222222] flex-[1_1_340px] max-w-[400px]">
-				<article class="group relative flex flex-col items-start w-full h-[240px] rounded-[24px] px-8 py-7 bg-[#E3E5EA]">
-					<div class="absolute inset-0 rounded-[24px] bg-[#FF8C00] opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-0"></div>
-					<div class="relative flex flex-row gap-2 mb-4 z-10">
-						<div class="inline-flex items-center bg-black text-white text-[15px] font-bold px-4 h-[30px] rounded-full">BIM</div>
-					</div>
-					<div class="relative flex-1 w-full z-10 flex flex-col">
-						<div class="relative w-full flex-1">
-							<h3 class="py-3 absolute inset-0 text-[28px] font-extrabold text-[#222222] leading-[1.1] transition-opacity duration-300 opacity-100 group-hover:opacity-0 pointer-events-none">
-								BIM Management & Coordination 2
-							</h3>
-							<p class="py-3 absolute inset-0 text-[16px] font-medium text-[#222222] leading-[1.25] transition-opacity duration-300 opacity-0 group-hover:opacity-100 pointer-events-none pr-8">
-								We support ongoing projects by establishing and maintaining digital collaborative workflows among involved parties.
-							</p>
-						</div>
-						<a href="#" class="inline-flex items-center bg-black text-white text-[12px] px-3 w-[80px] h-[24px] rounded-[5px] mt-auto z-10 self-start">
-							<span class="block group-hover:hidden">&gt; details_&nbsp;</span>
-							<span class="hidden group-hover:block">&gt; explore_</span>
-						</a>
-					</div>
-					<div class="absolute bottom-0 right-0 w-[50px] h-[50px] bg-[#DFFFEC] rounded-tl-[30px] rounded-br-[24px] flex items-end justify-end
-								before:content-[''] before:absolute before:w-[20px] before:h-[20px] before:bottom-[100%] before:right-0 before:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
-								after:content-[''] after:absolute after:w-[20px] after:h-[20px] after:right-[100%] after:bottom-0 after:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
-								z-10">
-						<button class="relative flex items-center justify-center w-[40px] h-[40px] bg-black text-white rounded-full transition-colors duration-300 group-hover:bg-[#FF8C00] group-hover:text-black" aria-label="Explore">
-							<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-								<line x1="7" y1="17" x2="17" y2="7"></line>
-								<polyline points="7 7 17 7 17 17"></polyline>
-							</svg>
-						</button>
-					</div>
-				</article>
-			</div>
-			
-			<div class="px-5 h-[240px] text-[#222222] flex-[1_1_340px] max-w-[400px]">
-				<article class="group relative flex flex-col items-start w-full h-[240px] rounded-[24px] px-8 py-7 bg-[#E3E5EA]">
-					<div class="absolute inset-0 rounded-[24px] bg-[#FF8C00] opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-0"></div>
-					<div class="relative flex flex-row gap-2 mb-4 z-10">
-						<div class="inline-flex items-center bg-black text-white text-[15px] font-bold px-4 h-[30px] rounded-full">BIM</div>
-					</div>
-					<div class="relative flex-1 w-full z-10 flex flex-col">
-						<div class="relative w-full flex-1">
-							<h3 class="py-3 absolute inset-0 text-[28px] font-extrabold text-[#222222] leading-[1.1] transition-opacity duration-300 opacity-100 group-hover:opacity-0 pointer-events-none">
-								BIM Management & Coordination 2
-							</h3>
-							<p class="py-3 absolute inset-0 text-[16px] font-medium text-[#222222] leading-[1.25] transition-opacity duration-300 opacity-0 group-hover:opacity-100 pointer-events-none pr-8">
-								We support ongoing projects by establishing and maintaining digital collaborative workflows among involved parties.
-							</p>
-						</div>
-						<a href="#" class="inline-flex items-center bg-black text-white text-[12px] px-3 w-[80px] h-[24px] rounded-[5px] mt-auto z-10 self-start">
-							<span class="block group-hover:hidden">&gt; details_&nbsp;</span>
-							<span class="hidden group-hover:block">&gt; explore_</span>
-						</a>
-					</div>
-					<div class="absolute bottom-0 right-0 w-[50px] h-[50px] bg-[#DFFFEC] rounded-tl-[30px] rounded-br-[24px] flex items-end justify-end
-								before:content-[''] before:absolute before:w-[20px] before:h-[20px] before:bottom-[100%] before:right-0 before:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
-								after:content-[''] after:absolute after:w-[20px] after:h-[20px] after:right-[100%] after:bottom-0 after:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
-								z-10">
-						<button class="relative flex items-center justify-center w-[40px] h-[40px] bg-black text-white rounded-full transition-colors duration-300 group-hover:bg-[#FF8C00] group-hover:text-black" aria-label="Explore">
-							<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-								<line x1="7" y1="17" x2="17" y2="7"></line>
-								<polyline points="7 7 17 7 17 17"></polyline>
-							</svg>
-						</button>
-					</div>
-				</article>
+
+			<!-- controls row: slash progress indicator on the left, arrows on
+			     the right. One slash per card, built + painted by the script. -->
+			<div class="flex items-center justify-between mt-2 md:mt-6 w-full px-5">
+				<div class="flex items-center text-[20px] font-extrabold leading-none tracking-[3px] select-none"
+				     data-indicator aria-hidden="true">
+				</div>
+				<div class="flex items-center gap-2">
+					<button type="button" data-prev class="flex justify-center items-center leading-none w-[40px] h-[24px] border border-[#E3E5EA] bg-transparent text-black text-[15px] rounded-[5px] transition-colors duration-300 hover:border-black hover:bg-black hover:text-white cursor-pointer disabled:opacity-40 disabled:pointer-events-none" aria-label="Previous slide">&larr;</button>
+					<button type="button" data-next class="flex justify-center items-center leading-none w-[40px] h-[24px] border border-[#E3E5EA] bg-transparent text-black text-[15px] rounded-[5px] transition-colors duration-300 hover:border-black hover:bg-black hover:text-white cursor-pointer disabled:opacity-40 disabled:pointer-events-none" aria-label="Next slide">&rarr;</button>
+				</div>
 			</div>
 
 		</div>
 	</div>
 </section>
+
+<script>
+	// Slider: one card per click, stop + disable arrows at the ends.
+	// Sizing matches the ORIGINAL card exactly: the flex item (the slide, which
+	// carries px-5) ranges 340..400px — same as the original
+	// `flex-[1_1_340px] max-w-[400px]`. The px-5 lives INSIDE that box, so the
+	// grey card is slide - 40px, exactly as before.
+	//   - perView = most 340px boxes that fit (rounded DOWN); never below 340,
+	//     never overflow.
+	//   - boxes grow to fill, capped at 400px.
+	//   - leftover space is split as symmetric side margin (safe-spots) so
+	//     nothing clips at the transition widths.
+	const BOX_MIN = 340;    // slide (flex item) min — matches flex-[1_1_340px]
+	const BOX_MAX = 400;    // slide max — matches max-w-[400px]
+	const MAX_PER_VIEW = 3; // never show more than 3 cards at once
+	const AUTOPLAY_MS = 5000; // idle time before auto-sliding one full page
+
+	function initServicesSlider(root: HTMLElement) {
+		const track = root.querySelector<HTMLElement>('[data-track]');
+		const viewport = root.querySelector<HTMLElement>('[data-slider]');
+		const slides = Array.from(root.querySelectorAll<HTMLElement>('[data-slide]'));
+		const prevBtn = root.querySelector<HTMLButtonElement>('[data-prev]');
+		const nextBtn = root.querySelector<HTMLButtonElement>('[data-next]');
+		if (!track || !viewport || !slides.length || !prevBtn || !nextBtn) return;
+
+		// progress indicator: one slash per card (optional element)
+		const FILLED = '#FF8C00';
+		const EMPTY = '#E3E5EA';
+		const indicator = root.querySelector<HTMLElement>('[data-indicator]');
+		const marks: HTMLElement[] = [];
+		if (indicator) {
+			indicator.textContent = '';
+			for (let i = 0; i < slides.length; i++) {
+				const m = document.createElement('span');
+				m.textContent = '/';
+				m.style.color = EMPTY;
+				indicator.appendChild(m);
+				marks.push(m);
+			}
+		}
+
+		function paintIndicator() {
+			if (!marks.length) return;
+			// orange = cards on screen or already slid past = index + perView
+			const filled = Math.min(slides.length, index + perView);
+			for (let i = 0; i < marks.length; i++) {
+				marks[i].style.color = i < filled ? FILLED : EMPTY;
+			}
+		}
+
+		let index = 0;
+		let perView = 1;
+		let box = BOX_MIN;  // slide box width incl. padding == the translate step
+		let padLeft = 0;    // leftover space, split so the window is centered
+
+		function layout() {
+			const vw = viewport.clientWidth;
+			// perView = most boxes that fit at MIN width (rounded DOWN), so a
+			// card is never forced below 340px and n boxes never overflow vw.
+			let n = Math.floor(vw / BOX_MIN);
+			n = Math.max(1, Math.min(MAX_PER_VIEW, n, slides.length));
+			// grow each box to fill, capped at MAX so the grey card <= 400px
+			let b = Math.max(BOX_MIN, Math.min(BOX_MAX, vw / n));
+			// any remaining space becomes symmetric margin (centered window),
+			// which keeps cards from ever clipping in the transition widths
+			const leftover = Math.max(0, vw - n * b);
+
+			perView = n;
+			box = b;
+			padLeft = leftover / 2;
+
+			for (const s of slides) {
+				s.style.flex = `0 0 ${b}px`;
+				s.style.width = `${b}px`;
+				s.style.maxWidth = `${b}px`;
+			}
+		}
+
+		function maxIndex() {
+			return Math.max(0, slides.length - perView);
+		}
+
+		function apply() {
+			const max = maxIndex();
+			index = Math.min(Math.max(index, 0), max);
+			// start the visible window at padLeft, then step by whole boxes
+			const x = padLeft - index * box;
+			track.style.transform = `translate3d(${x}px, 0, 0)`;
+			prevBtn.disabled = index <= 0;
+			nextBtn.disabled = index >= max;
+			paintIndicator();
+		}
+
+		function update() { layout(); apply(); }
+
+		// --- autoplay: after AUTOPLAY_MS with no arrow clicks, advance by a
+		// full page (perView cards). Manual clicks restart the idle countdown.
+		// Auto-advance WRAPS to the start when it reaches the end (manual
+		// arrows still stop and disable at the ends, as before).
+		let autoTimer = 0;
+		let hovered = false;
+		const reducedMotion = !!(window.matchMedia
+			&& window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+
+		function autoAdvance() {
+			const max = maxIndex();
+			if (max <= 0) return; // all cards visible: nothing to slide
+			index = index >= max ? 0 : Math.min(index + perView, max);
+			apply();
+		}
+
+		function stopAutoplay() {
+			if (autoTimer) { clearInterval(autoTimer); autoTimer = 0; }
+		}
+
+		function startAutoplay() {
+			stopAutoplay();
+			if (reducedMotion) return; // respect the OS motion preference
+			autoTimer = window.setInterval(() => {
+				// skip ticks while the person is reading a card or the tab is
+				// in the background; resume naturally on the next tick
+				if (hovered || document.hidden) return;
+				autoAdvance();
+			}, AUTOPLAY_MS);
+		}
+
+		viewport.addEventListener('mouseenter', () => { hovered = true; });
+		viewport.addEventListener('mouseleave', () => { hovered = false; });
+
+		prevBtn.addEventListener('click', () => { index -= 1; apply(); startAutoplay(); });
+		nextBtn.addEventListener('click', () => { index += 1; apply(); startAutoplay(); });
+
+		// Observe the VIEWPORT itself, not just window resize. Its width is
+		// driven by the group's own breakpoints + flex, which can settle after
+		// load; ResizeObserver fires on the post-layout box, so clientWidth is
+		// always the real one. rAF coalesces bursts.
+		let raf = 0;
+		const schedule = () => {
+			cancelAnimationFrame(raf);
+			raf = requestAnimationFrame(update);
+		};
+		if (typeof ResizeObserver !== 'undefined') {
+			new ResizeObserver(schedule).observe(viewport);
+		} else {
+			window.addEventListener('resize', schedule);
+		}
+		// also recompute once assets/fonts settle, in case initial read was early
+		window.addEventListener('load', schedule);
+
+		update();
+		startAutoplay();
+	}
+
+	document.querySelectorAll<HTMLElement>('[data-slider]').forEach((el) => {
+		const groupEl = (el.closest('.flex-wrap') as HTMLElement) ?? el.parentElement!;
+		initServicesSlider(groupEl);
+	});
+</script>
