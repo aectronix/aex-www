@@ -5,8 +5,8 @@ import ItemArrow from './item_arrow.astro';
 
 <section class="mt-25 relative px-5">
 	<div class="mx-auto flex flex-wrap justify-center gap-y-[40px] w-full max-w-[1600px]">
-		
-		<div class="p-5 min-[1420px]:h-[240px] self-start 
+
+		<div class="p-5 min-[1420px]:h-[240px] self-start
 		            flex-[1_1_100%] max-w-[400px]
 		            min-[720px]:max-w-[800px]
 		            min-[1080px]:max-w-[1200px]
@@ -18,9 +18,9 @@ import ItemArrow from './item_arrow.astro';
 			<p class="text-[16px] pt-5 text-black leading-[1.25]">
 				We’ve helped to succesfully accomplished different projects.
 			</p>
-			<a href="#" aria-label="See all services" class="mt-5 group inline-flex items-center gap-1.5
-															min-[1420px]:absolute
-															min-[1420px]:top-42">
+			<a href="#" aria-label="See all projects" class="mt-5 group inline-flex items-center gap-1.5
+																	min-[1420px]:absolute
+																	min-[1420px]:top-42">
 				<span class="flex justify-center items-center leading-none w-[40px] h-[24px] rounded-[5px] border border-black bg-black text-white text-[15px] transition-colors duration-300 group-hover:bg-[#FF8C00] group-hover:border-[#FF8C00] group-hover:text-black">
 					&rarr;
 				</span>
@@ -29,244 +29,505 @@ import ItemArrow from './item_arrow.astro';
 				</span>
 			</a>
 		</div>
-		
-		<div class="flex flex-wrap gap-y-[40px]
+
+		<!-- COLUMN GROUP: a 2-row slider. Each column = two stacked cards;
+		     the whole column slides as one unit. min-w-0 is REQUIRED (same
+		     flexbox trap as the services slider: without it the non-wrapping
+		     track forces this flex item wider than its container). -->
+		<div class="flex flex-wrap gap-y-[40px] min-w-0
 		            flex-[1_1_100%] max-w-[400px]
 		            min-[720px]:max-w-[800px]
 		            min-[1080px]:max-w-[1200px]
 		            min-[1420px]:flex-[3_3_1020px] min-[1420px]:max-w-[1200px]">
-			
-			<div class="px-5 h-[240px] text-[#222222] flex-[1_1_340px] max-w-[400px]">
-				<article class="group relative flex flex-col items-start w-full h-[240px] rounded-[24px] px-8 py-7 
-								bg-[url('/project1.png')] bg-center bg-cover bg-no-repeat">
-					<div class="absolute inset-0 rounded-[24px] bg-[#FF8C00] opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-0"></div>
-					<div class="relative flex flex-row gap-2 mb-4 z-10">
-						<div class="inline-flex items-center bg-black text-white text-[15px] font-bold px-4 h-[30px] rounded-full">BIM</div>
-						<div class="inline-flex items-center bg-black text-white text-[15px] font-bold px-4 h-[30px] rounded-full">IT</div>
-					</div>
-					<div class="relative flex-1 w-full z-10 flex flex-col">
-						<div class="relative w-full flex-1">
-							<div class="absolute inset-0 transition-opacity duration-300 opacity-100 group-hover:opacity-0 pointer-events-none">
-								<div class="w-[180px] bg-black text-white px-4 py-3 rounded-[16px] flex flex-col self-start gap-1">
-									<h3 class="text-[32px] font-extrabold tracking-wide leading-none">XXXYZ</h3>
-									<p class="text-[16px] font-bold tracking-widest">#Y2K25</p>
+
+			<!-- viewport: data-slider-col (NOT data-slider) so the services
+			     script's global [data-slider] query never matches this one -->
+			<div class="projects-slider w-full min-w-0 overflow-hidden" data-slider-col>
+				<!-- track: non-wrapping row of COLUMNS; the 40px gutter between
+				     columns comes from each card's own px-5, as everywhere else -->
+				<div class="flex flex-nowrap transition-transform duration-300 ease-out will-change-transform"
+				     data-track>
+
+					<!-- COLUMN 1: cards 1 (top) + 4 (bottom) -->
+					<div class="shrink-0 flex flex-col gap-y-[40px]" data-column>
+						<div class="px-5 h-[240px] text-[#222222]" data-slide>
+							<article class="group relative flex flex-col items-start w-full h-[240px] rounded-[24px] px-8 py-7
+											bg-[url('/project1.png')] bg-center bg-cover bg-no-repeat">
+								<div class="absolute inset-0 rounded-[24px] bg-[#FF8C00] opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-0"></div>
+								<div class="relative flex flex-row gap-2 mb-4 z-10">
+								<div class="inline-flex items-center bg-black text-white text-[15px] font-bold px-4 h-[30px] rounded-full">BIM</div>
+								<div class="inline-flex items-center bg-black text-white text-[15px] font-bold px-4 h-[30px] rounded-full">IT</div>
 								</div>
-							</div>
-							<p class="py-3 absolute inset-0 text-[16px] font-medium text-[#222222] leading-[1.25] transition-opacity duration-300 opacity-0 group-hover:opacity-100 pointer-events-none pr-8">
-								We support ongoing projects by establishing and maintaining digital collaborative workflows among involved parties.
-							</p>
-						</div>
-						<a href="#" class="inline-flex items-center bg-black text-white text-[12px] px-3 w-[80px] h-[24px] rounded-[5px] mt-auto z-10 self-start">
-							<span class="block group-hover:hidden">&gt; details_&nbsp;</span>
-							<span class="hidden group-hover:block">&gt; explore_</span>
-						</a>
-					</div>
-					<div class="absolute bottom-0 right-0 w-[50px] h-[50px] bg-[#DFFFEC] rounded-tl-[30px] rounded-br-[24px] flex items-end justify-end
-								before:content-[''] before:absolute before:w-[20px] before:h-[20px] before:bottom-[100%] before:right-0 before:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
-								after:content-[''] after:absolute after:w-[20px] after:h-[20px] after:right-[100%] after:bottom-0 after:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
-								z-10">
-						<button class="relative flex items-center justify-center w-[40px] h-[40px] bg-black text-white rounded-full transition-colors duration-300 group-hover:bg-[#FF8C00] group-hover:text-black" aria-label="Explore">
-							<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-								<line x1="7" y1="17" x2="17" y2="7"></line>
-								<polyline points="7 7 17 7 17 17"></polyline>
-							</svg>
-						</button>
-					</div>
-				</article>
-			</div>
-			
-			<div class="px-5 h-[240px] text-[#222222] flex-[1_1_340px] max-w-[400px]">
-				<article class="group relative flex flex-col items-start w-full h-[240px] rounded-[24px] px-8 py-7 
-								bg-[url('/project1.png')] bg-center bg-cover bg-no-repeat">
-					<div class="absolute inset-0 rounded-[24px] bg-[#FF8C00] opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-0"></div>
-					<div class="relative flex flex-row gap-2 mb-4 z-10">
-						<div class="inline-flex items-center bg-black text-white text-[15px] font-bold px-4 h-[30px] rounded-full">BIM</div>
-					</div>
-					<div class="relative flex-1 w-full z-10 flex flex-col">
-						<div class="relative w-full flex-1">
-							<div class="absolute inset-0 transition-opacity duration-300 opacity-100 group-hover:opacity-0 pointer-events-none">
-								<div class="w-[180px] bg-black text-white px-4 py-3 rounded-[16px] flex flex-col self-start gap-1">
-									<h3 class="text-[32px] font-extrabold tracking-wide leading-none">XXXYZ</h3>
-									<p class="text-[16px] font-bold tracking-widest">#Y2K25</p>
+								<div class="relative flex-1 w-full z-10 flex flex-col">
+									<div class="relative w-full flex-1">
+										<div class="absolute inset-0 transition-opacity duration-300 opacity-100 group-hover:opacity-0 pointer-events-none">
+											<div class="w-[180px] bg-black text-white px-4 py-3 rounded-[16px] flex flex-col self-start gap-1">
+												<h3 class="text-[32px] font-extrabold tracking-wide leading-none">XXXYZ</h3>
+												<p class="text-[16px] font-bold tracking-widest">#Y2K25</p>
+											</div>
+										</div>
+										<p class="py-3 absolute inset-0 text-[16px] font-medium text-[#222222] leading-[1.25] transition-opacity duration-300 opacity-0 group-hover:opacity-100 pointer-events-none pr-8">
+											We support ongoing projects by establishing and maintaining digital collaborative workflows among involved parties.
+										</p>
+									</div>
+									<a href="#" class="inline-flex items-center bg-black text-white text-[12px] px-3 w-[80px] h-[24px] rounded-[5px] mt-auto z-10 self-start">
+										<span class="block group-hover:hidden">&gt; details_&nbsp;</span>
+										<span class="hidden group-hover:block">&gt; explore_</span>
+									</a>
 								</div>
-							</div>
-							<p class="absolute inset-0 text-[16px] font-medium text-[#222222] leading-[1.25] transition-opacity duration-300 opacity-0 group-hover:opacity-100 pointer-events-none pr-8">
-								We support ongoing projects by establishing and maintaining digital collaborative workflows among involved parties.
-							</p>
-						</div>
-						<a href="#" class="inline-flex items-center bg-black text-white text-[12px] px-3 w-[80px] h-[24px] rounded-[5px] mt-auto z-10 self-start">
-							<span class="block group-hover:hidden">&gt; details_&nbsp;</span>
-							<span class="hidden group-hover:block">&gt; explore_</span>
-						</a>
-					</div>
-					<div class="absolute bottom-0 right-0 w-[50px] h-[50px] bg-[#DFFFEC] rounded-tl-[30px] rounded-br-[24px] flex items-end justify-end
-								before:content-[''] before:absolute before:w-[20px] before:h-[20px] before:bottom-[100%] before:right-0 before:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
-								after:content-[''] after:absolute after:w-[20px] after:h-[20px] after:right-[100%] after:bottom-0 after:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
-								z-10">
-						<button class="relative flex items-center justify-center w-[40px] h-[40px] bg-black text-white rounded-full transition-colors duration-300 group-hover:bg-[#FF8C00] group-hover:text-black" aria-label="Explore">
-							<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-								<line x1="7" y1="17" x2="17" y2="7"></line>
-								<polyline points="7 7 17 7 17 17"></polyline>
-							</svg>
-						</button>
-					</div>
-				</article>
-			</div>
-			
-			<div class="px-5 h-[240px] text-[#222222] flex-[1_1_340px] max-w-[400px]">
-				<article class="group relative flex flex-col items-start w-full h-[240px] rounded-[24px] px-8 py-7 
-								bg-[url('/project1.png')] bg-center bg-cover bg-no-repeat">
-					<div class="absolute inset-0 rounded-[24px] bg-[#FF8C00] opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-0"></div>
-					<div class="relative flex flex-row gap-2 mb-4 z-10">
-						<div class="inline-flex items-center bg-black text-white text-[15px] font-bold px-4 h-[30px] rounded-full">BIM</div>
-					</div>
-					<div class="relative flex-1 w-full z-10 flex flex-col">
-						<div class="relative w-full flex-1">
-							<div class="absolute inset-0 transition-opacity duration-300 opacity-100 group-hover:opacity-0 pointer-events-none">
-								<div class="w-[180px] bg-black text-white px-4 py-3 rounded-[16px] flex flex-col self-start gap-1">
-									<h3 class="text-[32px] font-extrabold tracking-wide leading-none">XXXYZ</h3>
-									<p class="text-[16px] font-bold tracking-widest">#Y2K25</p>
+								<div class="absolute bottom-0 right-0 w-[50px] h-[50px] bg-[#DFFFEC] rounded-tl-[30px] rounded-br-[24px] flex items-end justify-end
+											before:content-[''] before:absolute before:w-[20px] before:h-[20px] before:bottom-[100%] before:right-0 before:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
+											after:content-[''] after:absolute after:w-[20px] after:h-[20px] after:right-[100%] after:bottom-0 after:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
+											z-10">
+									<button class="relative flex items-center justify-center w-[40px] h-[40px] bg-black text-white rounded-full transition-colors duration-300 group-hover:bg-[#FF8C00] group-hover:text-black" aria-label="Explore">
+										<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+											<line x1="7" y1="17" x2="17" y2="7"></line>
+											<polyline points="7 7 17 7 17 17"></polyline>
+										</svg>
+									</button>
 								</div>
-							</div>
-							<p class="absolute inset-0 text-[16px] font-medium text-[#222222] leading-[1.25] transition-opacity duration-300 opacity-0 group-hover:opacity-100 pointer-events-none pr-8">
-								We support ongoing projects by establishing and maintaining digital collaborative workflows among involved parties.
-							</p>
+							</article>
 						</div>
-						<a href="#" class="inline-flex items-center bg-black text-white text-[12px] px-3 w-[80px] h-[24px] rounded-[5px] mt-auto z-10 self-start">
-							<span class="block group-hover:hidden">&gt; details_&nbsp;</span>
-							<span class="hidden group-hover:block">&gt; explore_</span>
-						</a>
+						<div class="px-5 h-[240px] text-[#222222]" data-slide>
+							<article class="group relative flex flex-col items-start w-full h-[240px] rounded-[24px] px-8 py-7
+											bg-[url('/project1.png')] bg-center bg-cover bg-no-repeat">
+								<div class="absolute inset-0 rounded-[24px] bg-[#FF8C00] opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-0"></div>
+								<div class="relative flex flex-row gap-2 mb-4 z-10">
+								<div class="inline-flex items-center bg-black text-white text-[15px] font-bold px-4 h-[30px] rounded-full">IT</div>
+								</div>
+								<div class="relative flex-1 w-full z-10 flex flex-col">
+									<div class="relative w-full flex-1">
+										<div class="absolute inset-0 transition-opacity duration-300 opacity-100 group-hover:opacity-0 pointer-events-none">
+											<div class="w-[180px] bg-black text-white px-4 py-3 rounded-[16px] flex flex-col self-start gap-1">
+												<h3 class="text-[32px] font-extrabold tracking-wide leading-none">XXXYZ</h3>
+												<p class="text-[16px] font-bold tracking-widest">#Y2K25</p>
+											</div>
+										</div>
+										<p class="absolute inset-0 text-[16px] font-medium text-[#222222] leading-[1.25] transition-opacity duration-300 opacity-0 group-hover:opacity-100 pointer-events-none pr-8">
+											We support ongoing projects by establishing and maintaining digital collaborative workflows among involved parties.
+										</p>
+									</div>
+									<a href="#" class="inline-flex items-center bg-black text-white text-[12px] px-3 w-[80px] h-[24px] rounded-[5px] mt-auto z-10 self-start">
+										<span class="block group-hover:hidden">&gt; details_&nbsp;</span>
+										<span class="hidden group-hover:block">&gt; explore_</span>
+									</a>
+								</div>
+								<div class="absolute bottom-0 right-0 w-[50px] h-[50px] bg-[#DFFFEC] rounded-tl-[30px] rounded-br-[24px] flex items-end justify-end
+											before:content-[''] before:absolute before:w-[20px] before:h-[20px] before:bottom-[100%] before:right-0 before:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
+											after:content-[''] after:absolute after:w-[20px] after:h-[20px] after:right-[100%] after:bottom-0 after:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
+											z-10">
+									<button class="relative flex items-center justify-center w-[40px] h-[40px] bg-black text-white rounded-full transition-colors duration-300 group-hover:bg-[#FF8C00] group-hover:text-black" aria-label="Explore">
+										<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+											<line x1="7" y1="17" x2="17" y2="7"></line>
+											<polyline points="7 7 17 7 17 17"></polyline>
+										</svg>
+									</button>
+								</div>
+							</article>
+						</div>
 					</div>
-					<div class="absolute bottom-0 right-0 w-[50px] h-[50px] bg-[#DFFFEC] rounded-tl-[30px] rounded-br-[24px] flex items-end justify-end
-								before:content-[''] before:absolute before:w-[20px] before:h-[20px] before:bottom-[100%] before:right-0 before:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
-								after:content-[''] after:absolute after:w-[20px] after:h-[20px] after:right-[100%] after:bottom-0 after:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
-								z-10">
-						<button class="relative flex items-center justify-center w-[40px] h-[40px] bg-black text-white rounded-full transition-colors duration-300 group-hover:bg-[#FF8C00] group-hover:text-black" aria-label="Explore">
-							<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-								<line x1="7" y1="17" x2="17" y2="7"></line>
-								<polyline points="7 7 17 7 17 17"></polyline>
-							</svg>
-						</button>
+
+					<!-- COLUMN 2: cards 2 (top) + 5 (bottom) -->
+					<div class="shrink-0 flex flex-col gap-y-[40px]" data-column>
+						<div class="px-5 h-[240px] text-[#222222]" data-slide>
+							<article class="group relative flex flex-col items-start w-full h-[240px] rounded-[24px] px-8 py-7
+											bg-[url('/project1.png')] bg-center bg-cover bg-no-repeat">
+								<div class="absolute inset-0 rounded-[24px] bg-[#FF8C00] opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-0"></div>
+								<div class="relative flex flex-row gap-2 mb-4 z-10">
+								<div class="inline-flex items-center bg-black text-white text-[15px] font-bold px-4 h-[30px] rounded-full">BIM</div>
+								</div>
+								<div class="relative flex-1 w-full z-10 flex flex-col">
+									<div class="relative w-full flex-1">
+										<div class="absolute inset-0 transition-opacity duration-300 opacity-100 group-hover:opacity-0 pointer-events-none">
+											<div class="w-[180px] bg-black text-white px-4 py-3 rounded-[16px] flex flex-col self-start gap-1">
+												<h3 class="text-[32px] font-extrabold tracking-wide leading-none">XXXYZ</h3>
+												<p class="text-[16px] font-bold tracking-widest">#Y2K25</p>
+											</div>
+										</div>
+										<p class="absolute inset-0 text-[16px] font-medium text-[#222222] leading-[1.25] transition-opacity duration-300 opacity-0 group-hover:opacity-100 pointer-events-none pr-8">
+											We support ongoing projects by establishing and maintaining digital collaborative workflows among involved parties.
+										</p>
+									</div>
+									<a href="#" class="inline-flex items-center bg-black text-white text-[12px] px-3 w-[80px] h-[24px] rounded-[5px] mt-auto z-10 self-start">
+										<span class="block group-hover:hidden">&gt; details_&nbsp;</span>
+										<span class="hidden group-hover:block">&gt; explore_</span>
+									</a>
+								</div>
+								<div class="absolute bottom-0 right-0 w-[50px] h-[50px] bg-[#DFFFEC] rounded-tl-[30px] rounded-br-[24px] flex items-end justify-end
+											before:content-[''] before:absolute before:w-[20px] before:h-[20px] before:bottom-[100%] before:right-0 before:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
+											after:content-[''] after:absolute after:w-[20px] after:h-[20px] after:right-[100%] after:bottom-0 after:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
+											z-10">
+									<button class="relative flex items-center justify-center w-[40px] h-[40px] bg-black text-white rounded-full transition-colors duration-300 group-hover:bg-[#FF8C00] group-hover:text-black" aria-label="Explore">
+										<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+											<line x1="7" y1="17" x2="17" y2="7"></line>
+											<polyline points="7 7 17 7 17 17"></polyline>
+										</svg>
+									</button>
+								</div>
+							</article>
+						</div>
+						<div class="px-5 h-[240px] text-[#222222]" data-slide>
+							<article class="group relative flex flex-col items-start w-full h-[240px] rounded-[24px] px-8 py-7
+											bg-[url('/project1.png')] bg-center bg-cover bg-no-repeat">
+								<div class="absolute inset-0 rounded-[24px] bg-[#FF8C00] opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-0"></div>
+								<div class="relative flex flex-row gap-2 mb-4 z-10">
+								<div class="inline-flex items-center bg-black text-white text-[15px] font-bold px-4 h-[30px] rounded-full">DEV</div>
+								<div class="inline-flex items-center bg-black text-white text-[15px] font-bold px-4 h-[30px] rounded-full">IT</div>
+								</div>
+								<div class="relative flex-1 w-full z-10 flex flex-col">
+									<div class="relative w-full flex-1">
+										<div class="absolute inset-0 transition-opacity duration-300 opacity-100 group-hover:opacity-0 pointer-events-none">
+											<div class="w-[180px] bg-black text-white px-4 py-3 rounded-[16px] flex flex-col self-start gap-1">
+												<h3 class="text-[32px] font-extrabold tracking-wide leading-none">XXXYZ</h3>
+												<p class="text-[16px] font-bold tracking-widest">#Y2K25</p>
+											</div>
+										</div>
+										<p class="absolute inset-0 text-[16px] font-medium text-[#222222] leading-[1.25] transition-opacity duration-300 opacity-0 group-hover:opacity-100 pointer-events-none pr-8">
+											We support ongoing projects by establishing and maintaining digital collaborative workflows among involved parties.
+										</p>
+									</div>
+									<a href="#" class="inline-flex items-center bg-black text-white text-[12px] px-3 w-[80px] h-[24px] rounded-[5px] mt-auto z-10 self-start">
+										<span class="block group-hover:hidden">&gt; details_&nbsp;</span>
+										<span class="hidden group-hover:block">&gt; explore_</span>
+									</a>
+								</div>
+								<div class="absolute bottom-0 right-0 w-[50px] h-[50px] bg-[#DFFFEC] rounded-tl-[30px] rounded-br-[24px] flex items-end justify-end
+											before:content-[''] before:absolute before:w-[20px] before:h-[20px] before:bottom-[100%] before:right-0 before:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
+											after:content-[''] after:absolute after:w-[20px] after:h-[20px] after:right-[100%] after:bottom-0 after:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
+											z-10">
+									<button class="relative flex items-center justify-center w-[40px] h-[40px] bg-black text-white rounded-full transition-colors duration-300 group-hover:bg-[#FF8C00] group-hover:text-black" aria-label="Explore">
+										<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+											<line x1="7" y1="17" x2="17" y2="7"></line>
+											<polyline points="7 7 17 7 17 17"></polyline>
+										</svg>
+									</button>
+								</div>
+							</article>
+						</div>
 					</div>
-				</article>
+
+					<!-- COLUMN 3: cards 3 (top) + 6 (bottom) -->
+					<div class="shrink-0 flex flex-col gap-y-[40px]" data-column>
+						<div class="px-5 h-[240px] text-[#222222]" data-slide>
+							<article class="group relative flex flex-col items-start w-full h-[240px] rounded-[24px] px-8 py-7
+											bg-[url('/project1.png')] bg-center bg-cover bg-no-repeat">
+								<div class="absolute inset-0 rounded-[24px] bg-[#FF8C00] opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-0"></div>
+								<div class="relative flex flex-row gap-2 mb-4 z-10">
+								<div class="inline-flex items-center bg-black text-white text-[15px] font-bold px-4 h-[30px] rounded-full">BIM</div>
+								</div>
+								<div class="relative flex-1 w-full z-10 flex flex-col">
+									<div class="relative w-full flex-1">
+										<div class="absolute inset-0 transition-opacity duration-300 opacity-100 group-hover:opacity-0 pointer-events-none">
+											<div class="w-[180px] bg-black text-white px-4 py-3 rounded-[16px] flex flex-col self-start gap-1">
+												<h3 class="text-[32px] font-extrabold tracking-wide leading-none">XXXYZ</h3>
+												<p class="text-[16px] font-bold tracking-widest">#Y2K25</p>
+											</div>
+										</div>
+										<p class="absolute inset-0 text-[16px] font-medium text-[#222222] leading-[1.25] transition-opacity duration-300 opacity-0 group-hover:opacity-100 pointer-events-none pr-8">
+											We support ongoing projects by establishing and maintaining digital collaborative workflows among involved parties.
+										</p>
+									</div>
+									<a href="#" class="inline-flex items-center bg-black text-white text-[12px] px-3 w-[80px] h-[24px] rounded-[5px] mt-auto z-10 self-start">
+										<span class="block group-hover:hidden">&gt; details_&nbsp;</span>
+										<span class="hidden group-hover:block">&gt; explore_</span>
+									</a>
+								</div>
+								<div class="absolute bottom-0 right-0 w-[50px] h-[50px] bg-[#DFFFEC] rounded-tl-[30px] rounded-br-[24px] flex items-end justify-end
+											before:content-[''] before:absolute before:w-[20px] before:h-[20px] before:bottom-[100%] before:right-0 before:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
+											after:content-[''] after:absolute after:w-[20px] after:h-[20px] after:right-[100%] after:bottom-0 after:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
+											z-10">
+									<button class="relative flex items-center justify-center w-[40px] h-[40px] bg-black text-white rounded-full transition-colors duration-300 group-hover:bg-[#FF8C00] group-hover:text-black" aria-label="Explore">
+										<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+											<line x1="7" y1="17" x2="17" y2="7"></line>
+											<polyline points="7 7 17 7 17 17"></polyline>
+										</svg>
+									</button>
+								</div>
+							</article>
+						</div>
+						<div class="px-5 h-[240px] text-[#222222]" data-slide>
+							<article class="group relative flex flex-col items-start w-full h-[240px] rounded-[24px] px-8 py-7
+											bg-[url('/project1.png')] bg-center bg-cover bg-no-repeat">
+								<div class="absolute inset-0 rounded-[24px] bg-[#FF8C00] opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-0"></div>
+								<div class="relative flex flex-row gap-2 mb-4 z-10">
+								<div class="inline-flex items-center bg-black text-white text-[15px] font-bold px-4 h-[30px] rounded-full">BIM</div>
+								<div class="inline-flex items-center bg-black text-white text-[15px] font-bold px-4 h-[30px] rounded-full">CDE</div>
+								</div>
+								<div class="relative flex-1 w-full z-10 flex flex-col">
+									<div class="relative w-full flex-1">
+										<div class="absolute inset-0 transition-opacity duration-300 opacity-100 group-hover:opacity-0 pointer-events-none">
+											<div class="w-[180px] bg-black text-white px-4 py-3 rounded-[16px] flex flex-col self-start gap-1">
+												<h3 class="text-[32px] font-extrabold tracking-wide leading-none">XXXYZ</h3>
+												<p class="text-[16px] font-bold tracking-widest">#Y2K25</p>
+											</div>
+										</div>
+										<p class="absolute inset-0 text-[16px] font-medium text-[#222222] leading-[1.25] transition-opacity duration-300 opacity-0 group-hover:opacity-100 pointer-events-none pr-8">
+											We support ongoing projects by establishing and maintaining digital collaborative workflows among involved parties.
+										</p>
+									</div>
+									<a href="#" class="inline-flex items-center bg-black text-white text-[12px] px-3 w-[80px] h-[24px] rounded-[5px] mt-auto z-10 self-start">
+										<span class="block group-hover:hidden">&gt; details_&nbsp;</span>
+										<span class="hidden group-hover:block">&gt; explore_</span>
+									</a>
+								</div>
+								<div class="absolute bottom-0 right-0 w-[50px] h-[50px] bg-[#DFFFEC] rounded-tl-[30px] rounded-br-[24px] flex items-end justify-end
+											before:content-[''] before:absolute before:w-[20px] before:h-[20px] before:bottom-[100%] before:right-0 before:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
+											after:content-[''] after:absolute after:w-[20px] after:h-[20px] after:right-[100%] after:bottom-0 after:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
+											z-10">
+									<button class="relative flex items-center justify-center w-[40px] h-[40px] bg-black text-white rounded-full transition-colors duration-300 group-hover:bg-[#FF8C00] group-hover:text-black" aria-label="Explore">
+										<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+											<line x1="7" y1="17" x2="17" y2="7"></line>
+											<polyline points="7 7 17 7 17 17"></polyline>
+										</svg>
+									</button>
+								</div>
+							</article>
+						</div>
+					</div>
+					<!-- COLUMN 4: cards 3 (top) + 6 (bottom) -->
+					<div class="shrink-0 flex flex-col gap-y-[40px]" data-column>
+						<div class="px-5 h-[240px] text-[#222222]" data-slide>
+							<article class="group relative flex flex-col items-start w-full h-[240px] rounded-[24px] px-8 py-7
+											bg-[url('/project1.png')] bg-center bg-cover bg-no-repeat">
+								<div class="absolute inset-0 rounded-[24px] bg-[#FF8C00] opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-0"></div>
+								<div class="relative flex flex-row gap-2 mb-4 z-10">
+								<div class="inline-flex items-center bg-black text-white text-[15px] font-bold px-4 h-[30px] rounded-full">BIM</div>
+								</div>
+								<div class="relative flex-1 w-full z-10 flex flex-col">
+									<div class="relative w-full flex-1">
+										<div class="absolute inset-0 transition-opacity duration-300 opacity-100 group-hover:opacity-0 pointer-events-none">
+											<div class="w-[180px] bg-black text-white px-4 py-3 rounded-[16px] flex flex-col self-start gap-1">
+												<h3 class="text-[32px] font-extrabold tracking-wide leading-none">XXXYZ</h3>
+												<p class="text-[16px] font-bold tracking-widest">#Y2K25</p>
+											</div>
+										</div>
+										<p class="absolute inset-0 text-[16px] font-medium text-[#222222] leading-[1.25] transition-opacity duration-300 opacity-0 group-hover:opacity-100 pointer-events-none pr-8">
+											We support ongoing projects by establishing and maintaining digital collaborative workflows among involved parties.
+										</p>
+									</div>
+									<a href="#" class="inline-flex items-center bg-black text-white text-[12px] px-3 w-[80px] h-[24px] rounded-[5px] mt-auto z-10 self-start">
+										<span class="block group-hover:hidden">&gt; details_&nbsp;</span>
+										<span class="hidden group-hover:block">&gt; explore_</span>
+									</a>
+								</div>
+								<div class="absolute bottom-0 right-0 w-[50px] h-[50px] bg-[#DFFFEC] rounded-tl-[30px] rounded-br-[24px] flex items-end justify-end
+											before:content-[''] before:absolute before:w-[20px] before:h-[20px] before:bottom-[100%] before:right-0 before:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
+											after:content-[''] after:absolute after:w-[20px] after:h-[20px] after:right-[100%] after:bottom-0 after:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
+											z-10">
+									<button class="relative flex items-center justify-center w-[40px] h-[40px] bg-black text-white rounded-full transition-colors duration-300 group-hover:bg-[#FF8C00] group-hover:text-black" aria-label="Explore">
+										<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+											<line x1="7" y1="17" x2="17" y2="7"></line>
+											<polyline points="7 7 17 7 17 17"></polyline>
+										</svg>
+									</button>
+								</div>
+							</article>
+						</div>
+						<div class="px-5 h-[240px] text-[#222222]" data-slide>
+							<article class="group relative flex flex-col items-start w-full h-[240px] rounded-[24px] px-8 py-7
+											bg-[url('/project1.png')] bg-center bg-cover bg-no-repeat">
+								<div class="absolute inset-0 rounded-[24px] bg-[#FF8C00] opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-0"></div>
+								<div class="relative flex flex-row gap-2 mb-4 z-10">
+								<div class="inline-flex items-center bg-black text-white text-[15px] font-bold px-4 h-[30px] rounded-full">BIM</div>
+								<div class="inline-flex items-center bg-black text-white text-[15px] font-bold px-4 h-[30px] rounded-full">CDE</div>
+								</div>
+								<div class="relative flex-1 w-full z-10 flex flex-col">
+									<div class="relative w-full flex-1">
+										<div class="absolute inset-0 transition-opacity duration-300 opacity-100 group-hover:opacity-0 pointer-events-none">
+											<div class="w-[180px] bg-black text-white px-4 py-3 rounded-[16px] flex flex-col self-start gap-1">
+												<h3 class="text-[32px] font-extrabold tracking-wide leading-none">XXXYZ</h3>
+												<p class="text-[16px] font-bold tracking-widest">#Y2K25</p>
+											</div>
+										</div>
+										<p class="absolute inset-0 text-[16px] font-medium text-[#222222] leading-[1.25] transition-opacity duration-300 opacity-0 group-hover:opacity-100 pointer-events-none pr-8">
+											We support ongoing projects by establishing and maintaining digital collaborative workflows among involved parties.
+										</p>
+									</div>
+									<a href="#" class="inline-flex items-center bg-black text-white text-[12px] px-3 w-[80px] h-[24px] rounded-[5px] mt-auto z-10 self-start">
+										<span class="block group-hover:hidden">&gt; details_&nbsp;</span>
+										<span class="hidden group-hover:block">&gt; explore_</span>
+									</a>
+								</div>
+								<div class="absolute bottom-0 right-0 w-[50px] h-[50px] bg-[#DFFFEC] rounded-tl-[30px] rounded-br-[24px] flex items-end justify-end
+											before:content-[''] before:absolute before:w-[20px] before:h-[20px] before:bottom-[100%] before:right-0 before:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
+											after:content-[''] after:absolute after:w-[20px] after:h-[20px] after:right-[100%] after:bottom-0 after:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
+											z-10">
+									<button class="relative flex items-center justify-center w-[40px] h-[40px] bg-black text-white rounded-full transition-colors duration-300 group-hover:bg-[#FF8C00] group-hover:text-black" aria-label="Explore">
+										<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+											<line x1="7" y1="17" x2="17" y2="7"></line>
+											<polyline points="7 7 17 7 17 17"></polyline>
+										</svg>
+									</button>
+								</div>
+							</article>
+						</div>
+					</div>
+				</div>
 			</div>
 
-			<div class="px-5 h-[240px] text-[#222222] flex-[1_1_340px] max-w-[400px]">
-				<article class="group relative flex flex-col items-start w-full h-[240px] rounded-[24px] px-8 py-7 
-								bg-[url('/project1.png')] bg-center bg-cover bg-no-repeat">
-					<div class="absolute inset-0 rounded-[24px] bg-[#FF8C00] opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-0"></div>
-					<div class="relative flex flex-row gap-2 mb-4 z-10">
-						<div class="inline-flex items-center bg-black text-white text-[15px] font-bold px-4 h-[30px] rounded-full">IT</div>
-					</div>
-					<div class="relative flex-1 w-full z-10 flex flex-col">
-						<div class="relative w-full flex-1">
-							<div class="absolute inset-0 transition-opacity duration-300 opacity-100 group-hover:opacity-0 pointer-events-none">
-								<div class="w-[180px] bg-black text-white px-4 py-3 rounded-[16px] flex flex-col self-start gap-1">
-									<h3 class="text-[32px] font-extrabold tracking-wide leading-none">XXXYZ</h3>
-									<p class="text-[16px] font-bold tracking-widest">#Y2K25</p>
-								</div>
-							</div>
-							<p class="absolute inset-0 text-[16px] font-medium text-[#222222] leading-[1.25] transition-opacity duration-300 opacity-0 group-hover:opacity-100 pointer-events-none pr-8">
-								We support ongoing projects by establishing and maintaining digital collaborative workflows among involved parties.
-							</p>
-						</div>
-						<a href="#" class="inline-flex items-center bg-black text-white text-[12px] px-3 w-[80px] h-[24px] rounded-[5px] mt-auto z-10 self-start">
-							<span class="block group-hover:hidden">&gt; details_&nbsp;</span>
-							<span class="hidden group-hover:block">&gt; explore_</span>
-						</a>
-					</div>
-					<div class="absolute bottom-0 right-0 w-[50px] h-[50px] bg-[#DFFFEC] rounded-tl-[30px] rounded-br-[24px] flex items-end justify-end
-								before:content-[''] before:absolute before:w-[20px] before:h-[20px] before:bottom-[100%] before:right-0 before:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
-								after:content-[''] after:absolute after:w-[20px] after:h-[20px] after:right-[100%] after:bottom-0 after:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
-								z-10">
-						<button class="relative flex items-center justify-center w-[40px] h-[40px] bg-black text-white rounded-full transition-colors duration-300 group-hover:bg-[#FF8C00] group-hover:text-black" aria-label="Explore">
-							<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-								<line x1="7" y1="17" x2="17" y2="7"></line>
-								<polyline points="7 7 17 7 17 17"></polyline>
-							</svg>
-						</button>
-					</div>
-				</article>
-			</div>
-
-			<div class="px-5 h-[240px] text-[#222222] flex-[1_1_340px] max-w-[400px]">
-				<article class="group relative flex flex-col items-start w-full h-[240px] rounded-[24px] px-8 py-7 
-								bg-[url('/project1.png')] bg-center bg-cover bg-no-repeat">
-					<div class="absolute inset-0 rounded-[24px] bg-[#FF8C00] opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-0"></div>
-					<div class="relative flex flex-row gap-2 mb-4 z-10">
-						<div class="inline-flex items-center bg-black text-white text-[15px] font-bold px-4 h-[30px] rounded-full">DEV</div>
-						<div class="inline-flex items-center bg-black text-white text-[15px] font-bold px-4 h-[30px] rounded-full">IT</div>
-					</div>
-					<div class="relative flex-1 w-full z-10 flex flex-col">
-						<div class="relative w-full flex-1">
-							<div class="absolute inset-0 transition-opacity duration-300 opacity-100 group-hover:opacity-0 pointer-events-none">
-								<div class="w-[180px] bg-black text-white px-4 py-3 rounded-[16px] flex flex-col self-start gap-1">
-									<h3 class="text-[32px] font-extrabold tracking-wide leading-none">XXXYZ</h3>
-									<p class="text-[16px] font-bold tracking-widest">#Y2K25</p>
-								</div>
-							</div>
-							<p class="absolute inset-0 text-[16px] font-medium text-[#222222] leading-[1.25] transition-opacity duration-300 opacity-0 group-hover:opacity-100 pointer-events-none pr-8">
-								We support ongoing projects by establishing and maintaining digital collaborative workflows among involved parties.
-							</p>
-						</div>
-						<a href="#" class="inline-flex items-center bg-black text-white text-[12px] px-3 w-[80px] h-[24px] rounded-[5px] mt-auto z-10 self-start">
-							<span class="block group-hover:hidden">&gt; details_&nbsp;</span>
-							<span class="hidden group-hover:block">&gt; explore_</span>
-						</a>
-					</div>
-					<div class="absolute bottom-0 right-0 w-[50px] h-[50px] bg-[#DFFFEC] rounded-tl-[30px] rounded-br-[24px] flex items-end justify-end
-								before:content-[''] before:absolute before:w-[20px] before:h-[20px] before:bottom-[100%] before:right-0 before:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
-								after:content-[''] after:absolute after:w-[20px] after:h-[20px] after:right-[100%] after:bottom-0 after:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
-								z-10">
-						<button class="relative flex items-center justify-center w-[40px] h-[40px] bg-black text-white rounded-full transition-colors duration-300 group-hover:bg-[#FF8C00] group-hover:text-black" aria-label="Explore">
-							<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-								<line x1="7" y1="17" x2="17" y2="7"></line>
-								<polyline points="7 7 17 7 17 17"></polyline>
-							</svg>
-						</button>
-					</div>
-				</article>
-			</div>
-
-			<div class="px-5 h-[240px] text-[#222222] flex-[1_1_340px] max-w-[400px]">
-				<article class="group relative flex flex-col items-start w-full h-[240px] rounded-[24px] px-8 py-7 
-								bg-[url('/project1.png')] bg-center bg-cover bg-no-repeat">
-					<div class="absolute inset-0 rounded-[24px] bg-[#FF8C00] opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-0"></div>
-					<div class="relative flex flex-row gap-2 mb-4 z-10">
-						<div class="inline-flex items-center bg-black text-white text-[15px] font-bold px-4 h-[30px] rounded-full">BIM</div>
-						<div class="inline-flex items-center bg-black text-white text-[15px] font-bold px-4 h-[30px] rounded-full">CDE</div>
-					</div>
-					<div class="relative flex-1 w-full z-10 flex flex-col">
-						<div class="relative w-full flex-1">
-							<div class="absolute inset-0 transition-opacity duration-300 opacity-100 group-hover:opacity-0 pointer-events-none">
-								<div class="w-[180px] bg-black text-white px-4 py-3 rounded-[16px] flex flex-col self-start gap-1">
-									<h3 class="text-[32px] font-extrabold tracking-wide leading-none">XXXYZ</h3>
-									<p class="text-[16px] font-bold tracking-widest">#Y2K25</p>
-								</div>
-							</div>
-							<p class="absolute inset-0 text-[16px] font-medium text-[#222222] leading-[1.25] transition-opacity duration-300 opacity-0 group-hover:opacity-100 pointer-events-none pr-8">
-								We support ongoing projects by establishing and maintaining digital collaborative workflows among involved parties.
-							</p>
-						</div>
-						<a href="#" class="inline-flex items-center bg-black text-white text-[12px] px-3 w-[80px] h-[24px] rounded-[5px] mt-auto z-10 self-start">
-							<span class="block group-hover:hidden">&gt; details_&nbsp;</span>
-							<span class="hidden group-hover:block">&gt; explore_</span>
-						</a>
-					</div>
-					<div class="absolute bottom-0 right-0 w-[50px] h-[50px] bg-[#DFFFEC] rounded-tl-[30px] rounded-br-[24px] flex items-end justify-end
-								before:content-[''] before:absolute before:w-[20px] before:h-[20px] before:bottom-[100%] before:right-0 before:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
-								after:content-[''] after:absolute after:w-[20px] after:h-[20px] after:right-[100%] after:bottom-0 after:bg-[radial-gradient(circle_at_top_left,transparent_20px,#DFFFEC_20px)]
-								z-10">
-						<button class="relative flex items-center justify-center w-[40px] h-[40px] bg-black text-white rounded-full transition-colors duration-300 group-hover:bg-[#FF8C00] group-hover:text-black" aria-label="Explore">
-							<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-								<line x1="7" y1="17" x2="17" y2="7"></line>
-								<polyline points="7 7 17 7 17 17"></polyline>
-							</svg>
-						</button>
-					</div>
-				</article>
+			<!-- controls row: same style as services, PRJ label -->
+			<div class="flex items-center justify-between w-full px-5">
+				<div class="flex items-center text-[12px] italic select-none"
+				     data-indicator aria-hidden="true">
+					<span class="text-[#aaa]">&ndash; PRJ.</span>
+					<span class="text-[#FF8C00] pr-1" data-indicator-count></span>
+					<span class="flex items-center font-medium tracking-wide" data-indicator-marks></span>
+				</div>
+				<div class="flex items-center gap-2">
+					<button type="button" data-prev class="flex justify-center items-center leading-none w-[40px] h-[24px] border border-[#E3E5EA] bg-transparent text-black text-[15px] rounded-[5px] transition-colors duration-300 hover:border-black hover:bg-black hover:text-white cursor-pointer disabled:opacity-40 disabled:pointer-events-none" aria-label="Previous slide">&larr;</button>
+					<button type="button" data-next class="flex justify-center items-center leading-none w-[40px] h-[24px] border border-[#E3E5EA] bg-transparent text-black text-[15px] rounded-[5px] transition-colors duration-300 hover:border-black hover:bg-black hover:text-white cursor-pointer disabled:opacity-40 disabled:pointer-events-none" aria-label="Next slide">&rarr;</button>
+				</div>
 			</div>
 
 		</div>
 	</div>
 </section>
+
+<script>
+	// Projects slider: identical system to the services slider, but the
+	// sliding UNIT is a COLUMN (two stacked cards). One column per click,
+	// stop + disable arrows at the ends, autoplay pages by perView columns.
+	// Column boxes range 340..400px, sized from the viewport exactly like
+	// the services card boxes; the 40px gutter comes from the cards' px-5.
+	// The indicator keeps ONE SLASH PER CARD: each seen column fills the
+	// slashes of all its cards (normally two at a time).
+	const BOX_MIN = 340;      // column (flex item) min width
+	const BOX_MAX = 400;      // column max width
+	const MAX_PER_VIEW = 3;   // never show more than 3 columns at once
+	const AUTOPLAY_MS = 5000; // idle time before auto-sliding one full page
+
+	function initProjectsSlider(root: HTMLElement) {
+		const track = root.querySelector<HTMLElement>('[data-track]');
+		const viewport = root.querySelector<HTMLElement>('[data-slider-col]');
+		const columns = Array.from(root.querySelectorAll<HTMLElement>('[data-column]'));
+		const slides = Array.from(root.querySelectorAll<HTMLElement>('[data-slide]'));
+		const prevBtn = root.querySelector<HTMLButtonElement>('[data-prev]');
+		const nextBtn = root.querySelector<HTMLButtonElement>('[data-next]');
+		if (!track || !viewport || !columns.length || !prevBtn || !nextBtn) return;
+
+		// cards per column (last column may hold a single card on odd totals)
+		const colCardCounts = columns.map((c) => c.querySelectorAll('[data-slide]').length);
+
+		// progress indicator: one slash per CARD
+		const FILLED = '#FF8C00';
+		const EMPTY = '#cccccc';
+		const indicator = root.querySelector<HTMLElement>('[data-indicator]');
+		const marksBox = root.querySelector<HTMLElement>('[data-indicator-marks]') ?? indicator;
+		const countEl = root.querySelector<HTMLElement>('[data-indicator-count]');
+		const marks: HTMLElement[] = [];
+		if (marksBox) {
+			marksBox.textContent = '';
+			for (let i = 0; i < slides.length; i++) {
+				const m = document.createElement('span');
+				m.textContent = '/';
+				m.style.color = EMPTY;
+				marksBox.appendChild(m);
+				marks.push(m);
+			}
+		}
+
+		let index = 0;    // in COLUMNS
+		let perView = 1;  // columns visible
+		let box = BOX_MIN;
+		let padLeft = 0;
+
+		function paintIndicator() {
+			// seen cards = all cards inside on-screen or already-passed columns
+			const seenCols = Math.min(columns.length, index + perView);
+			let filled = 0;
+			for (let i = 0; i < seenCols; i++) filled += colCardCounts[i];
+			filled = Math.min(slides.length, filled);
+			for (let i = 0; i < marks.length; i++) {
+				marks[i].style.color = i < filled ? FILLED : EMPTY;
+			}
+			if (countEl) countEl.textContent = String(filled).padStart(2, '0');
+		}
+
+		function layout() {
+			const vw = viewport.clientWidth;
+			let n = Math.floor(vw / BOX_MIN);
+			n = Math.max(1, Math.min(MAX_PER_VIEW, n, columns.length));
+			let b = Math.max(BOX_MIN, Math.min(BOX_MAX, vw / n));
+			const leftover = Math.max(0, vw - n * b);
+
+			perView = n;
+			box = b;
+			padLeft = leftover / 2;
+
+			for (const c of columns) {
+				c.style.flex = `0 0 ${b}px`;
+				c.style.width = `${b}px`;
+				c.style.maxWidth = `${b}px`;
+			}
+		}
+
+		function maxIndex() {
+			return Math.max(0, columns.length - perView);
+		}
+
+		function apply() {
+			const max = maxIndex();
+			index = Math.min(Math.max(index, 0), max);
+			const x = padLeft - index * box;
+			track.style.transform = `translate3d(${x}px, 0, 0)`;
+			prevBtn.disabled = index <= 0;
+			nextBtn.disabled = index >= max;
+			paintIndicator();
+		}
+
+		function update() { layout(); apply(); }
+
+		// autoplay: pages by perView columns, wraps at the end; manual arrows
+		// still stop. Same guards as services: hover, hidden tab, reduced motion.
+		let autoTimer = 0;
+		let hovered = false;
+		const reducedMotion = !!(window.matchMedia
+			&& window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+
+		function autoAdvance() {
+			const max = maxIndex();
+			if (max <= 0) return;
+			index = index >= max ? 0 : Math.min(index + perView, max);
+			apply();
+		}
+
+		function stopAutoplay() {
+			if (autoTimer) { clearInterval(autoTimer); autoTimer = 0; }
+		}
+
+		function startAutoplay() {
+			stopAutoplay();
+			if (reducedMotion) return;
+			autoTimer = window.setInterval(() => {
+				if (hovered || document.hidden) return;
+				autoAdvance();
+			}, AUTOPLAY_MS);
+		}
+
+		viewport.addEventListener('mouseenter', () => { hovered = true; });
+		viewport.addEventListener('mouseleave', () => { hovered = false; });
+
+		prevBtn.addEventListener('click', () => { index -= 1; apply(); startAutoplay(); });
+		nextBtn.addEventListener('click', () => { index += 1; apply(); startAutoplay(); });
+
+		let raf = 0;
+		const schedule = () => {
+			cancelAnimationFrame(raf);
+			raf = requestAnimationFrame(update);
+		};
+		if (typeof ResizeObserver !== 'undefined') {
+			new ResizeObserver(schedule).observe(viewport);
+		} else {
+			window.addEventListener('resize', schedule);
+		}
+		window.addEventListener('load', schedule);
+
+		update();
+		startAutoplay();
+	}
+
+	document.querySelectorAll<HTMLElement>('[data-slider-col]').forEach((el) => {
+		const groupEl = (el.closest('.flex-wrap') as HTMLElement) ?? el.parentElement!;
+		initProjectsSlider(groupEl);
+	});
+</script>
