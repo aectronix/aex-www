@@ -1,13 +1,275 @@
 ---
 // src/components/block_clients.astro
 
-import LogoARM from	'../components/client_logo_arm.astro'
 import LogoMMK from	'../components/client_logo_mmk.astro'
 import LogoPRJ from	'../components/client_logo_prj.astro'
 import LogoSWA from	'../components/client_logo_swa.astro'
+import LogoARM from	'../components/client_logo_arm.astro'
 
 ---
 
-<section>
+<section class="mt-25 relative px-5">
+	<div class="mx-auto flex flex-wrap justify-center gap-y-[40px] w-full max-w-[1600px]">
 
+		<!-- info block: full row (above the cards) until 1420px, then a left column -->
+		<div class="p-5 min-[1420px]:h-[240px] self-start
+		            flex-[1_1_100%] max-w-[400px]
+		            min-[720px]:max-w-[800px]
+		            min-[1080px]:max-w-[1200px]
+		            min-[1420px]:flex-[1_1_340px] min-[1420px]:max-w-[400px]">
+			<h3 class="relative py-1 font-bold text-[24px] text-[#222222]">
+				<span class="absolute -top-[20px] left-0 w-[40px] h-[10px] bg-[#FF8C00]"></span>
+				OUR CLIENTS
+			</h3>
+			<p class="text-[16px] pt-5 text-black leading-[1.25]">
+				We’ve helped to succesfully accomplished different projects.
+			</p>
+		</div>
+
+		<div class="flex flex-wrap gap-y-[40px] min-w-0
+		            flex-[1_1_100%] max-w-[400px]
+		            min-[720px]:max-w-[800px]
+		            min-[1080px]:max-w-[1200px]
+		            min-[1420px]:flex-[3_3_1020px] min-[1420px]:max-w-[1200px]">
+
+			<!-- viewport: only clips below 720px (slider mode). At >=720px the
+			     track wraps normally and nothing needs clipping. -->
+			<div class="clients-slider w-full min-w-0 overflow-hidden min-[720px]:overflow-visible" data-slider-clients>
+				<!-- track: a non-wrapping row of columns below 720px; a normal
+				     wrapping card grid at >=720px (columns become display:contents) -->
+				<div class="flex flex-nowrap transition-transform duration-300 ease-out will-change-transform
+				            min-[720px]:flex-wrap min-[720px]:gap-y-[40px] min-[720px]:justify-start"
+				     data-track>
+
+					<!-- COLUMN 1: 3 cards. At >=720px this wrapper becomes
+					     display:contents, so its cards flow as direct track items and
+					     wrap normally; below 720px it is a real sliding column. -->
+					<div class="shrink-0 flex flex-col gap-y-[40px] min-[720px]:contents" data-column>
+						<div class="px-5 h-[80px] text-[#333333]
+						            min-[720px]:flex-[1_1_340px] min-[720px]:max-w-[400px]" data-slide>
+							<article class="group relative flex flex-col items-start justify-center w-full h-[80px] rounded-[16px] px-8 transition-colors duration-300 hover:bg-[#E3E5EA] hover:text-black">
+								<div class="relative w-full z-10 [&>svg]:h-10 [&>svg]:w-auto">
+									<LogoMMK />
+								</div>
+							</article>
+						</div>
+						<div class="px-5 h-[80px] text-[#333333]
+						            min-[720px]:flex-[1_1_340px] min-[720px]:max-w-[400px]" data-slide>
+							<article class="group relative flex flex-col items-start justify-center w-full h-[80px] rounded-[16px] px-8 transition-colors duration-300 hover:bg-[#E3E5EA] hover:text-black">
+								<div class="relative w-full z-10 [&>svg]:h-5 [&>svg]:w-auto">
+									<LogoPRJ />
+								</div>
+							</article>
+						</div>
+					</div>
+
+					<!-- COLUMN 2: 3 cards. At >=720px this wrapper becomes
+					     display:contents, so its cards flow as direct track items and
+					     wrap normally; below 720px it is a real sliding column. -->
+					<div class="shrink-0 flex flex-col gap-y-[40px] min-[720px]:contents" data-column>
+						<div class="px-5 h-[80px] text-[#333333]
+						            min-[720px]:flex-[1_1_340px] min-[720px]:max-w-[400px]" data-slide>
+							<article class="group relative flex flex-col items-start justify-center w-full h-[80px] rounded-[16px] px-8 transition-colors duration-300 hover:bg-[#E3E5EA] hover:text-black">
+								<div class="relative w-full z-10 [&>svg]:h-6 [&>svg]:w-auto">
+									<LogoSWA />
+								</div>
+							</article>
+						</div>
+						<div class="px-5 h-[80px] text-[#333333]
+						            min-[720px]:flex-[1_1_340px] min-[720px]:max-w-[400px]" data-slide>
+							<article class="group relative flex flex-col items-start justify-center w-full h-[80px] rounded-[16px] px-8 transition-colors duration-300 hover:bg-[#E3E5EA] hover:text-black">
+								<div class="relative w-full z-10 [&>svg]:h-10 [&>svg]:w-auto">
+									<LogoARM />
+								</div>
+							</article>
+						</div>
+					</div>
+
+					<!-- COLUMN 3: 3 cards. At >=720px this wrapper becomes
+					     display:contents, so its cards flow as direct track items and
+					     wrap normally; below 720px it is a real sliding column. -->
+<!-- 					<div class="shrink-0 flex flex-col gap-y-[40px] min-[720px]:contents" data-column>
+						<div class="px-5 h-[80px] text-[#333333]
+						            min-[720px]:flex-[1_1_340px] min-[720px]:max-w-[400px]" data-slide>
+							<article class="group relative flex flex-col items-start justify-center w-full h-[80px] rounded-[24px] px-8 transition-colors duration-300 hover:bg-[#E3E5EA] hover:text-black">
+								<div class="relative w-full z-10">client 7</div>
+							</article>
+						</div>
+					</div> -->
+
+				</div>
+			</div>
+
+			<!-- controls: slider only exists below 720px, so hide the whole row above it -->
+			<div class="flex min-[720px]:hidden items-center justify-between w-full px-5">
+				<div class="flex items-center text-[12px] italic select-none"
+				     data-indicator aria-hidden="true">
+					<span class="text-[#aaa]">&ndash; ORG.</span>
+					<span class="text-[#FF8C00] pr-1" data-indicator-count></span>
+					<span class="flex items-center font-medium tracking-wide" data-indicator-marks></span>
+				</div>
+				<div class="flex items-center gap-2">
+					<button type="button" data-prev class="flex justify-center items-center leading-none w-[40px] h-[24px] border border-[#E3E5EA] bg-transparent text-black text-[15px] rounded-[5px] transition-colors duration-300 hover:border-black hover:bg-black hover:text-white cursor-pointer disabled:opacity-40 disabled:pointer-events-none" aria-label="Previous slide">&larr;</button>
+					<button type="button" data-next class="flex justify-center items-center leading-none w-[40px] h-[24px] border border-[#E3E5EA] bg-transparent text-black text-[15px] rounded-[5px] transition-colors duration-300 hover:border-black hover:bg-black hover:text-white cursor-pointer disabled:opacity-40 disabled:pointer-events-none" aria-label="Next slide">&rarr;</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
 </section>
+
+<script>
+	// Clients: a WRAPPING GRID at >=720px (no slider, no controls) and a
+	// COLUMN SLIDER below 720px (one column of 3 cards at a time).
+	//
+	// The switch is done with display:contents on the column wrappers (see the
+	// markup): above the breakpoint the wrapper box vanishes and its cards
+	// become direct flex items of the wrapping track, so they flow one per row
+	// slot and wrap naturally. Below it, the wrapper is a real flex column and
+	// this script sizes + slides it.
+	const SLIDER_MAX = 719.98;  // slider active only at <=719.98px (i.e. <720px)
+	const AUTOPLAY_MS = 5000;
+
+	function initClientsSlider(root: HTMLElement) {
+		const track = root.querySelector<HTMLElement>('[data-track]');
+		const viewport = root.querySelector<HTMLElement>('[data-slider-clients]');
+		const columns = Array.from(root.querySelectorAll<HTMLElement>('[data-column]'));
+		const slides = Array.from(root.querySelectorAll<HTMLElement>('[data-slide]'));
+		const prevBtn = root.querySelector<HTMLButtonElement>('[data-prev]');
+		const nextBtn = root.querySelector<HTMLButtonElement>('[data-next]');
+		if (!track || !viewport || !columns.length || !prevBtn || !nextBtn) return;
+
+		const colCardCounts = columns.map((c) => c.querySelectorAll('[data-slide]').length);
+
+		// indicator: one slash per CARD (fills a whole column at a time)
+		const FILLED = '#FF8C00';
+		const EMPTY = '#cccccc';
+		const indicator = root.querySelector<HTMLElement>('[data-indicator]');
+		const marksBox = root.querySelector<HTMLElement>('[data-indicator-marks]') ?? indicator;
+		const countEl = root.querySelector<HTMLElement>('[data-indicator-count]');
+		const marks: HTMLElement[] = [];
+		if (marksBox) {
+			marksBox.textContent = '';
+			for (let i = 0; i < slides.length; i++) {
+				const m = document.createElement('span');
+				m.textContent = '/';
+				m.style.color = EMPTY;
+				marksBox.appendChild(m);
+				marks.push(m);
+			}
+		}
+
+		let index = 0;   // in COLUMNS
+		let box = 0;     // column width == translate step
+		let active = false;
+
+		function paintIndicator() {
+			const seenCols = Math.min(columns.length, index + 1); // 1 column per view
+			let filled = 0;
+			for (let i = 0; i < seenCols; i++) filled += colCardCounts[i];
+			filled = Math.min(slides.length, filled);
+			for (let i = 0; i < marks.length; i++) {
+				marks[i].style.color = i < filled ? FILLED : EMPTY;
+			}
+			if (countEl) countEl.textContent = String(filled).padStart(2, '0');
+		}
+
+		function layout() {
+			// one full-width column per view on phones
+			box = viewport.clientWidth;
+			for (const c of columns) {
+				c.style.flex = `0 0 ${box}px`;
+				c.style.width = `${box}px`;
+				c.style.maxWidth = `${box}px`;
+			}
+		}
+
+		function maxIndex() {
+			return Math.max(0, columns.length - 1);
+		}
+
+		function apply() {
+			const max = maxIndex();
+			index = Math.min(Math.max(index, 0), max);
+			track.style.transform = `translate3d(${-(index * box)}px, 0, 0)`;
+			prevBtn.disabled = index <= 0;
+			nextBtn.disabled = index >= max;
+			paintIndicator();
+		}
+
+		// --- autoplay (slider mode only)
+		let autoTimer = 0;
+		let hovered = false;
+		const reducedMotion = !!(window.matchMedia
+			&& window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+
+		function stopAutoplay() {
+			if (autoTimer) { clearInterval(autoTimer); autoTimer = 0; }
+		}
+
+		function startAutoplay() {
+			stopAutoplay();
+			if (reducedMotion || !active) return;
+			autoTimer = window.setInterval(() => {
+				if (hovered || document.hidden) return;
+				const max = maxIndex();
+				if (max <= 0) return;
+				index = index >= max ? 0 : index + 1;
+				apply();
+			}, AUTOPLAY_MS);
+		}
+
+		// --- enable / disable the whole slider by breakpoint
+		function enable() {
+			active = true;
+			layout();
+			apply();
+			startAutoplay();
+		}
+
+		function disable() {
+			active = false;
+			stopAutoplay();
+			index = 0;
+			// strip every inline style the slider added, so the CSS grid rules
+			// (display:contents + flex-wrap) take over cleanly
+			track.style.transform = '';
+			for (const c of columns) {
+				c.style.flex = '';
+				c.style.width = '';
+				c.style.maxWidth = '';
+			}
+		}
+
+		const mq = window.matchMedia(`(max-width: ${SLIDER_MAX}px)`);
+		function sync() { mq.matches ? enable() : disable(); }
+
+		if (mq.addEventListener) mq.addEventListener('change', sync);
+		else mq.addListener(sync); // older Safari
+
+		viewport.addEventListener('mouseenter', () => { hovered = true; });
+		viewport.addEventListener('mouseleave', () => { hovered = false; });
+
+		prevBtn.addEventListener('click', () => { if (!active) return; index -= 1; apply(); startAutoplay(); });
+		nextBtn.addEventListener('click', () => { if (!active) return; index += 1; apply(); startAutoplay(); });
+
+		let raf = 0;
+		const schedule = () => {
+			cancelAnimationFrame(raf);
+			raf = requestAnimationFrame(() => { if (active) { layout(); apply(); } });
+		};
+		if (typeof ResizeObserver !== 'undefined') {
+			new ResizeObserver(schedule).observe(viewport);
+		} else {
+			window.addEventListener('resize', schedule);
+		}
+		window.addEventListener('load', schedule);
+
+		sync();
+	}
+
+	document.querySelectorAll<HTMLElement>('[data-slider-clients]').forEach((el) => {
+		const groupEl = (el.closest('.flex-wrap') as HTMLElement) ?? el.parentElement!;
+		initClientsSlider(groupEl);
+	});
+</script>
