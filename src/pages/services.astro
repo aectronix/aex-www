@@ -1,0 +1,485 @@
+---
+import 					'../styles/global.css';
+import { Image } from		'astro:assets';
+import HeroImage from		'../assets/aex_hero_cover.png';
+
+import Services from		'../components/block_services.astro';
+import Projects from		'../components/block_projects.astro';
+import Clients from			'../components/block_clients.astro';
+import Footer from			'../components/block_footer.astro';
+
+import Logo from 			'../components/aex_logo.astro';
+import LogoText from		'../components/aex_logo_text.astro';
+import ItemMenu from		'../components/item_menu.astro';
+import ItemArrow from		'../components/item_arrow.astro';
+
+const pageTitle = "aectronix";
+---
+
+<html lang="en" class="www">
+
+	<head>
+		<title>{pageTitle}</title>
+		<meta charset="utf-8" />
+		<meta name="description" content="aectronix – we provide bim, vdc and digitalization to aeco sector" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	</head>
+
+	<body class="bg-[#f2f3f5]">
+
+<header class="relative px-5">
+    <div class="mx-auto flex w-full max-w-[400px] min-[720px]:max-w-[800px] min-[1080px]:max-w-[1200px] min-[1420px]:max-w-[1600px] items-center p-5 pb-8 md:pt-[50px] md:pb-[60px]">
+        
+        <a href="#" class="flex flex-nowrap items-center gap-x-[30px] shrink-0 no-underline" aria-label="aectronix home">
+            <Logo />
+            <div class="hidden lg:block m-0 -translate-y-[2px]">
+                <LogoText />
+            </div>
+        </a>
+        
+        <nav class="ml-auto">
+            <ul class="hidden md:flex m-0 p-0 list-none gap-x-[50px]">
+                <li class="flex items-center text-[20px] font-semibold before:content-['/'] before:mr-1">
+                    <a class="hover:text-[#ff861b] hover:underline transition-colors duration-200 text-black" href="/">home</a>
+                </li>
+                <li class="flex items-center text-[20px] font-semibold before:content-['/'] before:mr-1">
+                    <a class="hover:text-[#ff861b] hover:underline transition-colors duration-200 text-black" href="/services">services</a>
+                </li>
+                <li class="flex items-center text-[20px] font-semibold before:content-['/'] before:mr-1">
+                    <a class="hover:text-[#ff861b] hover:underline transition-colors duration-200 text-black" href="#">about</a>
+                </li>
+<!--                 <li class="flex items-center text-[20px] font-semibold before:content-['/'] before:mr-1">
+                    <a class="hover:text-[#ff861b] hover:underline transition-colors duration-200 text-black" href="#">blog</a>
+                </li> -->
+                <li class="flex items-center text-[20px] font-semibold before:content-['>'] before:mr-1">
+                    <a class="hover:text-[#ff861b] hover:underline transition-colors duration-200 text-black" href="#">en</a>
+                </li>
+            </ul>
+            <button type="button" class="block md:hidden" aria-label="Open menu">
+                <ItemMenu />
+            </button>
+        </nav>
+
+    </div>
+</header>
+
+		<main>
+
+			<section class="relative px-5 md:mt-10 lg:mt-25">
+
+			    <div class="relative mx-auto flex w-full max-w-[400px] min-[720px]:max-w-[800px] min-[1080px]:max-w-[1200px] min-[1420px]:max-w-[1600px] rounded-[24px]">
+			            
+			            <div class="p-5 relative z-10 self-start w-full max-w-[450px] md:max-w-[600px] lg:max-w-[750px]">
+			                
+			                <h1 class="w-full text-[38px] md:text-[54px] lg:text-[72px] font-bold leading-[1.05] tracking-tight text-black m-0">
+			                    Services
+			                </h1>
+
+			                <p class="inlinew-full max-w-[360px] min-[1200px]:max-w-[720px] text-black text-[17px] md:text-[20px] leading-[1.5] mt-10">
+			                    Utilizing BIM, VDC and digital approach, we help to transform<br class="hidden min-[1200px]:block" /> AECO sector for better efficiency &amp; outcomes.
+			                </p>
+
+			            </div>
+
+			    </div>				
+
+			</section>
+
+<section class="relative mt-5 md:mt-10 lg:mt-20 px-5">
+	<div class="mx-auto w-full max-w-[400px] min-[720px]:max-w-[800px] min-[1080px]:max-w-[1200px] min-[1420px]:max-w-[1600px]">
+
+		<article class="grid
+		                grid-cols-[auto_1fr]
+		                min-[1420px]:grid-cols-4
+		                py-12 min-[1420px]:py-16
+		                border-t border-[#E3E5EA] first:border-t-0">
+			<!-- NUMBER -->
+			<div class="col-start-1 row-start-1 self-start px-5
+			            font-extrabold text-[#222222]
+			            text-[32px] min-[1420px]:text-[40px] leading-none tracking-tight">
+				<span class="font-mono">01</span><span class="text-[#FF8C00]"> /</span>
+			</div>
+
+			<!-- TITLE: beside the number when narrow; cols 2-4 when wide -->
+			<h2 id="bim" class="col-start-2 row-start-1 self-start px-5
+			           min-[1420px]:col-span-3
+			           font-extrabold text-[#222222] leading-[1.05] tracking-tight
+			           text-[32px] min-[1420px]:text-[44px]">
+				BIM Consulting &amp; Standards
+			</h2>
+
+			<!-- LABELS: full-width row 2 when narrow; under the number when wide -->
+			<div class="col-span-2 row-start-2 self-start px-5 pt-6
+			            min-[1420px]:col-span-1 min-[1420px]:col-start-1 min-[1420px]:row-start-2
+			            min-[1420px]:pt-8 min-[1420px]:-mt-[2px]
+			            flex flex-wrap items-center gap-2">
+				<span class="inline-flex items-center h-[26px] px-3 rounded-[6px]
+				             bg-black text-white text-[12px] font-bold lowercase">bim</span>
+				<span class="inline-flex items-center h-[26px] px-3 rounded-[6px]
+				             ring-1 ring-inset ring-[#cccccc] text-[#555555] text-[12px] font-bold lowercase
+				             transition-shadow duration-300 hover:ring-black"># audit</span>
+				<span class="inline-flex items-center h-[26px] px-3 rounded-[6px]
+				             ring-1 ring-inset ring-[#cccccc] text-[#555555] text-[12px] font-bold lowercase
+				             transition-shadow duration-300 hover:ring-black"># ipp</span>
+				<span class="inline-flex items-center h-[26px] px-3 rounded-[6px]
+				             ring-1 ring-inset ring-[#cccccc] text-[#555555] text-[12px] font-bold lowercase
+				             transition-shadow duration-300 hover:ring-black"># ipr</span>
+			</div>
+
+			<!-- BODY: row 3 when narrow; cols 2-4 row 2 when wide -->
+			<div class="col-span-2 row-start-3 px-5 pt-8
+			            min-[1420px]:col-span-3 min-[1420px]:col-start-2 min-[1420px]:row-start-2
+			            min-[1420px]:pt-8
+			            flex flex-col gap-5">
+				<p class="text-[16px] text-[#222222] leading-[1.35]">
+					We offer our expertise in BIM strategy, planning, implementation and support. Helping companies to develop standards or to achieve BIM requirements. Our services are tailored to projects and companies of all sizes and complexities in the AEC/O sector.
+				</p>
+				<p class="text-[16px] text-[#222222] leading-[1.35]">
+					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&rsquo;s standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset&rsquo;s Body Type sheets.
+				</p>
+			</div>
+
+		</article>
+
+		<article class="grid
+		                grid-cols-[auto_1fr]
+		                min-[1420px]:grid-cols-4
+		                py-12 min-[1420px]:py-16
+		                border-t border-[#E3E5EA] first:border-t-0">
+			<!-- NUMBER -->
+			<div class="col-start-1 row-start-1 self-start px-5
+			            font-extrabold text-[#222222]
+			            text-[32px] min-[1420px]:text-[40px] leading-none tracking-tight">
+				<span class="font-mono">02</span><span class="text-[#FF8C00]"> /</span>
+			</div>
+
+			<!-- TITLE: beside the number when narrow; cols 2-4 when wide -->
+			<h2 class="col-start-2 row-start-1 self-start px-5
+			           min-[1420px]:col-span-3
+			           font-extrabold text-[#222222] leading-[1.05] tracking-tight
+			           text-[32px] min-[1420px]:text-[44px]">
+				BIM Management &amp; Coordination
+			</h2>
+
+			<!-- LABELS: full-width row 2 when narrow; under the number when wide -->
+			<div class="col-span-2 row-start-2 self-start px-5 pt-6
+			            min-[1420px]:col-span-1 min-[1420px]:col-start-1 min-[1420px]:row-start-2
+			            min-[1420px]:pt-8 min-[1420px]:-mt-[2px]
+			            flex flex-wrap items-center gap-2">
+				<span class="inline-flex items-center h-[26px] px-3 rounded-[6px]
+				             bg-black text-white text-[12px] font-bold lowercase">bim</span>
+				<span class="inline-flex items-center h-[26px] px-3 rounded-[6px]
+				             ring-1 ring-inset ring-[#cccccc] text-[#555555] text-[12px] font-bold lowercase
+				             transition-shadow duration-300 hover:ring-black"># loin</span>
+				<span class="inline-flex items-center h-[26px] px-3 rounded-[6px]
+				             ring-1 ring-inset ring-[#cccccc] text-[#555555] text-[12px] font-bold lowercase
+				             transition-shadow duration-300 hover:ring-black"># collision control</span>
+				<span class="inline-flex items-center h-[26px] px-3 rounded-[6px]
+				             ring-1 ring-inset ring-[#cccccc] text-[#555555] text-[12px] font-bold lowercase
+				             transition-shadow duration-300 hover:ring-black"># qa/qc</span>
+			</div>
+
+			<!-- BODY: row 3 when narrow; cols 2-4 row 2 when wide -->
+			<div class="col-span-2 row-start-3 px-5 pt-8
+			            min-[1420px]:col-span-3 min-[1420px]:col-start-2 min-[1420px]:row-start-2
+			            min-[1420px]:pt-8
+			            flex flex-col gap-5">
+				<p class="text-[16px] text-[#222222] leading-[1.35]">
+					We support ongoing projects by establishing and maintaining digital collaborative workflows among involved parties. Our services include interdisciplinary coordination & data exchange, clash detection, quality control, foremen & surveyors assistance, software & user support etc.
+				</p>
+				<p class="text-[16px] text-[#222222] leading-[1.35]">
+					Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage.
+				</p>
+				<p class="text-[16px] text-[#222222] leading-[1.35]">
+					At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
+				</p>
+			</div>
+
+		</article>
+
+		<article class="grid
+		                grid-cols-[auto_1fr]
+		                min-[1420px]:grid-cols-4
+		                py-12 min-[1420px]:py-16
+		                border-t border-[#E3E5EA] first:border-t-0">
+			<!-- NUMBER -->
+			<div class="col-start-1 row-start-1 self-start px-5
+			            font-extrabold text-[#222222]
+			            text-[32px] min-[1420px]:text-[40px] leading-none tracking-tight">
+				<span class="font-mono">03</span><span class="text-[#FF8C00]"> /</span>
+			</div>
+
+			<!-- TITLE: beside the number when narrow; cols 2-4 when wide -->
+			<h2 id="3dm" class="col-start-2 row-start-1 self-start px-5
+			           min-[1420px]:col-span-3
+			           font-extrabold text-[#222222] leading-[1.05] tracking-tight
+			           text-[32px] min-[1420px]:text-[44px]">
+				BIM Modeling &amp; Support
+			</h2>
+
+			<!-- LABELS: full-width row 2 when narrow; under the number when wide -->
+			<div class="col-span-2 row-start-2 self-start px-5 pt-6
+			            min-[1420px]:col-span-1 min-[1420px]:col-start-1 min-[1420px]:row-start-2
+			            min-[1420px]:pt-8 min-[1420px]:-mt-[2px]
+			            flex flex-wrap items-center gap-2">
+				<span class="inline-flex items-center h-[26px] px-3 rounded-[6px]
+				             bg-black text-white text-[12px] font-bold lowercase">bim</span>
+				<span class="inline-flex items-center h-[26px] px-3 rounded-[6px]
+				             ring-1 ring-inset ring-[#cccccc] text-[#555555] text-[12px] font-bold lowercase
+				             transition-shadow duration-300 hover:ring-black"># 3dm</span>
+				<span class="inline-flex items-center h-[26px] px-3 rounded-[6px]
+				             ring-1 ring-inset ring-[#cccccc] text-[#555555] text-[12px] font-bold lowercase
+				             transition-shadow duration-300 hover:ring-black"># revit</span>
+				<span class="inline-flex items-center h-[26px] px-3 rounded-[6px]
+				             ring-1 ring-inset ring-[#cccccc] text-[#555555] text-[12px] font-bold lowercase
+				             transition-shadow duration-300 hover:ring-black"># archicad</span>
+			</div>
+
+			<!-- BODY: row 3 when narrow; cols 2-4 row 2 when wide -->
+			<div class="col-span-2 row-start-3 px-5 pt-8
+			            min-[1420px]:col-span-3 min-[1420px]:col-start-2 min-[1420px]:row-start-2
+			            min-[1420px]:pt-8
+			            flex flex-col gap-5">
+				<p class="text-[16px] text-[#222222] leading-[1.35]">
+					We offer our expertise in BIM strategy, planning, implementation and support. Helping companies to develop standards or to achieve BIM requirements. Our services are tailored to projects and companies of all sizes and complexities in the AEC/O sector.
+				</p>
+				<p class="text-[16px] text-[#222222] leading-[1.35]">
+					Curabitur tincidunt, lectus nec efficitur blandit, odio velit vehicula leo, nec pharetra dui magna eget dui. Duis eget libero id arcu suscipit lacinia. Nullam suscipit, justo nec auctor euismod, elit dui molestie nisi, hendrerit facilisis turpis metus at urna. Proin posuere tristique erat eget euismod. Aliquam a neque lobortis lectus gravida mattis. Nullam et metus erat. Vestibulum ut urna nec felis pulvinar dictum. Donec vel facilisis dolor.
+				</p>
+			</div>
+
+		</article>
+
+		<article class="grid
+		                grid-cols-[auto_1fr]
+		                min-[1420px]:grid-cols-4
+		                py-12 min-[1420px]:py-16
+		                border-t border-[#E3E5EA] first:border-t-0">
+			<!-- NUMBER -->
+			<div class="col-start-1 row-start-1 self-start px-5
+			            font-extrabold text-[#222222]
+			            text-[32px] min-[1420px]:text-[40px] leading-none tracking-tight">
+				<span class="font-mono">04</span><span class="text-[#FF8C00]"> /</span>
+			</div>
+
+			<!-- TITLE: beside the number when narrow; cols 2-4 when wide -->
+			<h2 id="cde" class="col-start-2 row-start-1 self-start px-5
+			           min-[1420px]:col-span-3
+			           font-extrabold text-[#222222] leading-[1.05] tracking-tight
+			           text-[32px] min-[1420px]:text-[44px]">
+				CDE Deployment &amp; Support
+			</h2>
+
+			<!-- LABELS: full-width row 2 when narrow; under the number when wide -->
+			<div class="col-span-2 row-start-2 self-start px-5 pt-6
+			            min-[1420px]:col-span-1 min-[1420px]:col-start-1 min-[1420px]:row-start-2
+			            min-[1420px]:pt-8 min-[1420px]:-mt-[2px]
+			            flex flex-wrap items-center gap-2">
+				<span class="inline-flex items-center h-[26px] px-3 rounded-[6px]
+				             bg-black text-white text-[12px] font-bold lowercase">cde</span>
+				<span class="inline-flex items-center h-[26px] px-3 rounded-[6px]
+				             ring-1 ring-inset ring-[#cccccc] text-[#555555] text-[12px] font-bold lowercase
+				             transition-shadow duration-300 hover:ring-black"># 19650</span>
+				<span class="inline-flex items-center h-[26px] px-3 rounded-[6px]
+				             ring-1 ring-inset ring-[#cccccc] text-[#555555] text-[12px] font-bold lowercase
+				             transition-shadow duration-300 hover:ring-black"># backup</span>
+			</div>
+
+			<!-- BODY: row 3 when narrow; cols 2-4 row 2 when wide -->
+			<div class="col-span-2 row-start-3 px-5 pt-8
+			            min-[1420px]:col-span-3 min-[1420px]:col-start-2 min-[1420px]:row-start-2
+			            min-[1420px]:pt-8
+			            flex flex-col gap-5">
+				<p class="text-[16px] text-[#222222] leading-[1.35]">
+					Providing deployment and support of CDE platforms (Forma, Bimsync, Speckle etc) or custom solutions, assisting companies in organizing their data across the projects.
+				</p>
+				<p class="text-[16px] text-[#222222] leading-[1.35]">
+					It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.
+				</p>
+				<p class="text-[16px] text-[#222222] leading-[1.35]">
+					Integer sollicitudin consectetur iaculis. Morbi elementum turpis nisi, ut fermentum lacus imperdiet vitae. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec vitae iaculis libero. Nullam mi ex, laoreet nec neque ut, pretium ullamcorper ex. Sed tristique, libero vitae elementum euismod, quam urna semper ante, id semper dolor metus eu dui. Etiam nulla mi, convallis sed nisi quis, maximus pellentesque lacus. 
+				</p>
+			</div>
+
+		</article>
+
+		<article class="grid
+		                grid-cols-[auto_1fr]
+		                min-[1420px]:grid-cols-4
+		                py-12 min-[1420px]:py-16
+		                border-t border-[#E3E5EA] first:border-t-0">
+			<!-- NUMBER -->
+			<div class="col-start-1 row-start-1 self-start px-5
+			            font-extrabold text-[#222222]
+			            text-[32px] min-[1420px]:text-[40px] leading-none tracking-tight">
+				<span class="font-mono">05</span><span class="text-[#FF8C00]"> /</span>
+			</div>
+
+			<!-- TITLE: beside the number when narrow; cols 2-4 when wide -->
+			<h2 id="dev" class="col-start-2 row-start-1 self-start px-5
+			           min-[1420px]:col-span-3
+			           font-extrabold text-[#222222] leading-[1.05] tracking-tight
+			           text-[32px] min-[1420px]:text-[44px]">
+				Automation & Development
+			</h2>
+
+			<!-- LABELS: full-width row 2 when narrow; under the number when wide -->
+			<div class="col-span-2 row-start-2 self-start px-5 pt-6
+			            min-[1420px]:col-span-1 min-[1420px]:col-start-1 min-[1420px]:row-start-2
+			            min-[1420px]:pt-8 min-[1420px]:-mt-[2px]
+			            flex flex-wrap items-center gap-2">
+				<span class="inline-flex items-center h-[26px] px-3 rounded-[6px]
+				             bg-black text-white text-[12px] font-bold lowercase">dev</span>
+				<span class="inline-flex items-center h-[26px] px-3 rounded-[6px]
+				             ring-1 ring-inset ring-[#cccccc] text-[#555555] text-[12px] font-bold lowercase
+				             transition-shadow duration-300 hover:ring-black"># rpa</span>
+				<span class="inline-flex items-center h-[26px] px-3 rounded-[6px]
+				             ring-1 ring-inset ring-[#cccccc] text-[#555555] text-[12px] font-bold lowercase
+				             transition-shadow duration-300 hover:ring-black"># scripts</span>
+				<span class="inline-flex items-center h-[26px] px-3 rounded-[6px]
+				             ring-1 ring-inset ring-[#cccccc] text-[#555555] text-[12px] font-bold lowercase
+				             transition-shadow duration-300 hover:ring-black"># addins</span>
+				<span class="inline-flex items-center h-[26px] px-3 rounded-[6px]
+				             ring-1 ring-inset ring-[#cccccc] text-[#555555] text-[12px] font-bold lowercase
+				             transition-shadow duration-300 hover:ring-black"># integrations</span>
+			</div>
+
+			<!-- BODY: row 3 when narrow; cols 2-4 row 2 when wide -->
+			<div class="col-span-2 row-start-3 px-5 pt-8
+			            min-[1420px]:col-span-3 min-[1420px]:col-start-2 min-[1420px]:row-start-2
+			            min-[1420px]:pt-8
+			            flex flex-col gap-5">
+				<p class="text-[16px] text-[#222222] leading-[1.35]">
+					Quisque dapibus velit nec feugiat lacinia. Vestibulum quis mattis nibh. Ut id placerat turpis, ac varius lacus. Nulla pharetra volutpat rutrum. Nam ultricies hendrerit arcu nec blandit. Vestibulum tempus diam non iaculis rutrum. Etiam non mi venenatis, cursus massa id, accumsan magna. Nam non purus vel eros congue pulvinar. Etiam quis justo commodo, dictum nisi at, tincidunt ipsum. Phasellus in nunc quam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nunc a odio vitae sem vestibulum semper et id nulla. Aliquam ultrices elit diam, vitae fermentum ligula vestibulum sit amet. Mauris elementum eros id tortor consequat, vitae malesuada sapien mollis. Sed fringilla venenatis elit in egestas.
+				</p>
+				<p class="text-[16px] text-[#222222] leading-[1.35]">
+					Development of scripts, tools, addons, integrations or other solutions to automate routine during the design/business process and boost the productivity of involved parties.
+				</p>
+			</div>
+
+		</article>
+
+		<article class="grid
+		                grid-cols-[auto_1fr]
+		                min-[1420px]:grid-cols-4
+		                py-12 min-[1420px]:py-16
+		                border-t border-[#E3E5EA] first:border-t-0">
+			<!-- NUMBER -->
+			<div class="col-start-1 row-start-1 self-start px-5
+			            font-extrabold text-[#222222]
+			            text-[32px] min-[1420px]:text-[40px] leading-none tracking-tight">
+				<span class="font-mono">06</span><span class="text-[#FF8C00]"> /</span>
+			</div>
+
+			<!-- TITLE: beside the number when narrow; cols 2-4 when wide -->
+			<h2 id="bi" class="col-start-2 row-start-1 self-start px-5
+			           min-[1420px]:col-span-3
+			           font-extrabold text-[#222222] leading-[1.05] tracking-tight
+			           text-[32px] min-[1420px]:text-[44px]">
+				Business Intelligence
+			</h2>
+
+			<!-- LABELS: full-width row 2 when narrow; under the number when wide -->
+			<div class="col-span-2 row-start-2 self-start px-5 pt-6
+			            min-[1420px]:col-span-1 min-[1420px]:col-start-1 min-[1420px]:row-start-2
+			            min-[1420px]:pt-8 min-[1420px]:-mt-[2px]
+			            flex flex-wrap items-center gap-2">
+				<span class="inline-flex items-center h-[26px] px-3 rounded-[6px]
+				             bg-black text-white text-[12px] font-bold lowercase">bi</span>
+				<span class="inline-flex items-center h-[26px] px-3 rounded-[6px]
+				             ring-1 ring-inset ring-[#cccccc] text-[#555555] text-[12px] font-bold lowercase
+				             transition-shadow duration-300 hover:ring-black"># reports</span>
+				<span class="inline-flex items-center h-[26px] px-3 rounded-[6px]
+				             ring-1 ring-inset ring-[#cccccc] text-[#555555] text-[12px] font-bold lowercase
+				             transition-shadow duration-300 hover:ring-black"># dashboards</span>
+				<span class="inline-flex items-center h-[26px] px-3 rounded-[6px]
+				             ring-1 ring-inset ring-[#cccccc] text-[#555555] text-[12px] font-bold lowercase
+				             transition-shadow duration-300 hover:ring-black"># etl</span>
+				<span class="inline-flex items-center h-[26px] px-3 rounded-[6px]
+				             ring-1 ring-inset ring-[#cccccc] text-[#555555] text-[12px] font-bold lowercase
+				             transition-shadow duration-300 hover:ring-black"># data pipelines</span>
+			</div>
+
+			<!-- BODY: row 3 when narrow; cols 2-4 row 2 when wide -->
+			<div class="col-span-2 row-start-3 px-5 pt-8
+			            min-[1420px]:col-span-3 min-[1420px]:col-start-2 min-[1420px]:row-start-2
+			            min-[1420px]:pt-8
+			            flex flex-col gap-5">
+				<p class="text-[16px] text-[#222222] leading-[1.35]">
+					Assisting companies in data visualization, utilizing ETL (extract, transform, load) principles & processes, UI/UX approaches. Helping to build BI dashboards using Power BI, Tableau, Google Looker Studio, Datalore or other frameworks.
+				</p>
+				<p class="text-[16px] text-[#222222] leading-[1.35]">
+					It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters. Proin posuere tristique erat eget euismod. Aliquam a neque lobortis lectus gravida mattis. Nullam et metus erat. Vestibulum ut urna nec felis pulvinar dictum. Donec vel facilisis dolor.
+				</p>
+			</div>
+
+		</article>
+
+		<article class="grid
+		                grid-cols-[auto_1fr]
+		                min-[1420px]:grid-cols-4
+		                py-12 min-[1420px]:py-16
+		                border-t border-[#E3E5EA] first:border-t-0">
+			<!-- NUMBER -->
+			<div class="col-start-1 row-start-1 self-start px-5
+			            font-extrabold text-[#222222]
+			            text-[32px] min-[1420px]:text-[40px] leading-none tracking-tight">
+				<span class="font-mono">07</span><span class="text-[#FF8C00]"> /</span>
+			</div>
+
+			<!-- TITLE: beside the number when narrow; cols 2-4 when wide -->
+			<h2 id="it" class="col-start-2 row-start-1 self-start px-5
+			           min-[1420px]:col-span-3
+			           font-extrabold text-[#222222] leading-[1.05] tracking-tight
+			           text-[32px] min-[1420px]:text-[44px]">
+				IT Support & Administration
+			</h2>
+
+			<!-- LABELS: full-width row 2 when narrow; under the number when wide -->
+			<div class="col-span-2 row-start-2 self-start px-5 pt-6
+			            min-[1420px]:col-span-1 min-[1420px]:col-start-1 min-[1420px]:row-start-2
+			            min-[1420px]:pt-8 min-[1420px]:-mt-[2px]
+			            flex flex-wrap items-center gap-2">
+				<span class="inline-flex items-center h-[26px] px-3 rounded-[6px]
+				             bg-black text-white text-[12px] font-bold lowercase">it</span>
+				<span class="inline-flex items-center h-[26px] px-3 rounded-[6px]
+				             ring-1 ring-inset ring-[#cccccc] text-[#555555] text-[12px] font-bold lowercase
+				             transition-shadow duration-300 hover:ring-black"># infrastructure</span>
+				<span class="inline-flex items-center h-[26px] px-3 rounded-[6px]
+				             ring-1 ring-inset ring-[#cccccc] text-[#555555] text-[12px] font-bold lowercase
+				             transition-shadow duration-300 hover:ring-black"># software</span>
+				<span class="inline-flex items-center h-[26px] px-3 rounded-[6px]
+				             ring-1 ring-inset ring-[#cccccc] text-[#555555] text-[12px] font-bold lowercase
+				             transition-shadow duration-300 hover:ring-black"># maintenance</span>
+				<span class="inline-flex items-center h-[26px] px-3 rounded-[6px]
+				             ring-1 ring-inset ring-[#cccccc] text-[#555555] text-[12px] font-bold lowercase
+				             transition-shadow duration-300 hover:ring-black"># network</span>
+			</div>
+
+			<!-- BODY: row 3 when narrow; cols 2-4 row 2 when wide -->
+			<div class="col-span-2 row-start-3 px-5 pt-8
+			            min-[1420px]:col-span-3 min-[1420px]:col-start-2 min-[1420px]:row-start-2
+			            min-[1420px]:pt-8
+			            flex flex-col gap-5">
+				<p class="text-[16px] text-[#222222] leading-[1.35]">
+					Ut accumsan, tellus pulvinar condimentum sollicitudin, enim diam accumsan velit, at convallis purus dolor volutpat tellus. Suspendisse vehicula nulla vitae ullamcorper gravida. Praesent quis augue euismod, dapibus orci ac, mattis nunc. Aenean tincidunt lacinia velit sit amet scelerisque. Aenean eu molestie nisl, id auctor ipsum. Nunc quis orci eu justo ornare bibendum ac sed dolor. Suspendisse fermentum eleifend nisl, ut congue nisi. Quisque egestas cursus quam, sed iaculis urna. Mauris mi purus, iaculis id elementum eget, placerat sed quam. Sed sed vestibulum sem, id porta mi. Morbi eget elementum sem, non egestas est. Pellentesque iaculis congue risus quis dignissim. Nullam pellentesque ante at leo eleifend convallis. Pellentesque scelerisque, risus ut tincidunt lacinia, lorem eros rhoncus nisl, a sollicitudin diam lorem mattis diam. Cras tempus diam ac urna interdum, gravida aliquet est vulputate.
+				</p>
+				<p class="text-[16px] text-[#222222] leading-[1.35]">
+					It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In id commodo nisl. In hac habitasse platea dictumst. Proin a varius lorem, non luctus felis.
+				</p>
+			</div>
+
+		</article>
+
+	</div>
+</section>
+
+		</main>
+
+		<Footer />
+
+	</body>
+
+</html>
