@@ -1,0 +1,315 @@
+---
+import 						'../styles/global.css';
+
+import Footer from			'../components/block_footer.astro';
+
+import Logo from 			'../components/aex_logo.astro';
+import LogoText from		'../components/aex_logo_text.astro';
+import ItemMenu from		'../components/item_menu.astro';
+
+import IcoLinkedin from 	'../components/item_ico_linkedin.astro';
+import IcoGithub from 		'../components/item_ico_github.astro';
+
+const pageTitle = "aectronix";
+---
+
+<html lang="en" class="www">
+
+	<head>
+		<title>{pageTitle}</title>
+		<meta charset="utf-8" />
+		<meta name="description" content="aectronix – we provide bim, vdc and digitalization to aeco sector" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	</head>
+
+	<body class="bg-[#f2f3f5]">
+
+<header class="relative px-5">
+	<div class="mx-auto flex w-full max-w-[400px] min-[720px]:max-w-[800px] min-[1080px]:max-w-[1200px] min-[1420px]:max-w-[1600px] items-center p-5 pb-8 md:pt-[50px] md:pb-[60px]">
+
+		<a href="/" class="flex flex-nowrap items-center gap-x-[30px] shrink-0 no-underline" aria-label="aectronix home">
+			<Logo />
+			<div class="hidden lg:block m-0 -translate-y-[2px]">
+				<LogoText />
+			</div>
+		</a>
+
+		<nav class="ml-auto">
+			<ul class="hidden md:flex m-0 p-0 list-none gap-x-[50px]">
+				<li class="flex items-center text-[20px] font-semibold before:content-['/'] before:mr-1">
+					<a class="hover:text-[#ff861b] hover:underline transition-colors duration-200 text-black" href="/">home</a>
+				</li>
+				<li class="flex items-center text-[20px] font-semibold before:content-['/'] before:mr-1">
+					<a class="hover:text-[#ff861b] hover:underline transition-colors duration-200 text-black" href="/services">services</a>
+				</li>
+				<li class="flex items-center text-[20px] font-semibold before:content-['/'] before:mr-1">
+					<a class="hover:text-[#ff861b] hover:underline transition-colors duration-200 text-black" href="/about">about</a>
+				</li>
+				<li class="flex items-center text-[20px] font-semibold before:content-['>'] before:mr-1">
+					<a class="hover:text-[#ff861b] hover:underline transition-colors duration-200 text-black" href="#">en</a>
+				</li>
+			</ul>
+			<button type="button" class="block md:hidden" aria-label="Open menu">
+				<ItemMenu />
+			</button>
+		</nav>
+
+	</div>
+</header>
+
+		<main>
+
+			<!-- HERO -->
+			<section class="relative px-5 ">
+				<div class="relative mx-auto flex w-full max-w-[400px] min-[720px]:max-w-[800px] min-[1080px]:max-w-[1200px] min-[1420px]:max-w-[1600px] rounded-[24px]">
+					<div class="p-5 relative z-10 self-start w-full">
+
+						<h1 class="w-full text-[38px] md:text-[54px] lg:text-[72px] font-bold leading-[1.05] tracking-tight text-black m-0">
+							About Us
+						</h1>
+
+						<div class="flex flex-col gap-5 mt-10 max-w-[1100px]">
+							<p class="text-black text-[16px] md:text-[17px] leading-[1.45]">
+								We are the compact Ukrainian team of BIM/VDC and digitization specialists in the field of design and construction, with a solid experience in diverse projects &ndash; including massive shopping malls, large-scale residential complexes, offices, business centers, schools, and industrial facilities.
+							</p>
+							<p class="text-black text-[16px] md:text-[17px] leading-[1.45]">
+								Having worked for and with the top AEC companies in Ukraine, Poland, Germany, the US and other countries, we&rsquo;ve contributed to establishing digital workflows that enhance project efficiency, productivity, and the quality of built assets. Now, we&rsquo;ve come together to harness our collective experience, knowledge, and skills, forging a path toward new goals and opportunities.
+							</p>
+						</div>
+
+					</div>
+				</div>
+			</section>
+
+			<!-- OUR TEAM: info block + wrapping card grid (same pattern as the index page) -->
+			<section class="relative mt-20  px-5">
+				<div class="mx-auto flex flex-wrap justify-center gap-y-[40px] w-full max-w-[400px] min-[720px]:max-w-[800px] min-[1080px]:max-w-[1200px] min-[1420px]:max-w-[1600px]">
+
+					<!-- INFO: full row above the cards until 1420px, then a left column -->
+					<div class="p-5 self-start
+					            flex-[1_1_100%] max-w-[400px]
+					            min-[720px]:max-w-[800px]
+					            min-[1080px]:max-w-[1200px]
+					            min-[1420px]:flex-[1_1_340px] min-[1420px]:max-w-[400px]">
+						<h3 class="relative py-1 font-bold text-[24px] text-[#222222]">
+							<span class="absolute -top-[20px] left-0 w-[40px] h-[10px] bg-[#FF8C00]"></span>
+							OUR TEAM
+						</h3>
+						<p class="text-[16px] pt-5 text-black leading-[1.25]">
+							We could provide a wide range of BIM, VDC, IT and other digital services to satisfy client any needs and goals.
+						</p>
+					</div>
+
+					<!-- CARDS: wrap one-by-one; 1 / 2 / 3 per row on the usual ladder -->
+					<div class="flex flex-wrap items-stretch gap-y-[40px] min-w-0
+					            flex-[1_1_100%] max-w-[400px]
+					            min-[720px]:max-w-[800px]
+					            min-[1080px]:max-w-[1200px]
+					            min-[1420px]:flex-[3_3_1020px] min-[1420px]:max-w-[1200px]">
+
+					<!-- IHOR YURASOV -->
+					<div class="px-5 flex-[1_1_340px] max-w-[400px]">
+						<article class="group flex flex-col h-full overflow-hidden rounded-[24px]
+						                bg-[#E3E5EA] transition-colors duration-300 hover:bg-[#FF8C00]">
+
+							<img src="team_iy.png" alt="IHOR YURASOV" width="360" height="240"
+							     class="w-full h-[240px] object-cover object-top grayscale
+							            transition-all duration-300 group-hover:grayscale-0" />
+
+							<div class="flex flex-col flex-1 px-7 py-6 min-h-[180px]">
+								<div class="flex items-start justify-between gap-3">
+									<div>
+										<div class="text-[18px] font-black tracking-wide text-[#222222]">
+											IHOR<span class="text-[#FF8C00] transition-colors duration-300 group-hover:text-white"> /</span>
+										</div>
+										<div class="text-[32px] font-extrabold leading-none tracking-tight text-[#222222] mt-1">
+											YURASOV
+										</div>
+									</div>
+									<div class="flex items-center gap-0.5 shrink-0 mt-[2px]">
+										<a href="#" aria-label="LinkedIn" class="text-[#999] transition-colors duration-300 hover:text-black group-hover:text-black">
+										<svg width="26px" height="26px" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg">
+										<path d="M18.72 3.99997H5.37C5.19793 3.99191 5.02595 4.01786 4.86392 4.07635C4.70189 4.13484 4.55299 4.22471 4.42573 4.34081C4.29848 4.45692 4.19537 4.59699 4.12232 4.75299C4.04927 4.909 4.0077 5.07788 4 5.24997V18.63C4.01008 18.9901 4.15766 19.3328 4.41243 19.5875C4.6672 19.8423 5.00984 19.9899 5.37 20H18.72C19.0701 19.9844 19.4002 19.8322 19.6395 19.5761C19.8788 19.32 20.0082 18.9804 20 18.63V5.24997C20.0029 5.08247 19.9715 4.91616 19.9078 4.76122C19.8441 4.60629 19.7494 4.466 19.6295 4.34895C19.5097 4.23191 19.3672 4.14059 19.2108 4.08058C19.0544 4.02057 18.8874 3.99314 18.72 3.99997ZM9 17.34H6.67V10.21H9V17.34ZM7.89 9.12997C7.72741 9.13564 7.5654 9.10762 7.41416 9.04768C7.26291 8.98774 7.12569 8.89717 7.01113 8.78166C6.89656 8.66615 6.80711 8.5282 6.74841 8.37647C6.6897 8.22474 6.66301 8.06251 6.67 7.89997C6.66281 7.73567 6.69004 7.57169 6.74995 7.41854C6.80986 7.26538 6.90112 7.12644 7.01787 7.01063C7.13463 6.89481 7.2743 6.80468 7.42793 6.74602C7.58157 6.68735 7.74577 6.66145 7.91 6.66997C8.07259 6.66431 8.2346 6.69232 8.38584 6.75226C8.53709 6.8122 8.67431 6.90277 8.78887 7.01828C8.90344 7.13379 8.99289 7.27174 9.05159 7.42347C9.1103 7.5752 9.13699 7.73743 9.13 7.89997C9.13719 8.06427 9.10996 8.22825 9.05005 8.3814C8.99014 8.53456 8.89888 8.6735 8.78213 8.78931C8.66537 8.90513 8.5257 8.99526 8.37207 9.05392C8.21843 9.11259 8.05423 9.13849 7.89 9.12997ZM17.34 17.34H15V13.44C15 12.51 14.67 11.87 13.84 11.87C13.5822 11.8722 13.3313 11.9541 13.1219 12.1045C12.9124 12.2549 12.7546 12.4664 12.67 12.71C12.605 12.8926 12.5778 13.0865 12.59 13.28V17.34H10.29V10.21H12.59V11.21C12.7945 10.8343 13.0988 10.5225 13.4694 10.3089C13.84 10.0954 14.2624 9.98848 14.69 9.99997C16.2 9.99997 17.34 11 17.34 13.13V17.34Z" fill="currentColor" fill-opacity="1"/>
+										</svg>
+									</a>
+									<a href="#" aria-label="GitHub" class="text-[#999] transition-colors duration-300 hover:text-black group-hover:text-black">
+										<svg width="26px" height="26px" viewBox="0 1 26 20" xmlns="http://www.w3.org/2000/svg"><path d="M15.917 1.666V17.5h-5.15c-.424 0-.557-.238-.557-.455 0-.266.01-1.141.01-2.226a1.935 1.935 0 0 0-.552-1.502c1.808-.202 3.706-.887 3.706-4.005a3.134 3.134 0 0 0-.834-2.177 2.914 2.914 0 0 0-.081-2.147s-.68-.218-2.23.832a7.684 7.684 0 0 0-4.063 0c-1.55-1.05-2.23-.832-2.23-.832a2.918 2.918 0 0 0-.08 2.147 3.142 3.142 0 0 0-.835 2.177c0 3.11 1.894 3.806 3.696 4.011a1.737 1.737 0 0 0-.516 1.084 1.726 1.726 0 0 1-2.361-.674 1.706 1.706 0 0 0-1.243-.836s-.793-.01-.056.494a2.145 2.145 0 0 1 .9 1.187s.478 1.578 2.735 1.088c.004.676.01 1.186.01 1.38 0 .214-.147.454-.553.454H.083V1.666z" fill="currentColor" fill-opacity="1"/>
+										</svg>
+									</a>
+									</div>
+								</div>
+
+								<p class="text-[16px] leading-[1.35] text-[#222] mt-5">
+									CEO &bull; BIM Manager &bull; Technologist
+								</p>
+							</div>
+
+						</article>
+					</div>
+
+					<!-- SERHII LOS -->
+					<div class="px-5 flex-[1_1_340px] max-w-[400px]">
+						<article class="group flex flex-col h-full overflow-hidden rounded-[24px]
+						                bg-[#E3E5EA] transition-colors duration-300 hover:bg-[#FF8C00]">
+
+							<img src="team_sl.png" alt="SERHII LOS" width="360" height="240"
+							     class="w-full h-[240px] object-cover object-top grayscale
+							            transition-all duration-300 group-hover:grayscale-0" />
+
+							<div class="flex flex-col flex-1 px-7 py-6 min-h-[180px]">
+								<div class="flex items-start justify-between gap-3">
+									<div>
+										<div class="text-[18px] font-black tracking-wide text-[#222222]">
+											SERHII<span class="text-[#FF8C00] transition-colors duration-300 group-hover:text-white"> /</span>
+										</div>
+										<div class="text-[32px] font-extrabold leading-none tracking-tight text-[#222222] mt-1">
+											LOS
+										</div>
+									</div>
+									<div class="flex items-center gap-0.5 shrink-0 mt-[2px]">
+										<a href="#" aria-label="LinkedIn" class="text-[#999] transition-colors duration-300 hover:text-black group-hover:text-black">
+										<svg width="26px" height="26px" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg">
+										<path d="M18.72 3.99997H5.37C5.19793 3.99191 5.02595 4.01786 4.86392 4.07635C4.70189 4.13484 4.55299 4.22471 4.42573 4.34081C4.29848 4.45692 4.19537 4.59699 4.12232 4.75299C4.04927 4.909 4.0077 5.07788 4 5.24997V18.63C4.01008 18.9901 4.15766 19.3328 4.41243 19.5875C4.6672 19.8423 5.00984 19.9899 5.37 20H18.72C19.0701 19.9844 19.4002 19.8322 19.6395 19.5761C19.8788 19.32 20.0082 18.9804 20 18.63V5.24997C20.0029 5.08247 19.9715 4.91616 19.9078 4.76122C19.8441 4.60629 19.7494 4.466 19.6295 4.34895C19.5097 4.23191 19.3672 4.14059 19.2108 4.08058C19.0544 4.02057 18.8874 3.99314 18.72 3.99997ZM9 17.34H6.67V10.21H9V17.34ZM7.89 9.12997C7.72741 9.13564 7.5654 9.10762 7.41416 9.04768C7.26291 8.98774 7.12569 8.89717 7.01113 8.78166C6.89656 8.66615 6.80711 8.5282 6.74841 8.37647C6.6897 8.22474 6.66301 8.06251 6.67 7.89997C6.66281 7.73567 6.69004 7.57169 6.74995 7.41854C6.80986 7.26538 6.90112 7.12644 7.01787 7.01063C7.13463 6.89481 7.2743 6.80468 7.42793 6.74602C7.58157 6.68735 7.74577 6.66145 7.91 6.66997C8.07259 6.66431 8.2346 6.69232 8.38584 6.75226C8.53709 6.8122 8.67431 6.90277 8.78887 7.01828C8.90344 7.13379 8.99289 7.27174 9.05159 7.42347C9.1103 7.5752 9.13699 7.73743 9.13 7.89997C9.13719 8.06427 9.10996 8.22825 9.05005 8.3814C8.99014 8.53456 8.89888 8.6735 8.78213 8.78931C8.66537 8.90513 8.5257 8.99526 8.37207 9.05392C8.21843 9.11259 8.05423 9.13849 7.89 9.12997ZM17.34 17.34H15V13.44C15 12.51 14.67 11.87 13.84 11.87C13.5822 11.8722 13.3313 11.9541 13.1219 12.1045C12.9124 12.2549 12.7546 12.4664 12.67 12.71C12.605 12.8926 12.5778 13.0865 12.59 13.28V17.34H10.29V10.21H12.59V11.21C12.7945 10.8343 13.0988 10.5225 13.4694 10.3089C13.84 10.0954 14.2624 9.98848 14.69 9.99997C16.2 9.99997 17.34 11 17.34 13.13V17.34Z" fill="currentColor" fill-opacity="1"/>
+										</svg>
+									</a>
+									<a href="#" aria-label="GitHub" class="text-[#999] transition-colors duration-300 hover:text-black group-hover:text-black">
+										<svg width="26px" height="26px" viewBox="0 1 26 20" xmlns="http://www.w3.org/2000/svg"><path d="M15.917 1.666V17.5h-5.15c-.424 0-.557-.238-.557-.455 0-.266.01-1.141.01-2.226a1.935 1.935 0 0 0-.552-1.502c1.808-.202 3.706-.887 3.706-4.005a3.134 3.134 0 0 0-.834-2.177 2.914 2.914 0 0 0-.081-2.147s-.68-.218-2.23.832a7.684 7.684 0 0 0-4.063 0c-1.55-1.05-2.23-.832-2.23-.832a2.918 2.918 0 0 0-.08 2.147 3.142 3.142 0 0 0-.835 2.177c0 3.11 1.894 3.806 3.696 4.011a1.737 1.737 0 0 0-.516 1.084 1.726 1.726 0 0 1-2.361-.674 1.706 1.706 0 0 0-1.243-.836s-.793-.01-.056.494a2.145 2.145 0 0 1 .9 1.187s.478 1.578 2.735 1.088c.004.676.01 1.186.01 1.38 0 .214-.147.454-.553.454H.083V1.666z" fill="currentColor" fill-opacity="1"/>
+										</svg>
+									</a>
+									</div>
+								</div>
+
+								<p class="text-[16px] leading-[1.35] text-[#222] mt-5">
+									BIM Manager &bull; Archicad Specialist
+								</p>
+							</div>
+
+						</article>
+					</div>
+
+					<!-- OLEKSANDR KHOMENKO -->
+					<div class="px-5 flex-[1_1_340px] max-w-[400px]">
+						<article class="group flex flex-col h-full overflow-hidden rounded-[24px]
+						                bg-[#E3E5EA] transition-colors duration-300 hover:bg-[#FF8C00]">
+
+							<img src="team_ok.png" alt="OLEKSANDR KHOMENKO" width="360" height="240"
+							     class="w-full h-[240px] object-cover object-top grayscale
+							            transition-all duration-300 group-hover:grayscale-0" />
+
+							<div class="flex flex-col flex-1 px-7 py-6 min-h-[180px]">
+								<div class="flex items-start justify-between gap-3">
+									<div>
+										<div class="text-[18px] font-black tracking-wide text-[#222222]">
+											OLEKSANDR<span class="text-[#FF8C00] transition-colors duration-300 group-hover:text-white"> /</span>
+										</div>
+										<div class="text-[32px] font-extrabold leading-none tracking-tight text-[#222222] mt-1">
+											KHOMENKO
+										</div>
+									</div>
+									<div class="flex items-center gap-0.5 shrink-0 mt-[2px]">
+										<a href="#" aria-label="LinkedIn" class="text-[#999] transition-colors duration-300 hover:text-black group-hover:text-black">
+										<svg width="26px" height="26px" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg">
+										<path d="M18.72 3.99997H5.37C5.19793 3.99191 5.02595 4.01786 4.86392 4.07635C4.70189 4.13484 4.55299 4.22471 4.42573 4.34081C4.29848 4.45692 4.19537 4.59699 4.12232 4.75299C4.04927 4.909 4.0077 5.07788 4 5.24997V18.63C4.01008 18.9901 4.15766 19.3328 4.41243 19.5875C4.6672 19.8423 5.00984 19.9899 5.37 20H18.72C19.0701 19.9844 19.4002 19.8322 19.6395 19.5761C19.8788 19.32 20.0082 18.9804 20 18.63V5.24997C20.0029 5.08247 19.9715 4.91616 19.9078 4.76122C19.8441 4.60629 19.7494 4.466 19.6295 4.34895C19.5097 4.23191 19.3672 4.14059 19.2108 4.08058C19.0544 4.02057 18.8874 3.99314 18.72 3.99997ZM9 17.34H6.67V10.21H9V17.34ZM7.89 9.12997C7.72741 9.13564 7.5654 9.10762 7.41416 9.04768C7.26291 8.98774 7.12569 8.89717 7.01113 8.78166C6.89656 8.66615 6.80711 8.5282 6.74841 8.37647C6.6897 8.22474 6.66301 8.06251 6.67 7.89997C6.66281 7.73567 6.69004 7.57169 6.74995 7.41854C6.80986 7.26538 6.90112 7.12644 7.01787 7.01063C7.13463 6.89481 7.2743 6.80468 7.42793 6.74602C7.58157 6.68735 7.74577 6.66145 7.91 6.66997C8.07259 6.66431 8.2346 6.69232 8.38584 6.75226C8.53709 6.8122 8.67431 6.90277 8.78887 7.01828C8.90344 7.13379 8.99289 7.27174 9.05159 7.42347C9.1103 7.5752 9.13699 7.73743 9.13 7.89997C9.13719 8.06427 9.10996 8.22825 9.05005 8.3814C8.99014 8.53456 8.89888 8.6735 8.78213 8.78931C8.66537 8.90513 8.5257 8.99526 8.37207 9.05392C8.21843 9.11259 8.05423 9.13849 7.89 9.12997ZM17.34 17.34H15V13.44C15 12.51 14.67 11.87 13.84 11.87C13.5822 11.8722 13.3313 11.9541 13.1219 12.1045C12.9124 12.2549 12.7546 12.4664 12.67 12.71C12.605 12.8926 12.5778 13.0865 12.59 13.28V17.34H10.29V10.21H12.59V11.21C12.7945 10.8343 13.0988 10.5225 13.4694 10.3089C13.84 10.0954 14.2624 9.98848 14.69 9.99997C16.2 9.99997 17.34 11 17.34 13.13V17.34Z" fill="currentColor" fill-opacity="1"/>
+										</svg>
+									</a>
+									</div>
+								</div>
+
+								<p class="text-[16px] leading-[1.35] text-[#222] mt-5">
+									BIM Manager &bull; Revit Specialist
+								</p>
+							</div>
+
+						</article>
+					</div>
+
+					<!-- VIKTORIA LOS -->
+					<div class="px-5 flex-[1_1_340px] max-w-[400px]">
+						<article class="group flex flex-col h-full overflow-hidden rounded-[24px]
+						                bg-[#E3E5EA] transition-colors duration-300 hover:bg-[#FF8C00]">
+
+							<img src="team_vl.png" alt="VIKTORIA LOS" width="360" height="240"
+							     class="w-full h-[240px] object-cover object-top grayscale
+							            transition-all duration-300 group-hover:grayscale-0" />
+
+							<div class="flex flex-col flex-1 px-7 py-6 min-h-[180px]">
+								<div class="flex items-start justify-between gap-3">
+									<div>
+										<div class="text-[18px] font-black tracking-wide text-[#222222]">
+											VIKTORIA<span class="text-[#FF8C00] transition-colors duration-300 group-hover:text-white"> /</span>
+										</div>
+										<div class="text-[32px] font-extrabold leading-none tracking-tight text-[#222222] mt-1">
+											LOS
+										</div>
+									</div>
+									<div class="flex items-center gap-0.5 shrink-0 mt-[2px]">
+										<a href="#" aria-label="LinkedIn" class="text-[#999] transition-colors duration-300 hover:text-black group-hover:text-black">
+										<svg width="26px" height="26px" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg">
+										<path d="M18.72 3.99997H5.37C5.19793 3.99191 5.02595 4.01786 4.86392 4.07635C4.70189 4.13484 4.55299 4.22471 4.42573 4.34081C4.29848 4.45692 4.19537 4.59699 4.12232 4.75299C4.04927 4.909 4.0077 5.07788 4 5.24997V18.63C4.01008 18.9901 4.15766 19.3328 4.41243 19.5875C4.6672 19.8423 5.00984 19.9899 5.37 20H18.72C19.0701 19.9844 19.4002 19.8322 19.6395 19.5761C19.8788 19.32 20.0082 18.9804 20 18.63V5.24997C20.0029 5.08247 19.9715 4.91616 19.9078 4.76122C19.8441 4.60629 19.7494 4.466 19.6295 4.34895C19.5097 4.23191 19.3672 4.14059 19.2108 4.08058C19.0544 4.02057 18.8874 3.99314 18.72 3.99997ZM9 17.34H6.67V10.21H9V17.34ZM7.89 9.12997C7.72741 9.13564 7.5654 9.10762 7.41416 9.04768C7.26291 8.98774 7.12569 8.89717 7.01113 8.78166C6.89656 8.66615 6.80711 8.5282 6.74841 8.37647C6.6897 8.22474 6.66301 8.06251 6.67 7.89997C6.66281 7.73567 6.69004 7.57169 6.74995 7.41854C6.80986 7.26538 6.90112 7.12644 7.01787 7.01063C7.13463 6.89481 7.2743 6.80468 7.42793 6.74602C7.58157 6.68735 7.74577 6.66145 7.91 6.66997C8.07259 6.66431 8.2346 6.69232 8.38584 6.75226C8.53709 6.8122 8.67431 6.90277 8.78887 7.01828C8.90344 7.13379 8.99289 7.27174 9.05159 7.42347C9.1103 7.5752 9.13699 7.73743 9.13 7.89997C9.13719 8.06427 9.10996 8.22825 9.05005 8.3814C8.99014 8.53456 8.89888 8.6735 8.78213 8.78931C8.66537 8.90513 8.5257 8.99526 8.37207 9.05392C8.21843 9.11259 8.05423 9.13849 7.89 9.12997ZM17.34 17.34H15V13.44C15 12.51 14.67 11.87 13.84 11.87C13.5822 11.8722 13.3313 11.9541 13.1219 12.1045C12.9124 12.2549 12.7546 12.4664 12.67 12.71C12.605 12.8926 12.5778 13.0865 12.59 13.28V17.34H10.29V10.21H12.59V11.21C12.7945 10.8343 13.0988 10.5225 13.4694 10.3089C13.84 10.0954 14.2624 9.98848 14.69 9.99997C16.2 9.99997 17.34 11 17.34 13.13V17.34Z" fill="currentColor" fill-opacity="1"/>
+										</svg>
+									</a>
+									</div>
+								</div>
+
+								<p class="text-[16px] leading-[1.35] text-[#222] mt-5">
+									Portfolio / Project Manager &bull; Analyst
+								</p>
+							</div>
+
+						</article>
+					</div>
+
+					<!-- DENYS PETRENKO -->
+					<div class="px-5 flex-[1_1_340px] max-w-[400px]">
+						<article class="group flex flex-col h-full overflow-hidden rounded-[24px]
+						                bg-[#E3E5EA] transition-colors duration-300 hover:bg-[#FF8C00]">
+
+							<img src="team_dp.png" alt="DENYS PETRENKO" width="360" height="240"
+							     class="w-full h-[240px] object-cover object-top grayscale
+							            transition-all duration-300 group-hover:grayscale-0" />
+
+							<div class="flex flex-col flex-1 px-7 py-6 min-h-[180px]">
+								<div class="flex items-start justify-between gap-3">
+									<div>
+										<div class="text-[18px] font-black tracking-wide text-[#222222]">
+											DENYS<span class="text-[#FF8C00] transition-colors duration-300 group-hover:text-white"> /</span>
+										</div>
+										<div class="text-[32px] font-extrabold leading-none tracking-tight text-[#222222] mt-1">
+											PETRENKO
+										</div>
+									</div>
+									<div class="flex items-center gap-0.5 shrink-0 mt-[2px]">
+										<a href="#" aria-label="LinkedIn" class="text-[#999] transition-colors duration-300 hover:text-black group-hover:text-black">
+										<svg width="26px" height="26px" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg">
+										<path d="M18.72 3.99997H5.37C5.19793 3.99191 5.02595 4.01786 4.86392 4.07635C4.70189 4.13484 4.55299 4.22471 4.42573 4.34081C4.29848 4.45692 4.19537 4.59699 4.12232 4.75299C4.04927 4.909 4.0077 5.07788 4 5.24997V18.63C4.01008 18.9901 4.15766 19.3328 4.41243 19.5875C4.6672 19.8423 5.00984 19.9899 5.37 20H18.72C19.0701 19.9844 19.4002 19.8322 19.6395 19.5761C19.8788 19.32 20.0082 18.9804 20 18.63V5.24997C20.0029 5.08247 19.9715 4.91616 19.9078 4.76122C19.8441 4.60629 19.7494 4.466 19.6295 4.34895C19.5097 4.23191 19.3672 4.14059 19.2108 4.08058C19.0544 4.02057 18.8874 3.99314 18.72 3.99997ZM9 17.34H6.67V10.21H9V17.34ZM7.89 9.12997C7.72741 9.13564 7.5654 9.10762 7.41416 9.04768C7.26291 8.98774 7.12569 8.89717 7.01113 8.78166C6.89656 8.66615 6.80711 8.5282 6.74841 8.37647C6.6897 8.22474 6.66301 8.06251 6.67 7.89997C6.66281 7.73567 6.69004 7.57169 6.74995 7.41854C6.80986 7.26538 6.90112 7.12644 7.01787 7.01063C7.13463 6.89481 7.2743 6.80468 7.42793 6.74602C7.58157 6.68735 7.74577 6.66145 7.91 6.66997C8.07259 6.66431 8.2346 6.69232 8.38584 6.75226C8.53709 6.8122 8.67431 6.90277 8.78887 7.01828C8.90344 7.13379 8.99289 7.27174 9.05159 7.42347C9.1103 7.5752 9.13699 7.73743 9.13 7.89997C9.13719 8.06427 9.10996 8.22825 9.05005 8.3814C8.99014 8.53456 8.89888 8.6735 8.78213 8.78931C8.66537 8.90513 8.5257 8.99526 8.37207 9.05392C8.21843 9.11259 8.05423 9.13849 7.89 9.12997ZM17.34 17.34H15V13.44C15 12.51 14.67 11.87 13.84 11.87C13.5822 11.8722 13.3313 11.9541 13.1219 12.1045C12.9124 12.2549 12.7546 12.4664 12.67 12.71C12.605 12.8926 12.5778 13.0865 12.59 13.28V17.34H10.29V10.21H12.59V11.21C12.7945 10.8343 13.0988 10.5225 13.4694 10.3089C13.84 10.0954 14.2624 9.98848 14.69 9.99997C16.2 9.99997 17.34 11 17.34 13.13V17.34Z" fill="currentColor" fill-opacity="1"/>
+										</svg>
+									</a>
+									</div>
+								</div>
+
+								<p class="text-[16px] leading-[1.35] text-[#222] mt-5">
+									BIM Manager &bull; Content Creator &bull; Revit Specialist
+								</p>
+							</div>
+
+						</article>
+					</div>
+
+						<div class="px-5 flex-[1_1_340px] max-w-[400px]">
+							<!-- empty -->
+						</div>
+
+					</div>
+
+				</div>
+			</section>
+
+		</main>
+
+		<Footer />
+
+	</body>
+
+</html>
