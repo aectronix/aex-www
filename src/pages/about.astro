@@ -47,9 +47,9 @@ const pageTitle = "aectronix";
 				<li class="flex items-center text-[20px] font-semibold before:content-['/'] before:mr-1">
 					<a class="hover:text-[#ff861b] hover:underline transition-colors duration-200 text-black" href="/about">about</a>
 				</li>
-				<li class="flex items-center text-[20px] font-semibold before:content-['>'] before:mr-1">
-					<a class="hover:text-[#ff861b] hover:underline transition-colors duration-200 text-black" href="#">en</a>
-				</li>
+                <li class="text-[#aaa] flex items-center text-[20px] font-semibold before:content-['>'] before:mr-1">
+                    <span class="text-[#aaa]" href="#">en</span>
+                </li>
 			</ul>
 			<button type="button" class="block md:hidden" aria-label="Open menu">
 				<ItemMenu />
@@ -61,7 +61,6 @@ const pageTitle = "aectronix";
 
 		<main>
 
-			<!-- HERO -->
 			<section class="relative px-5 ">
 				<div class="relative mx-auto flex w-full max-w-[400px] min-[720px]:max-w-[800px] min-[1080px]:max-w-[1200px] min-[1420px]:max-w-[1600px] rounded-[24px]">
 					<div class="p-5 relative z-10 self-start w-full">
@@ -83,11 +82,9 @@ const pageTitle = "aectronix";
 				</div>
 			</section>
 
-			<!-- OUR TEAM: info block + wrapping card grid (same pattern as the index page) -->
-			<section class="relative mt-20  px-5">
+			<section class="relative mt-20 px-5">
 				<div class="mx-auto flex flex-wrap justify-center gap-y-[40px] w-full max-w-[400px] min-[720px]:max-w-[800px] min-[1080px]:max-w-[1200px] min-[1420px]:max-w-[1600px]">
 
-					<!-- INFO: full row above the cards until 1420px, then a left column -->
 					<div class="p-5 self-start
 					            flex-[1_1_100%] max-w-[400px]
 					            min-[720px]:max-w-[800px]
@@ -102,14 +99,12 @@ const pageTitle = "aectronix";
 						</p>
 					</div>
 
-					<!-- CARDS: wrap one-by-one; 1 / 2 / 3 per row on the usual ladder -->
 					<div class="flex flex-wrap items-stretch gap-y-[40px] min-w-0
 					            flex-[1_1_100%] max-w-[400px]
 					            min-[720px]:max-w-[800px]
 					            min-[1080px]:max-w-[1200px]
 					            min-[1420px]:flex-[3_3_1020px] min-[1420px]:max-w-[1200px]">
 
-					<!-- IHOR YURASOV -->
 					<div class="px-5 flex-[1_1_340px] max-w-[400px]">
 						<article class="group flex flex-col h-full overflow-hidden rounded-[24px]
 						                bg-[#E3E5EA] transition-colors duration-300 hover:bg-[#FF8C00]">
@@ -142,14 +137,13 @@ const pageTitle = "aectronix";
 								</div>
 
 								<p class="text-[16px] leading-[1.35] text-[#222] mt-5">
-									CEO &bull; BIM Manager &bull; Technologist
+									<span class="font-bold">Founder</span> &bull; BIM Manager &bull; Technologist
 								</p>
 							</div>
 
 						</article>
 					</div>
 
-					<!-- SERHII LOS -->
 					<div class="px-5 flex-[1_1_340px] max-w-[400px]">
 						<article class="group flex flex-col h-full overflow-hidden rounded-[24px]
 						                bg-[#E3E5EA] transition-colors duration-300 hover:bg-[#FF8C00]">
@@ -182,14 +176,13 @@ const pageTitle = "aectronix";
 								</div>
 
 								<p class="text-[16px] leading-[1.35] text-[#222] mt-5">
-									BIM Manager &bull; Archicad Specialist
+									<span class="font-bold">BIM Manager</span> &bull; Archicad & Rhino Specialist
 								</p>
 							</div>
 
 						</article>
 					</div>
 
-					<!-- OLEKSANDR KHOMENKO -->
 					<div class="px-5 flex-[1_1_340px] max-w-[400px]">
 						<article class="group flex flex-col h-full overflow-hidden rounded-[24px]
 						                bg-[#E3E5EA] transition-colors duration-300 hover:bg-[#FF8C00]">
@@ -218,14 +211,13 @@ const pageTitle = "aectronix";
 								</div>
 
 								<p class="text-[16px] leading-[1.35] text-[#222] mt-5">
-									BIM Manager &bull; Revit Specialist
+									<span class="font-bold">BIM Manager</span> &bull; Revit Specialist
 								</p>
 							</div>
 
 						</article>
 					</div>
 
-					<!-- VIKTORIA LOS -->
 					<div class="px-5 flex-[1_1_340px] max-w-[400px]">
 						<article class="group flex flex-col h-full overflow-hidden rounded-[24px]
 						                bg-[#E3E5EA] transition-colors duration-300 hover:bg-[#FF8C00]">
@@ -254,14 +246,13 @@ const pageTitle = "aectronix";
 								</div>
 
 								<p class="text-[16px] leading-[1.35] text-[#222] mt-5">
-									Portfolio / Project Manager &bull; Analyst
+									<span class="font-bold">Portfolio & Project Manager</span> &bull; Analyst
 								</p>
 							</div>
 
 						</article>
 					</div>
 
-					<!-- DENYS PETRENKO -->
 					<div class="px-5 flex-[1_1_340px] max-w-[400px]">
 						<article class="group flex flex-col h-full overflow-hidden rounded-[24px]
 						                bg-[#E3E5EA] transition-colors duration-300 hover:bg-[#FF8C00]">
@@ -290,7 +281,7 @@ const pageTitle = "aectronix";
 								</div>
 
 								<p class="text-[16px] leading-[1.35] text-[#222] mt-5">
-									BIM Manager &bull; Content Creator &bull; Revit Specialist
+									<span class="font-bold">BIM Manager</span> &bull; Content Creator &bull; Revit Specialist
 								</p>
 							</div>
 

@@ -18,7 +18,7 @@ import ItemArrow from './item_arrow.astro';
 			<p class="text-[16px] pt-5 text-black leading-[1.25]">
 				We could provide a wide range of BIM, VDC, IT and other digital services to satisfy client any needs and goals.
 			</p>
-			<a href="#" aria-label="See all services" class="mt-5 group inline-flex items-center gap-1.5
+			<a href="/services" aria-label="See all services" class="mt-5 group inline-flex items-center gap-1.5
 															min-[1420px]:absolute
 															min-[1420px]:top-42">
 				<span class="flex justify-center items-center leading-none w-[40px] h-[24px] rounded-[5px] border border-black bg-black text-white text-[15px] transition-colors duration-300 group-hover:bg-[#FF8C00] group-hover:border-[#FF8C00] group-hover:text-black">
@@ -32,9 +32,9 @@ import ItemArrow from './item_arrow.astro';
 
 		<!-- CARD GROUP: same responsive width steps as before; now a slider.
 		     min-w-0 is REQUIRED: without it, the non-wrapping track's content
-		     (5 cards) forces this flex item's min-width to its content size,
-		     so the group balloons past the container and the first card clips
-		     at the left edge. min-w-0 lets it shrink to the available width. -->
+		     forces this flex item's min-width to its content size, so the group
+		     balloons past the container and the first card clips at the left
+		     edge. min-w-0 lets it shrink to the available width. -->
 		<div class="flex flex-wrap gap-y-[40px] min-w-0
 		            flex-[1_1_100%] max-w-[400px]
 		            min-[720px]:max-w-[800px]
@@ -53,7 +53,11 @@ import ItemArrow from './item_arrow.astro';
 
 					<!-- SLIDE 1 -->
 					<div class="shrink-0 px-5 h-[240px] text-[#222222]" data-slide>
-						<article class="group relative flex flex-col items-start w-full h-[240px] rounded-[24px] px-8 py-7 bg-[#E3E5EA]">
+						<!-- the whole card is the link; inner "details_" and the arrow are
+						     spans, since <a>/<button> cannot nest inside an <a> -->
+						<a href="/services#bim" aria-label="BIM Management & Coordination"
+						   class="group relative flex flex-col items-start w-full h-[240px] rounded-[24px] px-8 py-7 bg-[#E3E5EA] no-underline cursor-pointer
+						          focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">
 							<div class="absolute inset-0 rounded-[24px] bg-[#FF8C00] opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-0"></div>
 							<div class="relative flex flex-row gap-2 mb-4 z-10">
 								<div class="inline-flex items-center bg-black text-white text-[15px] font-bold px-4 h-[30px] rounded-full">BIM</div>
@@ -61,34 +65,38 @@ import ItemArrow from './item_arrow.astro';
 							<div class="relative flex-1 w-full z-10 flex flex-col">
 								<div class="relative w-full flex-1">
 									<h3 class="py-2.5 absolute inset-0 text-[28px] font-extrabold text-[#222222] leading-[1.1] transition-opacity duration-300 opacity-100 group-hover:opacity-0 pointer-events-none">
-										BIM Management & Coordination
+										BIM Management &amp; Coordination
 									</h3>
 									<p class="py-3 absolute inset-0 text-[16px] font-medium text-[#222222] leading-[1.25] transition-opacity duration-300 opacity-0 group-hover:opacity-100 pointer-events-none pr-8">
 										We support ongoing projects by establishing and maintaining digital collaborative workflows among involved parties.
 									</p>
 								</div>
-								<a href="#" class="inline-flex items-center bg-black text-white text-[12px] px-3 w-[80px] h-[24px] rounded-[5px] mt-auto z-10 self-start">
+								<span class="inline-flex items-center bg-black text-white text-[12px] px-3 w-[80px] h-[24px] rounded-[5px] mt-auto z-10 self-start">
 									<span class="block group-hover:hidden">&gt; details_&nbsp;</span>
 									<span class="hidden group-hover:block">&gt; explore_</span>
-								</a>
+								</span>
 							</div>
 							<div class="absolute bottom-0 right-0 w-[50px] h-[50px] bg-[var(--set0-grey-0)] rounded-tl-[30px] rounded-br-[24px] flex items-end justify-end
 										before:content-[''] before:absolute before:w-[20px] before:h-[20px] before:bottom-[100%] before:right-0 before:bg-[radial-gradient(circle_at_top_left,transparent_20px,var(--set0-grey-0)_20px)]
 										after:content-[''] after:absolute after:w-[20px] after:h-[20px] after:right-[100%] after:bottom-0 after:bg-[radial-gradient(circle_at_top_left,transparent_20px,var(--set0-grey-0)_20px)]
 										z-10">
-								<button class="relative flex items-center justify-center w-[40px] h-[40px] bg-black text-white rounded-full transition-colors duration-300 group-hover:bg-[#FF8C00] group-hover:text-black" aria-label="Explore">
+								<span class="relative flex items-center justify-center w-[40px] h-[40px] bg-black text-white rounded-full transition-colors duration-300 group-hover:bg-[#FF8C00] group-hover:text-black" aria-hidden="true">
 									<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 										<line x1="7" y1="17" x2="17" y2="7"></line>
 										<polyline points="7 7 17 7 17 17"></polyline>
 									</svg>
-								</button>
+								</span>
 							</div>
-						</article>
+						</a>
 					</div>
 
 					<!-- SLIDE 2 -->
 					<div class="shrink-0 px-5 h-[240px] text-[#222222]" data-slide>
-						<article class="group relative flex flex-col items-start w-full h-[240px] rounded-[24px] px-8 py-7 bg-[#E3E5EA]">
+						<!-- the whole card is the link; inner "details_" and the arrow are
+						     spans, since <a>/<button> cannot nest inside an <a> -->
+						<a href="/services#3dm" aria-label="BIM Modeling"
+						   class="group relative flex flex-col items-start w-full h-[240px] rounded-[24px] px-8 py-7 bg-[#E3E5EA] no-underline cursor-pointer
+						          focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">
 							<div class="absolute inset-0 rounded-[24px] bg-[#FF8C00] opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-0"></div>
 							<div class="relative flex flex-row gap-2 mb-4 z-10">
 								<div class="inline-flex items-center bg-black text-white text-[15px] font-bold px-4 h-[30px] rounded-full">BIM</div>
@@ -96,34 +104,38 @@ import ItemArrow from './item_arrow.astro';
 							<div class="relative flex-1 w-full z-10 flex flex-col">
 								<div class="relative w-full flex-1">
 									<h3 class="py-3 absolute inset-0 text-[28px] font-extrabold text-[#222222] leading-[1.1] transition-opacity duration-300 opacity-100 group-hover:opacity-0 pointer-events-none">
-										BIM Modeling
+										BIM Modeling &amp; Support
 									</h3>
 									<p class="py-3 absolute inset-0 text-[16px] font-medium text-[#222222] leading-[1.25] transition-opacity duration-300 opacity-0 group-hover:opacity-100 pointer-events-none pr-8">
 										We support ongoing projects by establishing and maintaining digital collaborative workflows among involved parties.
 									</p>
 								</div>
-								<a href="#" class="inline-flex items-center bg-black text-white text-[12px] px-3 w-[80px] h-[24px] rounded-[5px] mt-auto z-10 self-start">
+								<span class="inline-flex items-center bg-black text-white text-[12px] px-3 w-[80px] h-[24px] rounded-[5px] mt-auto z-10 self-start">
 									<span class="block group-hover:hidden">&gt; details_&nbsp;</span>
 									<span class="hidden group-hover:block">&gt; explore_</span>
-								</a>
+								</span>
 							</div>
 							<div class="absolute bottom-0 right-0 w-[50px] h-[50px] bg-[var(--set0-grey-0)] rounded-tl-[30px] rounded-br-[24px] flex items-end justify-end
 										before:content-[''] before:absolute before:w-[20px] before:h-[20px] before:bottom-[100%] before:right-0 before:bg-[radial-gradient(circle_at_top_left,transparent_20px,var(--set0-grey-0)_20px)]
 										after:content-[''] after:absolute after:w-[20px] after:h-[20px] after:right-[100%] after:bottom-0 after:bg-[radial-gradient(circle_at_top_left,transparent_20px,var(--set0-grey-0)_20px)]
 										z-10">
-								<button class="relative flex items-center justify-center w-[40px] h-[40px] bg-black text-white rounded-full transition-colors duration-300 group-hover:bg-[#FF8C00] group-hover:text-black" aria-label="Explore">
+								<span class="relative flex items-center justify-center w-[40px] h-[40px] bg-black text-white rounded-full transition-colors duration-300 group-hover:bg-[#FF8C00] group-hover:text-black" aria-hidden="true">
 									<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 										<line x1="7" y1="17" x2="17" y2="7"></line>
 										<polyline points="7 7 17 7 17 17"></polyline>
 									</svg>
-								</button>
+								</span>
 							</div>
-						</article>
+						</a>
 					</div>
 
 					<!-- SLIDE 3 -->
 					<div class="shrink-0 px-5 h-[240px] text-[#222222]" data-slide>
-						<article class="group relative flex flex-col items-start w-full h-[240px] rounded-[24px] px-8 py-7 bg-[#E3E5EA]">
+						<!-- the whole card is the link; inner "details_" and the arrow are
+						     spans, since <a>/<button> cannot nest inside an <a> -->
+						<a href="/services#cde" aria-label="CDE Deployment & Support"
+						   class="group relative flex flex-col items-start w-full h-[240px] rounded-[24px] px-8 py-7 bg-[#E3E5EA] no-underline cursor-pointer
+						          focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">
 							<div class="absolute inset-0 rounded-[24px] bg-[#FF8C00] opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-0"></div>
 							<div class="relative flex flex-row gap-2 mb-4 z-10">
 								<div class="inline-flex items-center bg-black text-white text-[15px] font-bold px-4 h-[30px] rounded-full">CDE</div>
@@ -131,34 +143,38 @@ import ItemArrow from './item_arrow.astro';
 							<div class="relative flex-1 w-full z-10 flex flex-col">
 								<div class="relative w-full flex-1">
 									<h3 class="py-3 absolute inset-0 text-[28px] font-extrabold text-[#222222] leading-[1.1] transition-opacity duration-300 opacity-100 group-hover:opacity-0 pointer-events-none">
-										CDE Deployment & Support
+										CDE Deployment &amp; Support
 									</h3>
 									<p class="py-3 absolute inset-0 text-[16px] font-medium text-[#222222] leading-[1.25] transition-opacity duration-300 opacity-0 group-hover:opacity-100 pointer-events-none pr-8">
 										We support ongoing projects by establishing and maintaining digital collaborative workflows among involved parties.
 									</p>
 								</div>
-								<a href="#" class="inline-flex items-center bg-black text-white text-[12px] px-3 w-[80px] h-[24px] rounded-[5px] mt-auto z-10 self-start">
+								<span class="inline-flex items-center bg-black text-white text-[12px] px-3 w-[80px] h-[24px] rounded-[5px] mt-auto z-10 self-start">
 									<span class="block group-hover:hidden">&gt; details_&nbsp;</span>
 									<span class="hidden group-hover:block">&gt; explore_</span>
-								</a>
+								</span>
 							</div>
 							<div class="absolute bottom-0 right-0 w-[50px] h-[50px] bg-[var(--set0-grey-0)] rounded-tl-[30px] rounded-br-[24px] flex items-end justify-end
 										before:content-[''] before:absolute before:w-[20px] before:h-[20px] before:bottom-[100%] before:right-0 before:bg-[radial-gradient(circle_at_top_left,transparent_20px,var(--set0-grey-0)_20px)]
 										after:content-[''] after:absolute after:w-[20px] after:h-[20px] after:right-[100%] after:bottom-0 after:bg-[radial-gradient(circle_at_top_left,transparent_20px,var(--set0-grey-0)_20px)]
 										z-10">
-								<button class="relative flex items-center justify-center w-[40px] h-[40px] bg-black text-white rounded-full transition-colors duration-300 group-hover:bg-[#FF8C00] group-hover:text-black" aria-label="Explore">
+								<span class="relative flex items-center justify-center w-[40px] h-[40px] bg-black text-white rounded-full transition-colors duration-300 group-hover:bg-[#FF8C00] group-hover:text-black" aria-hidden="true">
 									<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 										<line x1="7" y1="17" x2="17" y2="7"></line>
 										<polyline points="7 7 17 7 17 17"></polyline>
 									</svg>
-								</button>
+								</span>
 							</div>
-						</article>
+						</a>
 					</div>
 
 					<!-- SLIDE 4 -->
 					<div class="shrink-0 px-5 h-[240px] text-[#222222]" data-slide>
-						<article class="group relative flex flex-col items-start w-full h-[240px] rounded-[24px] px-8 py-7 bg-[#E3E5EA]">
+						<!-- the whole card is the link; inner "details_" and the arrow are
+						     spans, since <a>/<button> cannot nest inside an <a> -->
+						<a href="/services#dev" aria-label="Automation & Development"
+						   class="group relative flex flex-col items-start w-full h-[240px] rounded-[24px] px-8 py-7 bg-[#E3E5EA] no-underline cursor-pointer
+						          focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">
 							<div class="absolute inset-0 rounded-[24px] bg-[#FF8C00] opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-0"></div>
 							<div class="relative flex flex-row gap-2 mb-4 z-10">
 								<div class="inline-flex items-center bg-black text-white text-[15px] font-bold px-4 h-[30px] rounded-full">DEV</div>
@@ -166,34 +182,38 @@ import ItemArrow from './item_arrow.astro';
 							<div class="relative flex-1 w-full z-10 flex flex-col">
 								<div class="relative w-full flex-1">
 									<h3 class="py-3 absolute inset-0 text-[28px] font-extrabold text-[#222222] leading-[1.1] transition-opacity duration-300 opacity-100 group-hover:opacity-0 pointer-events-none">
-										Automation & Development
+										Automation &amp; Development
 									</h3>
 									<p class="py-3 absolute inset-0 text-[16px] font-medium text-[#222222] leading-[1.25] transition-opacity duration-300 opacity-0 group-hover:opacity-100 pointer-events-none pr-8">
 										We support ongoing projects by establishing and maintaining digital collaborative workflows among involved parties.
 									</p>
 								</div>
-								<a href="#" class="inline-flex items-center bg-black text-white text-[12px] px-3 w-[80px] h-[24px] rounded-[5px] mt-auto z-10 self-start">
+								<span class="inline-flex items-center bg-black text-white text-[12px] px-3 w-[80px] h-[24px] rounded-[5px] mt-auto z-10 self-start">
 									<span class="block group-hover:hidden">&gt; details_&nbsp;</span>
 									<span class="hidden group-hover:block">&gt; explore_</span>
-								</a>
+								</span>
 							</div>
 							<div class="absolute bottom-0 right-0 w-[50px] h-[50px] bg-[var(--set0-grey-0)] rounded-tl-[30px] rounded-br-[24px] flex items-end justify-end
 										before:content-[''] before:absolute before:w-[20px] before:h-[20px] before:bottom-[100%] before:right-0 before:bg-[radial-gradient(circle_at_top_left,transparent_20px,var(--set0-grey-0)_20px)]
 										after:content-[''] after:absolute after:w-[20px] after:h-[20px] after:right-[100%] after:bottom-0 after:bg-[radial-gradient(circle_at_top_left,transparent_20px,var(--set0-grey-0)_20px)]
 										z-10">
-								<button class="relative flex items-center justify-center w-[40px] h-[40px] bg-black text-white rounded-full transition-colors duration-300 group-hover:bg-[#FF8C00] group-hover:text-black" aria-label="Explore">
+								<span class="relative flex items-center justify-center w-[40px] h-[40px] bg-black text-white rounded-full transition-colors duration-300 group-hover:bg-[#FF8C00] group-hover:text-black" aria-hidden="true">
 									<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 										<line x1="7" y1="17" x2="17" y2="7"></line>
 										<polyline points="7 7 17 7 17 17"></polyline>
 									</svg>
-								</button>
+								</span>
 							</div>
-						</article>
+						</a>
 					</div>
 
 					<!-- SLIDE 5 -->
 					<div class="shrink-0 px-5 h-[240px] text-[#222222]" data-slide>
-						<article class="group relative flex flex-col items-start w-full h-[240px] rounded-[24px] px-8 py-7 bg-[#E3E5EA]">
+						<!-- the whole card is the link; inner "details_" and the arrow are
+						     spans, since <a>/<button> cannot nest inside an <a> -->
+						<a href="/services#ai" aria-label="AI Workflows & Orchestration"
+						   class="group relative flex flex-col items-start w-full h-[240px] rounded-[24px] px-8 py-7 bg-[#E3E5EA] no-underline cursor-pointer
+						          focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">
 							<div class="absolute inset-0 rounded-[24px] bg-[#FF8C00] opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-0"></div>
 							<div class="relative flex flex-row gap-2 mb-4 z-10">
 								<div class="inline-flex items-center bg-black text-white text-[15px] font-bold px-4 h-[30px] rounded-full">AI</div>
@@ -201,34 +221,38 @@ import ItemArrow from './item_arrow.astro';
 							<div class="relative flex-1 w-full z-10 flex flex-col">
 								<div class="relative w-full flex-1">
 									<h3 class="py-3 absolute inset-0 text-[28px] font-extrabold text-[#222222] leading-[1.1] transition-opacity duration-300 opacity-100 group-hover:opacity-0 pointer-events-none">
-										AI Workflows & Orchestration
+										AI Workflows &amp; Orchestration
 									</h3>
 									<p class="py-3 absolute inset-0 text-[16px] font-medium text-[#222222] leading-[1.25] transition-opacity duration-300 opacity-0 group-hover:opacity-100 pointer-events-none pr-8">
 										We support ongoing projects by establishing and maintaining digital collaborative workflows among involved parties.
 									</p>
 								</div>
-								<a href="#" class="inline-flex items-center bg-black text-white text-[12px] px-3 w-[80px] h-[24px] rounded-[5px] mt-auto z-10 self-start">
+								<span class="inline-flex items-center bg-black text-white text-[12px] px-3 w-[80px] h-[24px] rounded-[5px] mt-auto z-10 self-start">
 									<span class="block group-hover:hidden">&gt; details_&nbsp;</span>
 									<span class="hidden group-hover:block">&gt; explore_</span>
-								</a>
+								</span>
 							</div>
 							<div class="absolute bottom-0 right-0 w-[50px] h-[50px] bg-[var(--set0-grey-0)] rounded-tl-[30px] rounded-br-[24px] flex items-end justify-end
 										before:content-[''] before:absolute before:w-[20px] before:h-[20px] before:bottom-[100%] before:right-0 before:bg-[radial-gradient(circle_at_top_left,transparent_20px,var(--set0-grey-0)_20px)]
 										after:content-[''] after:absolute after:w-[20px] after:h-[20px] after:right-[100%] after:bottom-0 after:bg-[radial-gradient(circle_at_top_left,transparent_20px,var(--set0-grey-0)_20px)]
 										z-10">
-								<button class="relative flex items-center justify-center w-[40px] h-[40px] bg-black text-white rounded-full transition-colors duration-300 group-hover:bg-[#FF8C00] group-hover:text-black" aria-label="Explore">
+								<span class="relative flex items-center justify-center w-[40px] h-[40px] bg-black text-white rounded-full transition-colors duration-300 group-hover:bg-[#FF8C00] group-hover:text-black" aria-hidden="true">
 									<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 										<line x1="7" y1="17" x2="17" y2="7"></line>
 										<polyline points="7 7 17 7 17 17"></polyline>
 									</svg>
-								</button>
+								</span>
 							</div>
-						</article>
+						</a>
 					</div>
 
 					<!-- SLIDE 6 -->
 					<div class="shrink-0 px-5 h-[240px] text-[#222222]" data-slide>
-						<article class="group relative flex flex-col items-start w-full h-[240px] rounded-[24px] px-8 py-7 bg-[#E3E5EA]">
+						<!-- the whole card is the link; inner "details_" and the arrow are
+						     spans, since <a>/<button> cannot nest inside an <a> -->
+						<a href="/services#bi" aria-label="Business Intelligence & Data Ops"
+						   class="group relative flex flex-col items-start w-full h-[240px] rounded-[24px] px-8 py-7 bg-[#E3E5EA] no-underline cursor-pointer
+						          focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">
 							<div class="absolute inset-0 rounded-[24px] bg-[#FF8C00] opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-0"></div>
 							<div class="relative flex flex-row gap-2 mb-4 z-10">
 								<div class="inline-flex items-center bg-black text-white text-[15px] font-bold px-4 h-[30px] rounded-full">BI</div>
@@ -236,34 +260,38 @@ import ItemArrow from './item_arrow.astro';
 							<div class="relative flex-1 w-full z-10 flex flex-col">
 								<div class="relative w-full flex-1">
 									<h3 class="py-3 absolute inset-0 text-[28px] font-extrabold text-[#222222] leading-[1.1] transition-opacity duration-300 opacity-100 group-hover:opacity-0 pointer-events-none">
-										Business Intelligence & Data Ops
+										Business Intelligence &amp; Data Ops
 									</h3>
 									<p class="py-3 absolute inset-0 text-[16px] font-medium text-[#222222] leading-[1.25] transition-opacity duration-300 opacity-0 group-hover:opacity-100 pointer-events-none pr-8">
 										We support ongoing projects by establishing and maintaining digital collaborative workflows among involved parties.
 									</p>
 								</div>
-								<a href="#" class="inline-flex items-center bg-black text-white text-[12px] px-3 w-[80px] h-[24px] rounded-[5px] mt-auto z-10 self-start">
+								<span class="inline-flex items-center bg-black text-white text-[12px] px-3 w-[80px] h-[24px] rounded-[5px] mt-auto z-10 self-start">
 									<span class="block group-hover:hidden">&gt; details_&nbsp;</span>
 									<span class="hidden group-hover:block">&gt; explore_</span>
-								</a>
+								</span>
 							</div>
 							<div class="absolute bottom-0 right-0 w-[50px] h-[50px] bg-[var(--set0-grey-0)] rounded-tl-[30px] rounded-br-[24px] flex items-end justify-end
 										before:content-[''] before:absolute before:w-[20px] before:h-[20px] before:bottom-[100%] before:right-0 before:bg-[radial-gradient(circle_at_top_left,transparent_20px,var(--set0-grey-0)_20px)]
 										after:content-[''] after:absolute after:w-[20px] after:h-[20px] after:right-[100%] after:bottom-0 after:bg-[radial-gradient(circle_at_top_left,transparent_20px,var(--set0-grey-0)_20px)]
 										z-10">
-								<button class="relative flex items-center justify-center w-[40px] h-[40px] bg-black text-white rounded-full transition-colors duration-300 group-hover:bg-[#FF8C00] group-hover:text-black" aria-label="Explore">
+								<span class="relative flex items-center justify-center w-[40px] h-[40px] bg-black text-white rounded-full transition-colors duration-300 group-hover:bg-[#FF8C00] group-hover:text-black" aria-hidden="true">
 									<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 										<line x1="7" y1="17" x2="17" y2="7"></line>
 										<polyline points="7 7 17 7 17 17"></polyline>
 									</svg>
-								</button>
+								</span>
 							</div>
-						</article>
+						</a>
 					</div>
 
 					<!-- SLIDE 7 -->
 					<div class="shrink-0 px-5 h-[240px] text-[#222222]" data-slide>
-						<article class="group relative flex flex-col items-start w-full h-[240px] rounded-[24px] px-8 py-7 bg-[#E3E5EA]">
+						<!-- the whole card is the link; inner "details_" and the arrow are
+						     spans, since <a>/<button> cannot nest inside an <a> -->
+						<a href="/services#it" aria-label="IT Support & Administration"
+						   class="group relative flex flex-col items-start w-full h-[240px] rounded-[24px] px-8 py-7 bg-[#E3E5EA] no-underline cursor-pointer
+						          focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">
 							<div class="absolute inset-0 rounded-[24px] bg-[#FF8C00] opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-0"></div>
 							<div class="relative flex flex-row gap-2 mb-4 z-10">
 								<div class="inline-flex items-center bg-black text-white text-[15px] font-bold px-4 h-[30px] rounded-full">IT</div>
@@ -271,29 +299,29 @@ import ItemArrow from './item_arrow.astro';
 							<div class="relative flex-1 w-full z-10 flex flex-col">
 								<div class="relative w-full flex-1">
 									<h3 class="py-3 absolute inset-0 text-[28px] font-extrabold text-[#222222] leading-[1.1] transition-opacity duration-300 opacity-100 group-hover:opacity-0 pointer-events-none">
-										IT Support & Administration
+										IT Support &amp; Administration
 									</h3>
 									<p class="py-3 absolute inset-0 text-[16px] font-medium text-[#222222] leading-[1.25] transition-opacity duration-300 opacity-0 group-hover:opacity-100 pointer-events-none pr-8">
 										We support ongoing projects by establishing and maintaining digital collaborative workflows among involved parties.
 									</p>
 								</div>
-								<a href="#" class="inline-flex items-center bg-black text-white text-[12px] px-3 w-[80px] h-[24px] rounded-[5px] mt-auto z-10 self-start">
+								<span class="inline-flex items-center bg-black text-white text-[12px] px-3 w-[80px] h-[24px] rounded-[5px] mt-auto z-10 self-start">
 									<span class="block group-hover:hidden">&gt; details_&nbsp;</span>
 									<span class="hidden group-hover:block">&gt; explore_</span>
-								</a>
+								</span>
 							</div>
 							<div class="absolute bottom-0 right-0 w-[50px] h-[50px] bg-[var(--set0-grey-0)] rounded-tl-[30px] rounded-br-[24px] flex items-end justify-end
 										before:content-[''] before:absolute before:w-[20px] before:h-[20px] before:bottom-[100%] before:right-0 before:bg-[radial-gradient(circle_at_top_left,transparent_20px,var(--set0-grey-0)_20px)]
 										after:content-[''] after:absolute after:w-[20px] after:h-[20px] after:right-[100%] after:bottom-0 after:bg-[radial-gradient(circle_at_top_left,transparent_20px,var(--set0-grey-0)_20px)]
 										z-10">
-								<button class="relative flex items-center justify-center w-[40px] h-[40px] bg-black text-white rounded-full transition-colors duration-300 group-hover:bg-[#FF8C00] group-hover:text-black" aria-label="Explore">
+								<span class="relative flex items-center justify-center w-[40px] h-[40px] bg-black text-white rounded-full transition-colors duration-300 group-hover:bg-[#FF8C00] group-hover:text-black" aria-hidden="true">
 									<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 										<line x1="7" y1="17" x2="17" y2="7"></line>
 										<polyline points="7 7 17 7 17 17"></polyline>
 									</svg>
-								</button>
+								</span>
 							</div>
-						</article>
+						</a>
 					</div>
 
 				</div>
@@ -304,7 +332,7 @@ import ItemArrow from './item_arrow.astro';
 			<div class="flex items-center justify-between w-full px-5">
 				<div class="flex items-center text-[12px] italic select-none"
 				     data-indicator aria-hidden="true">
-					<span class="text-[#aaa]">– SRV.</span>
+					<span class="text-[#aaa]">&ndash; SRV.</span>
 					<span class="text-[#FF8C00] pr-1" data-indicator-count></span>
 					<span class="flex items-center font-medium tracking-wide" data-indicator-marks></span>
 				</div>
