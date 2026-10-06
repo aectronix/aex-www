@@ -1,10 +1,11 @@
 ---
 // src/components/block_clients.astro
 
+import LogoARM from	'../components/client_logo_arm.astro'
 import LogoMMK from	'../components/client_logo_mmk.astro'
 import LogoPRJ from	'../components/client_logo_prj.astro'
 import LogoSWA from	'../components/client_logo_swa.astro'
-import LogoARM from	'../components/client_logo_arm.astro'
+import LogoUAU from	'../components/client_logo_uau.astro'
 
 ---
 
@@ -17,7 +18,7 @@ import LogoARM from	'../components/client_logo_arm.astro'
 		            min-[720px]:max-w-[800px]
 		            min-[1080px]:max-w-[1200px]
 		            min-[1420px]:flex-[1_1_340px] min-[1420px]:max-w-[400px]">
-			<h3 class="relative py-1 font-bold text-[24px] text-[#222222]">
+			<h3 id="clients" class="relative py-1 font-bold text-[24px] text-[#222222]">
 				<span class="absolute -top-[20px] left-0 w-[40px] h-[10px] bg-[#FF8C00]"></span>
 				OUR CLIENTS
 			</h3>
@@ -63,6 +64,8 @@ import LogoARM from	'../components/client_logo_arm.astro'
 						</div>
 					</div>
 
+
+
 					<!-- COLUMN 2: 3 cards. At >=720px this wrapper becomes
 					     display:contents, so its cards flow as direct track items and
 					     wrap normally; below 720px it is a real sliding column. -->
@@ -71,7 +74,19 @@ import LogoARM from	'../components/client_logo_arm.astro'
 						            min-[720px]:flex-[1_1_340px] min-[720px]:max-w-[400px]" data-slide>
 							<article class="group relative flex flex-col items-start justify-center w-full h-[80px] rounded-[16px] px-8 transition-colors duration-300 hover:bg-[#E3E5EA] hover:text-black">
 								<div class="relative w-full z-10 [&>svg]:h-6 [&>svg]:w-auto">
-									<LogoSWA />
+									<LogoUAU />
+								</div>
+							</article>
+						</div>
+
+					</div>
+
+					<div class="shrink-0 flex flex-col gap-y-[40px] min-[720px]:contents" data-column>
+						<div class="px-5 h-[80px] text-[#333333]
+						            min-[720px]:flex-[1_1_340px] min-[720px]:max-w-[400px]" data-slide>
+							<article class="group relative flex flex-col items-start justify-center w-full h-[80px] rounded-[16px] px-8 transition-colors duration-300 hover:bg-[#E3E5EA] hover:text-black">
+								<div class="relative w-full z-10 [&>svg]:h-6 [&>svg]:w-auto">
+									<LogoARM />
 								</div>
 							</article>
 						</div>
